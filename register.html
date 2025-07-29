@@ -1,24 +1,49 @@
-<form id="registrationForm">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Register | Learn Socratic</title>
+  <title>Register</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+<body>
+  <h1>Register</h1>
+  <form id="registerForm">
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="password" id="password" placeholder="Password" required />
+    <button type="submit">Register</button>
+  </form>
 
-  <h2>Student Registration</h2>
-  <label for="name">Full Name:</label>
-  <input type="text" id="name" required />
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT.firebaseapp.com",
+      // ...other config
+    };
+    firebase.initializeApp(firebaseConfig);
 
-  <label for="email">Email:</label>
-  <input type="email" id="email" required />
+    document.getElementById("registerForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
 
-  <label for="course">Course:</label>
-  <select id="course" required>
-    <option value="">Select a course</option>
-    <option value="philosophy">Philosophy</option>
-    <option value="ethics">Ethics</option>
-    <option value="logic">Logic</option>
-  </select>
+      firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then(userCredential => {
+          console.log("User registered:", userCredential.user);
+          // Redirect or show confirmation
+        })
+        .catch(error => {
+          console.error("Error:", error.message);
+        });
+    });
+  </script>
 
-  <button type="submit">Register & Pay</button>
-</form>
+  <!-- Stripe JS (if needed later) -->
+  <script src="https://js.stripe.com/v3/"></script>
+  <script>
+    // Stripe setup here if you're charging right after registration
+  </script>
+</body>
+</html>
