@@ -1,3 +1,128 @@
+h1 {
+  text-align: center;
+  color: #333;
+  font-family: Arial, sans-serif;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 2em;
+  font-weight: bold;
+  text-transform: capitalize;
+  letter-spacing: 1px;;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: #e9ecef;
+  }
+}
+
+h6 {
+  text-align: center;
+  color: #333;
+  font-family: Arial, sans-serif;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: capitalize;
+  letter-spacing: 1px;;
+  padding: 5px;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: #e9ecef;
+  }
+}
+body {
+  font-family: Lato, Humanist sans;
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 20px;
+  padding: 0;
+  background-color: lavender;
+  /*background: url('SolarSystemBG.png') no-repeat center center fixed;*/
+      background-size: cover;
+      z-index: -1;
+}
+
+.menu-bar {
+  position: fixed;     /* Keeps it fixed in the viewport */
+  height: 30px;
+  top: 0;              /* Anchors it to the top */
+  width: 100%;         /* Full width across the page */
+  background-color: #333;
+  overflow: visible;
+ /* font-family:Arial, sans-serif;*/
+  /*display: flex;*/
+  float: right;            /* Aligns the whole menu to the right */
+  z-index: 1000;       /* Ensures it stays above other elements */
+}
+
+.menu-bar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background-color: #b098f9;
+  position: relative; /* Allows dropdowns to be positioned relative to this */
+}
+
+.menu-bar li {
+  margin: 0;
+  position: relative;
+  padding: 0 10px; /* Adds space on the left and right */
+}
+
+.menu-bar > li > a {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  float: left;            
+}
+
+.menu-bar > li > a:hover {
+  background-color: #34495e;
+}
+
+/*Dropdown menu*/
+
+
+
+
+.menu-bar li .dropdown{
+  display:none;
+  position:absolute;
+  background-color:#a2aff6;
+  top:100%;
+  left: 0;
+  min-width:160px;
+  z-index:1000;
+}
+
+.menu-bar li .dropdown li {
+  position: relative;
+}
+
+.dropdown a{
+  display:block;
+  color:white;
+  padding: 10px 12
+  px;
+  text-decoration: none;
+}
+
+.dropdown a:hover{
+  background-color:#b098f9;
+}
+
+/*Show dropdown on hover */
+.menu-bar li:hover .dropdown{
+  display: block;
+}
+
+
 form {
   max-width: 400px;
   margin: auto;
