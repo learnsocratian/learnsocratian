@@ -45,6 +45,13 @@
     button:hover {
       background-color: #0056b3;
     }
+    #thankYouMessage {
+      background-color: #e0ffe0;
+      padding: 20px;
+      border: 1px solid #b2d8b2;
+      border-radius: 5px;
+      font-family: sans-serif;
+    }
   </style>
 </head>
 <body>
@@ -54,19 +61,30 @@
   <div class="contact-container">
     <h2>Contact Us</h2>
     <form action="https://formspree.io/f/mgvzpler" method="POST">
-    <label for="name">Name:</label>
+      <label for="name">Name:</label>
       <input type="text" id="name" name="name" required>
       <label for="email">Your Email:</label>
-  <input type="email" name="email" id="email" required>
+      <input type="email" name="email" id="email" required>
+      <label for="message">Your Message:</label>
+      <textarea name="message" id="message" required></textarea>
 
-  <label for="message">Your Message:</label>
-  <textarea name="message" id="message" required></textarea>
-
-  <!-- Optional: Add more fields here -->
+      <!-- Your form and thank-you message -->
+    <form id="contactForm" action="https://formspree.io/f/mgvzpler" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  
 
   <!-- Redirect to thank-you page after submission -->
   <input type="hidden" name="_redirect" value="https://learnsocratian.github.io/thank-you.html">
 
+      <div id="thankYouMessage" style="display:none; margin-top: 20px;">
+        <h3>Thank you for reaching out!</h3>
+        <p>We'll get back to you as soon as possible.</p>
+      </div>
+      
   <button type="submit">Send Message</button>
 </form>
 
@@ -74,6 +92,28 @@
 
 
   <!--JavaScript code-->
-      <script src="menu-loader.js"></script>
+  <script src="menu-loader.js"></script>
+  
+  const form = document.getElementById('contactForm');
+    const thankYou = document.getElementById('thankYouMessage');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          form.reset();
+          thankYou.style.display = 'block';
+        } else {
+          alert('Oops! Something went wrong. Please try again.');
+        }
+      });
+    });
 </body>
 </html>
