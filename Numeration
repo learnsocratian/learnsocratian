@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <title>Numeration LearnSocratian</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+
+    <!--Title of the page-->
+<h1> <img src="images/Algebra.png" alt="🧮" style="height: 1em; vertical-align: middle;"> Why Numeration?</h1>
+  
+
+<!--Picture and text on the right-->
+
+<div style="display: flex; ">
+  <div style="width: 50%; padding: 20px;">
+    <img src="images/1.png" alt="Fondation" style="width: 100%; height: auto;">
+  </div>
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <p>Imagine math as a magnificent house. Tall, complex, full of rooms and staircases. But what holds it all up? The foundation. That’s numeration.</p>
+  </div>
+</div>
+
+<!--Text and picture (Students counting, doing number drills, looking bored) on the right-->
+<div style="display: flex;
+">
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <p>Many students think this is math—counting, number lines, place value drills. And yeah… it can feel repetitive. Even boring.</p>
+  </div>
+  <div style="width: 50%; padding: 20px;">
+    <img src="images/2.png" alt="Students counting" style="width: 100%; height: auto;">
+  </div>
+</div>
+
+<!--Picture (A young athlete training, dribbling and missing shots] and text on the right-->
+<div style="display: flex; ">
+  <div style="width: 50%; padding: 20px;">
+    <img src="images/3.png" alt="Fondation" style="width: 100%; height: auto;">
+  </div>
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <p>But think of a legendary basketball player. Before the crowds, they spent hours dribbling, thousands of shots, tons of misses… and kept going.</p>
+  </div>
+</div>
+
+________________________________________
+[Scene 4 – Back to the classroom, same student solving advanced math] 
+Narrator: 
+“Numeration is the dribbling of mathematics. It’s what builds fluency, confidence, and intuition.”
+________________________________________
+[Scene 5 – House complete, child stands in front proudly] 
+Narrator: 
+“Without it, the rest of math can't stand. But with it? You can build towers of logic, spiral through calculus, and leap into discovery.”
+________________________________________
+[Final scene – upbeat music, text on screen: “Build Strong. Think Big.”] 
+Narrator: 
+“So next time you count… repeat… and drill—remember: you’re laying bricks. You’re training for greatness. One number at a time.”
+
+   <div id="menu-placeholder"></div>
+
+<!--JavaScript code-->
+      <script src="menu-loader.js"></script>
+  </body>
