@@ -33,6 +33,15 @@ h6 {
     background-color: #e9ecef;
   }
 }
+
+img {
+  border-radius: 12px;         /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  transition: box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+
+
 body {
   font-family: Lato, Humanist sans;
   font-size: 20px;
