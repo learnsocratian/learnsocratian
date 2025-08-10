@@ -95,10 +95,14 @@ body {
   background-color: #34495e;
 }
 
+#top-bar-right-content {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+
 /*Dropdown menu*/
-
-
-
 
 .menu-bar li .dropdown{
   display:none;
