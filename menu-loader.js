@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const currentPage = window.location.pathname.split("/").pop();
           if (currentPage === "Numeration.html") {
             rightContent.innerHTML = `
-              <a href="https://drive.google.com/file/d/1uploadcompleteSampleNumeration/view" target="_blank"
+              <a href="https://drive.google.com/file/d/17SrTJhh_6G9ASR8_0HBGJYMymkVyrYP5/view" target="_blank"
                  style="text-decoration: none; font-weight: bold; color: #fff;">
                 📄 Sample – Numeration
               </a>
