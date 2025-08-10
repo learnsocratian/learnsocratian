@@ -15,12 +15,16 @@ document.addEventListener("DOMContentLoaded", function () {
         // ✅ Inject page-specific content AFTER menu loads
         const rightContent = document.getElementById("top-bar-right-content");
         if (rightContent) {
-          rightContent.innerHTML = `
-            <a href="https://drive.google.com/file/d/1uploadcompleteSampleNumeration/view" target="_blank"
-               style="text-decoration: none; font-weight: bold; color: #333;">
-              📄 Sample – Numeration
-            </a>
-          `;
+          // Check current page
+          const currentPage = window.location.pathname.split("/").pop();
+          if (currentPage === "Numeration.html") {
+            rightContent.innerHTML = `
+              <a href="https://drive.google.com/file/d/1uploadcompleteSampleNumeration/view" target="_blank"
+                 style="text-decoration: none; font-weight: bold; color: #fff;">
+                📄 Sample – Numeration
+              </a>
+            `;
+          }
         } else {
           console.warn("No element with ID 'top-bar-right-content' found in loaded menu.");
         }
@@ -29,6 +33,11 @@ document.addEventListener("DOMContentLoaded", function () {
         console.warn("No element with ID 'menu-placeholder' found.");
       }
     })
+    .catch(function (error) {
+      console.error("Error loading menu:", error);
+    });
+});
+
     .catch(function (error) {
       console.error("Error loading menu:", error);
     });
