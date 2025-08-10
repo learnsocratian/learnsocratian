@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return response.text();
     })
     .then(function (menuHTML) {
+      console.log("Menu HTML loaded:", menuHTML);
       const placeholder = document.getElementById("menu-placeholder");
       if (placeholder) {
         placeholder.innerHTML = menuHTML;
