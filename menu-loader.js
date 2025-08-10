@@ -16,9 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         
-        } else {
-          console.warn("No element with ID 'top-bar-right-content' found in loaded menu.");
-        }
+       
 
       } else {
         console.warn("No element with ID 'menu-placeholder' found.");
