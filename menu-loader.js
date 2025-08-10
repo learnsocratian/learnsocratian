@@ -27,5 +27,5 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch(function (error) {
       console.error("Error loading menu:", error);
     });
-          
+  });       
    
