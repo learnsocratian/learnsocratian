@@ -11,26 +11,7 @@
   <!-- Load menu AFTER the container is defined -->
   <script src="menu-loader.js"></script>
 
-<script>
-  // Inject page-specific content after menu loads
-  document.addEventListener("DOMContentLoaded", function () {
-    setTimeout(function () {
-      const rightContent = document.getElementById("top-bar-right-content");
-      if (rightContent) {
-        rightContent.innerHTML = `
-          <a href="https://drive.google.com/file/d/1uploadcompleteSampleNumeration/view" target="_blank"
-             style="text-decoration: none; font-weight: bold; color: #fff;">
-            📄 Sample – Numeration
-          </a>
-        `;
-      }
-    }, 100); // Delay ensures menu.html is loaded first
-  });
-</script>
-
-
-
-    
+   
     
     <!--Title of the page-->
   <h1> <img src="images/Algebra.png" alt="🧮" style="height: 1em; vertical-align: middle;"> Why Numeration?</h1>
