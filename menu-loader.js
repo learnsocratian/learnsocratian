@@ -11,6 +11,20 @@ document.addEventListener("DOMContentLoaded", function () {
       const placeholder = document.getElementById("menu-placeholder");
       if (placeholder) {
         placeholder.innerHTML = menuHTML;
+
+        // ✅ Inject page-specific content AFTER menu loads
+        const rightContent = document.getElementById("top-bar-right-content");
+        if (rightContent) {
+          rightContent.innerHTML = `
+            <a href="https://drive.google.com/file/d/1uploadcompleteSampleNumeration/view" target="_blank"
+               style="text-decoration: none; font-weight: bold; color: #333;">
+              📄 Sample – Numeration
+            </a>
+          `;
+        } else {
+          console.warn("No element with ID 'top-bar-right-content' found in loaded menu.");
+        }
+
       } else {
         console.warn("No element with ID 'menu-placeholder' found.");
       }
