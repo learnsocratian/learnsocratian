@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
   'style="text-decoration: none; font-weight: bold; color: #fff;">' +
   '📄 Sample – Numeration' +
   '</a>';
-            `;
           }
         } else {
           console.warn("No element with ID 'top-bar-right-content' found in loaded menu.");
@@ -37,5 +36,5 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("Error loading menu:", error);
     });
 
-
+}};
    
