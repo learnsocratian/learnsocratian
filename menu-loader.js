@@ -13,18 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
       if (placeholder) {
         placeholder.innerHTML = menuHTML;
 
-        // ✅ Inject page-specific content AFTER menu loads
-        const rightContent = document.getElementById("top-bar-right-content");
-        if (rightContent) {
-          // Check current page
-          const currentPage = window.location.pathname.split("/").pop();
-          if (currentPage === "Numeration.html") {
-            rightContent.innerHTML =
-  '<a href="https://drive.google.com/file/d/17SrTJhh_6G9ASR8_0HBGJYMymkVyrYP5/view" target="_blank" ' +
-  'style="text-decoration: none; font-weight: bold; color: #fff;">' +
-  '📄 Sample – Numeration' +
-  '</a>';
-          }
+
+
+        
         } else {
           console.warn("No element with ID 'top-bar-right-content' found in loaded menu.");
         }
