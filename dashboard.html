@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8">
   <title>Dashboard - LearnSocratian</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -10,32 +10,27 @@
 
   <h1>Dashboard</h1>
 
-  <p>Welcome:</p>
+  <p>Logged in as:</p>
   <p id="userEmail">Loading...</p>
 
   <button id="logoutBtn">Logout</button>
 
   <script type="module">
     import { auth } from "./firebase.js";
-    import {
-      onAuthStateChanged,
-      signOut
-    } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+    import { onAuthStateChanged, signOut }
+      from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 
     const userEmail = document.getElementById("userEmail");
     const logoutBtn = document.getElementById("logoutBtn");
 
-    // 🔒 Check if user is logged in
     onAuthStateChanged(auth, (user) => {
       if (user) {
         userEmail.textContent = user.email;
       } else {
-        // not logged in → send back to login
         window.location.href = "login.html";
       }
     });
 
-    // 🚪 Logout
     logoutBtn.addEventListener("click", async () => {
       await signOut(auth);
       window.location.href = "login.html";
