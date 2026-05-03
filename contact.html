@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Contact Us</title>
+
+  <link rel="stylesheet" href="styles.css">
+
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
       padding: 20px;
     }
+
     .contact-container {
       max-width: 600px;
       margin: auto;
@@ -18,21 +24,26 @@
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
+
     h2 {
       text-align: center;
       margin-bottom: 20px;
     }
+
     label {
       display: block;
       margin-top: 15px;
     }
-    input, textarea {
+
+    input,
+    textarea {
       width: 100%;
       padding: 10px;
       margin-top: 5px;
       border: 1px solid #ccc;
       border-radius: 4px;
     }
+
     button {
       margin-top: 20px;
       padding: 10px 20px;
@@ -42,9 +53,11 @@
       border-radius: 4px;
       cursor: pointer;
     }
+
     button:hover {
       background-color: #0056b3;
     }
+
     #thankYouMessage {
       background-color: #e0ffe0;
       padding: 20px;
@@ -54,54 +67,76 @@
     }
   </style>
 </head>
+
 <body>
 
   <div id="menu-placeholder"></div>
 
-<script>
+  <script>
     fetch("menu.html")
       .then(response => response.text())
       .then(data => {
         document.getElementById("menu-placeholder").innerHTML = data;
       });
   </script>
-  
 
-  
   <div class="contact-container">
+
     <h2>Contact Us</h2>
-     
-    <form id="contactForm" action="https://formspree.io/f/mgvzpler" method="POST">
+
+    <form id="contactForm"
+          action="https://formspree.io/f/mgvzpler"
+          method="POST">
+
       <label for="name">Name:</label>
-      <input type="text" id="name" name="name" placeholder="Your Name" required>
+      <input type="text"
+             id="name"
+             name="name"
+             placeholder="Your Name"
+             required>
+
       <label for="email">Your Email:</label>
-      <input type="email" name="email" id="email" placeholder="Your Email" required>
-      <label for ="subject"> Subject: </label>
-      <input type="subject" name="subject" id="subject" placeholder="Subject" required>
+      <input type="email"
+             name="email"
+             id="email"
+             placeholder="Your Email"
+             required>
+
+      <label for="subject">Subject:</label>
+      <input type="text"
+             name="subject"
+             id="subject"
+             placeholder="Subject"
+             required>
+
       <label for="message">Your Message:</label>
-      <textarea name="message" id="message" placeholder="Type Your Message" rows="6" required></textarea>
+
+      <textarea name="message"
+                id="message"
+                placeholder="Type Your Message"
+                rows="6"
+                required></textarea>
+
       <button type="submit">Send</button>
+
     </form>
-  
 
-  <!-- Redirect to thank-you page after submission -->
-  <input type="hidden" name="_redirect" value="https://learnsocratian.github.io/thank-you.html">
+    <div id="thankYouMessage"
+         style="display:none; margin-top: 20px;">
 
-      <div id="thankYouMessage" style="display:none; margin-top: 20px;">
-        <h3>Thank you for reaching out!</h3>
-        <p>We'll get back to you as soon as possible.</p>
-      </div>
-      
+      <h3>Thank you for reaching out!</h3>
+      <p>We'll get back to you as soon as possible.</p>
+
+    </div>
+
   </div>
 
-
-  <!--JavaScript code-->
-  <script src="menu-loader.js"></script>
-  
-  const form = document.getElementById('contactForm');
+  <script>
+    const form = document.getElementById('contactForm');
     const thankYou = document.getElementById('thankYouMessage');
 
     form.addEventListener('submit', function (e) {
+
       e.preventDefault();
 
       fetch(form.action, {
@@ -110,14 +145,22 @@
         headers: {
           'Accept': 'application/json'
         }
+
       }).then(response => {
+
         if (response.ok) {
           form.reset();
           thankYou.style.display = 'block';
+
         } else {
           alert('Oops! Something went wrong. Please try again.');
         }
+
       });
+
     });
+  </script>
+
 </body>
+
 </html>
