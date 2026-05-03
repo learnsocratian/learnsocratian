@@ -2,99 +2,138 @@
 <html>
 
 <head>
-    <title>Registration LearnSocratian</title>
+  <title>Registration LearnSocratian</title>
+  <link rel="stylesheet" href="styles.css">
 
-    <link rel="stylesheet" href="styles.css">
+  <style>
+    .register-container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
 
-    <style>
-        .register-container {
-            max-width: 600px;
-            margin: 40px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
+    .register-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-        .register-container h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+    .register-container label {
+      display: block;
+      margin-top: 15px;
+    }
 
-        .register-container label {
-            display: block;
-            margin-top: 15px;
-        }
+    .register-container input,
+    .register-container select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
 
-        .register-container input,
-        .register-container select {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
+    .register-container button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
 
-        .register-container button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .register-container button:hover {
-            background-color: #0056b3;
-        }
-    </style>
-
+    .register-container button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 
 <body>
 
-    <div id="menu-placeholder"></div>
+  <div id="menu-placeholder"></div>
 
-    <script>
-        fetch("menu.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("menu-placeholder").innerHTML = data;
-            });
-    </script>
+  <script>
+    fetch("menu.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("menu-placeholder").innerHTML = data;
+      });
+  </script>
 
-    <div class="register-container">
+  <div class="register-container">
 
-        <form id="registrationForm">
+    <form id="registrationForm">
 
-            <h2>Student Registration</h2>
+      <h2>Student Registration</h2>
 
-            <label for="name">Full Name:</label>
-            <input type="text" id="name" required />
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" required />
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" required />
+      <label for="email">Email:</label>
+      <input type="email" id="email" required />
 
-            <label for="course">Course:</label>
+      <label for="password">Password:</label>
+      <input type="password" id="password" required />
 
-            <select id="course" required>
-                <option value="">Select a course</option>
-            </select>
+      <label for="course">Course:</label>
+      <select id="course" required>
+        <option value="">Select a course</option>
+      </select>
 
-            <script>
-                fetch("courses-list.html")
-                    .then(response => response.text())
-                    .then(data => {
-                        document.getElementById("course").innerHTML += data;
-                    });
-            </script>
+      <script>
+        fetch("courses-list.html")
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById("course").innerHTML += data;
+          });
+      </script>
 
-            <button type="submit">Register & Pay</button>
+      <button type="submit">Register</button>
 
-        </form>
+    </form>
 
-    </div>
+  </div>
+
+  <!-- FIREBASE LOGIC -->
+  <script type="module">
+    import { auth, db } from "./firebase.js";
+    import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+    import { doc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+
+    const form = document.getElementById("registrationForm");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const course = document.getElementById("course").value;
+
+      try {
+        // 1. Create user in Firebase Auth
+        const userCred = await createUserWithEmailAndPassword(auth, email, password);
+
+        // 2. Save extra user data in Firestore
+        await setDoc(doc(db, "users", userCred.user.uid), {
+          name: name,
+          email: email,
+          course: course,
+          createdAt: new Date()
+        });
+
+        alert("Registration successful!");
+
+        // 3. Redirect to login page
+        window.location.href = "login.html";
+
+      } catch (error) {
+        alert(error.message);
+      }
+    });
+  </script>
 
 </body>
 
