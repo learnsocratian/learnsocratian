@@ -47,6 +47,17 @@
 </head>
 <body>
 
+<div id="menu-placeholder"></div>
+
+  <script>
+    fetch("../menu.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("menu-placeholder").innerHTML = data;
+      });
+  </script>
+
+  
   <h2 style="text-align:center;">Register for LearnSocratian</h2>
   <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
     <label for="name">Full Name:</label>
