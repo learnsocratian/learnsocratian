@@ -6,6 +6,17 @@
     
   </head>
 
+  <body>
+
+    <div id="menu-placeholder"></div>
+
+    <script>
+        fetch("menu.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("menu-placeholder").innerHTML = data;
+            });
+    </script>
 
 <form id="registrationForm">
   <h2>Student Registration</h2>
@@ -20,17 +31,20 @@
     <option value="">Select a course</option>
   </select>
 
+<!-- brings up the menu-->
+  <script>
+            fetch("courses-list.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("course").innerHTML += data;
+                });
+        </script>
+
+  
   <button type="submit">Register & Pay</button>
 </form>
 
 
-<!--JavaScript code-->
-    <script>
-fetch("courses-list.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("course").innerHTML += data;
-  });
-</script>
+
 
 </html>
