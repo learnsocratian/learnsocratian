@@ -18,9 +18,6 @@
   <label for="course">Course:</label>
   <select id="course" required>
     <option value="">Select a course</option>
-    <option value="philosophy">Philosophy</option>
-    <option value="ethics">Ethics</option>
-    <option value="logic">Logic</option>
   </select>
 
   <button type="submit">Register & Pay</button>
@@ -28,6 +25,12 @@
 
 
 <!--JavaScript code-->
-    <script src="menu-loader.js"></script>
+    <script>
+fetch("courses-list.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("course").innerHTML += data;
+  });
+</script>
 
 </html>
