@@ -6,6 +6,20 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("menu.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("menu-placeholder").innerHTML = data;
+    })
+    .catch(err => {
+      console.error("Menu failed to load:", err);
+    });
+});
+</script>
+
+  
 <body>
 
   <h2>Student Registration</h2>
@@ -64,4 +78,6 @@
   </script>
 
 </body>
+
+  <div id="menu-placeholder"></div>
 </html>
