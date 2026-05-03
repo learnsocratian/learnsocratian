@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Contact Us</title>
+
+  <link rel="stylesheet" href="styles.css">
 
   <style>
     body {
@@ -31,7 +35,8 @@
       margin-top: 15px;
     }
 
-    input, textarea {
+    input,
+    textarea {
       width: 100%;
       padding: 10px;
       margin-top: 5px;
@@ -58,6 +63,7 @@
       padding: 20px;
       border: 1px solid #b2d8b2;
       border-radius: 5px;
+      font-family: sans-serif;
     }
   </style>
 </head>
@@ -66,44 +72,71 @@
 
   <div id="menu-placeholder"></div>
 
+  <script>
+    fetch("menu.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("menu-placeholder").innerHTML = data;
+      });
+  </script>
+
   <div class="contact-container">
 
     <h2>Contact Us</h2>
 
-    <form id="contactForm" action="https://formspree.io/f/mgvzpler" method="POST">
+    <form id="contactForm"
+          action="https://formspree.io/f/mgvzpler"
+          method="POST">
 
       <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
+      <input type="text"
+             id="name"
+             name="name"
+             placeholder="Your Name"
+             required>
 
       <label for="email">Your Email:</label>
-      <input type="email" id="email" name="email" required>
+      <input type="email"
+             name="email"
+             id="email"
+             placeholder="Your Email"
+             required>
 
       <label for="subject">Subject:</label>
-      <input type="text" id="subject" name="subject" required>
+      <input type="text"
+             name="subject"
+             id="subject"
+             placeholder="Subject"
+             required>
 
       <label for="message">Your Message:</label>
-      <textarea id="message" name="message" rows="6" required></textarea>
+
+      <textarea name="message"
+                id="message"
+                placeholder="Type Your Message"
+                rows="6"
+                required></textarea>
 
       <button type="submit">Send</button>
 
     </form>
 
-    <input type="hidden" name="_redirect" value="https://learnsocratian.github.io/thank-you.html">
+    <div id="thankYouMessage"
+         style="display:none; margin-top: 20px;">
 
-    <div id="thankYouMessage" style="display:none; margin-top: 20px;">
       <h3>Thank you for reaching out!</h3>
       <p>We'll get back to you as soon as possible.</p>
+
     </div>
 
   </div>
-
-  <script src="menu-loader.js"></script>
 
   <script>
     const form = document.getElementById('contactForm');
     const thankYou = document.getElementById('thankYouMessage');
 
     form.addEventListener('submit', function (e) {
+
       e.preventDefault();
 
       fetch(form.action, {
@@ -112,16 +145,22 @@
         headers: {
           'Accept': 'application/json'
         }
+
       }).then(response => {
+
         if (response.ok) {
           form.reset();
           thankYou.style.display = 'block';
+
         } else {
           alert('Oops! Something went wrong. Please try again.');
         }
+
       });
+
     });
   </script>
 
 </body>
+
 </html>
