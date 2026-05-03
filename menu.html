@@ -7,13 +7,15 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="courses.html">Courses &#9662;</a>
-          <ul class="dropdown">
-            <li><a href="Numeration.html">Numeration</a></li>
-            <li><a href="Algebra.html">Algebra</a></li>
-            <li><a href="Calculus.html">Calculus</a></li>
-            <li><a href="Trigonometry.html">Trigonometry</a></li>
-                        <li><a href="Geometry.html">Geometry</a></li>
-          </ul>
+          <ul class="dropdown" id="courses-dropdown"></ul>
+
+<script>
+fetch("courses-list.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("courses-dropdown").innerHTML = data;
+  });
+</script>
         </li>
         <li><a href="register.html">Register</a></li>
         <li><a href="contact.html">Contact</a></li>
