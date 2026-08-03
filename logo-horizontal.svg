@@ -1,0 +1,14 @@
+<svg width="440" height="130" viewBox="0 0 440 130" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon: an open ring (compass-drawn, "the question left open") with a small
+       spark escaping through the gap (the moment of insight) -->
+  <path d="M65 95 A30 30 0 1 1 91 80" fill="none" stroke="#7C5CE0" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="83" cy="96" r="5" fill="#E8C468"/>
+
+  <!-- Wordmark -->
+  <text x="135" y="76" font-family="Fraunces, serif" font-weight="600" font-size="32" letter-spacing="-0.01em">
+    <tspan fill="#2E2A4A">Learn</tspan><tspan fill="#7C5CE0" font-style="italic" font-weight="500">Socratian</tspan>
+  </text>
+
+  <!-- Tagline -->
+  <text x="136" y="100" font-family="'IBM Plex Mono', monospace" font-size="11" letter-spacing="0.14em" fill="#6E6693">LEARN &#183; QUESTION &#183; DISCOVER</text>
+</svg>
