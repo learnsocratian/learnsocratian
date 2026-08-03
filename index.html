@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LearnSocratian — Learn Mathematics Through Conversation</title>
+<meta name="description" content="Discover mathematics through thoughtful dialogue, curiosity, and deep conceptual learning.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#E6E6FA;          /* lavender base — user's existing body bg */
+    --bg-panel:#FBFAFF;    /* near-white lavender, for nav/cards */
+    --ink:#2E2A4A;         /* deep plum-ink for text — cohesive with palette, replaces flat grey */
+    --muted:#6E6693;       /* muted violet-grey, secondary text */
+    --violet:#B098F9;      /* user's existing menu-bar color */
+    --violet-deep:#7C5CE0; /* deeper tone, primary accent/CTA */
+    --periwinkle:#A2AFF6;  /* user's existing dropdown color */
+    --champagne:#E8C468;   /* warm spark accent — complements cool lavender */
+    --line:#D9D2F5;        /* dividers */
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    background-color:var(--bg);
+    background-image:
+      radial-gradient(rgba(124,92,224,0.08) 1px, transparent 1px);
+    background-size:26px 26px;
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    overflow-x:hidden;
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    display:flex;
+    flex-direction:column;
+    background:rgba(251,250,255,0.75);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    box-shadow:0 1px 0 var(--line), 0 8px 24px -16px rgba(46,42,74,0.25);
+    position:sticky;
+    top:0;
+    z-index:10;
+  }
+
+  .nav-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:20px 48px;
+    max-width:1280px;
+    margin:0 auto;
+    width:100%;
+  }
+
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Fraunces',serif;
+    font-size:1.3rem;
+    font-weight:600;
+    letter-spacing:0.01em;
+    color:var(--ink);
+    text-decoration:none;
+  }
+
+  .logo-mark{width:30px;height:30px;flex-shrink:0;}
+
+  nav.links{display:flex;gap:40px;}
+
+  nav.links a{
+    color:var(--muted);
+    text-decoration:none;
+    font-size:0.92rem;
+    font-weight:500;
+    letter-spacing:0.01em;
+    transition:color 0.2s ease;
+    position:relative;
+  }
+
+  nav.links a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0%;
+    height:2px;
+    border-radius:2px;
+    background:var(--champagne);
+    transition:width 0.25s ease;
+  }
+
+  nav.links a:hover{color:var(--ink);}
+  nav.links a:hover::after{width:100%;}
+
+  .auth{display:flex;align-items:center;gap:20px;}
+
+  .auth a{
+    color:var(--muted);
+    text-decoration:none;
+    font-size:0.92rem;
+    font-weight:500;
+    transition:color 0.2s ease;
+  }
+  .auth a:hover{color:var(--ink);}
+
+  .register-btn{
+    color:#ffffff !important;
+    background:var(--violet-deep);
+    padding:9px 22px;
+    border-radius:6px;
+    font-weight:600 !important;
+    box-shadow:0 6px 16px -6px rgba(124,92,224,0.55);
+    transition:transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  }
+  .register-btn:hover{
+    background:var(--violet);
+    transform:translateY(-1px);
+    box-shadow:0 8px 20px -6px rgba(124,92,224,0.6);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    max-width:1280px;
+    margin:0 auto;
+    padding:110px 48px 60px;
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    align-items:center;
+    gap:40px;
+    min-height:calc(100vh - 88px);
+    position:relative;
+  }
+
+  .hero-copy{max-width:560px;}
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--violet-deep);
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:28px;
+  }
+
+  .eyebrow-dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:var(--champagne);
+    box-shadow:0 0 0 4px rgba(232,196,104,0.25);
+    animation:pulse 2.4s ease-in-out infinite;
+    flex-shrink:0;
+  }
+
+  @keyframes pulse{
+    0%,100%{box-shadow:0 0 0 4px rgba(232,196,104,0.25);}
+    50%{box-shadow:0 0 0 7px rgba(232,196,104,0.12);}
+  }
+
+  h1{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:clamp(2.6rem, 5vw, 4.2rem);
+    line-height:1.05;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+  }
+
+  h1 .accent{
+    color:var(--violet-deep);
+    font-style:italic;
+    font-weight:500;
+    position:relative;
+  }
+
+  .subhead{
+    font-family:'Fraunces',serif;
+    font-size:1.15rem;
+    font-weight:500;
+    font-style:italic;
+    color:var(--muted);
+    margin-top:22px;
+  }
+
+  .desc{
+    font-size:1.02rem;
+    line-height:1.65;
+    color:var(--muted);
+    margin-top:16px;
+    max-width:460px;
+  }
+
+  .cta-row{display:flex;gap:16px;margin-top:38px;flex-wrap:wrap;}
+
+  .btn{
+    font-family:'Inter',sans-serif;
+    font-size:0.95rem;
+    font-weight:600;
+    padding:14px 28px;
+    border-radius:6px;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    transition:all 0.2s ease;
+    letter-spacing:0.01em;
+  }
+
+  .btn-primary{
+    background:var(--violet-deep);
+    color:#ffffff;
+    border:1px solid var(--violet-deep);
+    box-shadow:0 10px 24px -10px rgba(124,92,224,0.65);
+  }
+  .btn-primary:hover{
+    background:#6E4CD9;
+    border-color:#6E4CD9;
+    transform:translateY(-2px);
+    box-shadow:0 14px 28px -10px rgba(124,92,224,0.75);
+  }
+
+  .btn-secondary{
+    background:var(--bg-panel);
+    color:var(--ink);
+    border:1px solid var(--violet);
+  }
+  .btn-secondary:hover{
+    border-color:var(--violet-deep);
+    background:#F1ECFF;
+    transform:translateY(-2px);
+  }
+
+  /* ---------- ILLUSTRATION ---------- */
+  .hero-art{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+  }
+
+  .art-glow{
+    position:absolute;
+    width:380px;
+    height:380px;
+    border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, rgba(232,196,104,0.35), rgba(162,175,246,0.35) 45%, transparent 70%);
+    filter:blur(38px);
+    z-index:0;
+  }
+
+  .art-float{position:relative;z-index:1;animation:float 6s ease-in-out infinite;}
+  .orbit-ring{transform-origin:210px 210px;animation:spin 40s linear infinite;}
+
+  @keyframes float{
+    0%,100%{transform:translateY(0px);}
+    50%{transform:translateY(-14px);}
+  }
+
+  @keyframes spin{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .art-float{animation:none;}
+    .orbit-ring{animation:none;}
+    .eyebrow-dot{animation:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  /* ---------- SCROLL CUE ---------- */
+  .scroll-cue{
+    position:absolute;
+    bottom:8px;
+    left:50%;
+    transform:translateX(-50%);
+    color:var(--muted);
+    font-size:1.3rem;
+    animation:bob 2.2s ease-in-out infinite;
+  }
+
+  @keyframes bob{
+    0%,100%{transform:translateX(-50%) translateY(0);}
+    50%{transform:translateX(-50%) translateY(6px);}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .scroll-cue{animation:none;}
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 920px){
+    .nav-top{flex-wrap:wrap;gap:16px;padding:18px 24px;}
+    nav.links{order:3;width:100%;justify-content:center;gap:24px;flex-wrap:wrap;}
+    .hero{grid-template-columns:1fr;padding:50px 24px 80px;text-align:center;}
+    .hero-copy{margin:0 auto;}
+    .desc{margin-left:auto;margin-right:auto;}
+    .cta-row{justify-content:center;}
+    .eyebrow{justify-content:center;}
+    .hero-art{order:-1;max-width:280px;margin:0 auto;}
+  }
+
+  @media (max-width: 480px){
+    nav.links{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-top">
+    <a href="#" class="logo">
+      <svg class="logo-mark" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 6C4 4.9 4.9 4 6 4H22C23.1 4 24 4.9 24 6V16C24 17.1 23.1 18 22 18H11L6 22V18H6C4.9 18 4 17.1 4 16V6Z" stroke="#7C5CE0" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M11.5 8.5C11.5 7.4 12.4 6.7 13.5 6.7C14.6 6.7 15.4 7.4 15.4 8.3C15.4 9.6 13.5 9.8 13.5 11.3" stroke="#2E2A4A" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="13.5" cy="13.6" r="0.9" fill="#E8C468"/>
+      </svg>
+      LearnSocratian
+    </a>
+
+    <nav class="links">
+      <a href="#">Home</a>
+      <a href="#">Courses</a>
+      <a href="#">About</a>
+      <a href="#">Philosophy</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <div class="auth">
+      <a href="#">Login</a>
+      <a href="#" class="register-btn">Register</a>
+    </div>
+  </div>
+</header>
+
+<main class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow"><span class="eyebrow-dot"></span>The Socratic Method, Applied to Math</div>
+    <h1>Learn Mathematics<br>Through <span class="accent">Conversation</span></h1>
+    <p class="subhead">Understanding begins with a question.</p>
+    <p class="desc">Discover mathematics through thoughtful dialogue, curiosity, and deep conceptual learning — one question at a time.</p>
+    <div class="cta-row">
+      <a href="#" class="btn btn-primary">Start Learning</a>
+      <a href="#" class="btn btn-secondary">Explore Courses</a>
+    </div>
+  </div>
+
+  <div class="hero-art">
+    <div class="art-glow"></div>
+    <svg class="art-float" width="420" height="420" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- slow-orbiting faint ring, math/orrery nod -->
+      <g class="orbit-ring">
+        <circle cx="210" cy="210" r="185" stroke="#A2AFF6" stroke-width="1" stroke-dasharray="1 9" opacity="0.5"/>
+        <circle cx="210" cy="25" r="4" fill="#E8C468"/>
+      </g>
+
+      <!-- faint floating geometry -->
+      <circle cx="70" cy="80" r="40" stroke="#A2AFF6" stroke-width="1.2" stroke-dasharray="3 5" opacity="0.7"/>
+      <path d="M330 60L360 118H300L330 60Z" stroke="#A2AFF6" stroke-width="1.2" opacity="0.7"/>
+      <text x="345" y="180" fill="#A2AFF6" font-family="IBM Plex Mono" font-size="20">π</text>
+      <text x="52" y="335" fill="#A2AFF6" font-family="IBM Plex Mono" font-size="18">&#8730;x</text>
+      <line x1="18" y1="235" x2="68" y2="235" stroke="#A2AFF6" stroke-width="1.2" opacity="0.7"/>
+      <line x1="43" y1="210" x2="43" y2="260" stroke="#A2AFF6" stroke-width="1.2" opacity="0.7"/>
+
+      <!-- large speech bubble with compass-drawn question mark -->
+      <path d="M90 110C90 97.85 99.85 88 112 88H290C302.15 88 312 97.85 312 110V210C312 222.15 302.15 232 290 232H175L128 268V232H112C99.85 232 90 222.15 90 210V110Z"
+            fill="#FBFAFF" stroke="#7C5CE0" stroke-width="2"/>
+      <path d="M175 140C175 126 187 116 202 116C217 116 227 127 227 139C227 158 202 160 202 182"
+            stroke="#2E2A4A" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <circle cx="202" cy="205" r="4.5" fill="#E8C468"/>
+      <circle cx="202" cy="152" r="58" stroke="#7C5CE0" stroke-width="1" stroke-dasharray="2 4" opacity="0.45"/>
+
+      <!-- dotted connector -->
+      <line x1="190" y1="260" x2="230" y2="300" stroke="#6E6693" stroke-width="1.5" stroke-dasharray="1 6" stroke-linecap="round"/>
+
+      <!-- small reply bubble with checkmark -->
+      <path d="M232 288C232 279.72 238.72 273 247 273H344C352.28 273 359 279.72 359 288V330C359 338.28 352.28 345 344 345H270L245 366V345H247C238.72 345 232 338.28 232 330V288Z"
+            fill="#FBFAFF" stroke="#A2AFF6" stroke-width="1.6"/>
+      <path d="M270 308L288 324L322 296" stroke="#7C5CE0" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+  </div>
+
+  <div class="scroll-cue">↓</div>
+</main>
+
+</body>
+</html>
