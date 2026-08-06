@@ -1,0 +1,7 @@
+# Learn Socratian — search crawler guidance
+
+User-agent: *
+Allow: /
+
+# Add the absolute sitemap URL after the production domain is confirmed.
+# Sitemap: https://www.example.com/sitemap.xml
