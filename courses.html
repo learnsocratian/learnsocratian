@@ -1,106 +1,483 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-CA">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses | Learn Socratian</title>
+    <meta
+      name="description"
+      content="Explore Learn Socratian courses in Mathematics and French, with structured pathways and focused topics designed to build lasting understanding."
+    >
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#6f5aa8">
+    <meta name="color-scheme" content="light">
 
-  <title>Courses | LearnSocratian</title>
+    <!-- Add an absolute canonical URL after final production metadata is confirmed. -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_CA">
+    <meta property="og:site_name" content="Learn Socratian">
+    <meta property="og:title" content="Courses | Learn Socratian">
+    <meta
+      property="og:description"
+      content="Explore Mathematics and French through guided questions, clear reasoning and purposeful discovery."
+    >
+    <!-- Add og:url and og:image after final production metadata is confirmed. -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Courses | Learn Socratian">
+    <meta
+      name="twitter:description"
+      content="Explore Mathematics and French through guided questions, clear reasoning and purposeful discovery."
+    >
 
-  <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/images/logo/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/images/logo/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Libre+Baskerville:wght@400;700&amp;display=swap"
+    >
+    <link rel="stylesheet" href="assets/css/styles.css">
 
-    .courses-container {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-    }
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Courses",
+        "description": "Explore Learn Socratian courses in Mathematics and French.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Learn Socratian"
+        },
+        "inLanguage": "en-CA"
+      }
+    </script>
+    <script type="module" src="assets/js/main.js"></script>
+  </head>
 
-    h1 {
-      text-align: center;
-      margin-bottom: 40px;
-    }
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    .course-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
+    <header class="site-header" data-site-header>
+      <div class="site-header__container container">
+        <a class="site-header__brand" href="index.html" aria-label="Learn Socratian home">
+          <img
+            class="site-header__logo"
+            src="assets/images/logo/learn-socratian-logo.svg"
+            width="440"
+            height="130"
+            alt=""
+          >
+        </a>
 
-    .course-card {
-      background: white;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: transform 0.2s ease;
-    }
+        <button
+          class="site-header__menu-button"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          data-menu-toggle
+        >
+          <span class="site-header__menu-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+          <span class="site-header__menu-label">Menu</span>
+        </button>
 
-    .course-card:hover {
-      transform: translateY(-5px);
-    }
+        <nav
+          class="site-header__navigation"
+          id="primary-navigation"
+          aria-label="Primary navigation"
+          data-primary-navigation
+        >
+          <ul class="site-nav" role="list">
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="index.html">Home</a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="philosophy.html">Philosophy</a>
+            </li>
+            <li class="site-nav__item site-nav__item--has-menu" data-submenu>
+              <div class="site-nav__link-group">
+                <a class="site-nav__link site-nav__link--active" href="courses.html" aria-current="page">Courses</a>
+                <button
+                  class="site-nav__submenu-toggle"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="courses-menu"
+                  data-submenu-toggle
+                >
+                  <span class="visually-hidden">Show course links</span>
+                  <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true">
+                    <path d="m5 7.5 5 5 5-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/>
+                  </svg>
+                </button>
+              </div>
 
-    .course-card a {
-      text-decoration: none;
-      color: #0077cc;
-      font-size: 1.2rem;
-      font-weight: bold;
-    }
+              <div class="course-menu" id="courses-menu" data-submenu-panel>
+                <div class="course-menu__intro">
+                  <p class="course-menu__eyebrow">Choose your subject</p>
+                  <p class="course-menu__title">Build understanding, one question at a time.</p>
+                  <a class="course-menu__all-link" href="courses.html">View all courses</a>
+                </div>
+                <ul class="course-menu__list" role="list">
+                  <li class="course-menu__item">
+                    <a class="course-menu__link" href="courses/mathematics/index.html">
+                      <span class="course-menu__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                          <path d="M4 7h16M7 4v6m10-6v6M5 14h4m6 0h4M7 12v4m10-4v4M5 20h14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.7"/>
+                        </svg>
+                      </span>
+                      <span>
+                        <span class="course-menu__name">Mathematics</span>
+                        <span class="course-menu__description">Explore grades, topics and guided practice.</span>
+                      </span>
+                    </a>
+                  </li>
+                  <li class="course-menu__item">
+                    <a class="course-menu__link" href="courses/french/index.html">
+                      <span class="course-menu__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                          <path d="M5 5.5h9.5A2.5 2.5 0 0 1 17 8v10.5H7.5A2.5 2.5 0 0 1 5 16V5.5Zm12 3H19v10h-2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"/>
+                        </svg>
+                      </span>
+                      <span>
+                        <span class="course-menu__name">French</span>
+                        <span class="course-menu__description">Develop language skills with clarity and confidence.</span>
+                      </span>
+                    </a>
+                  </li>
 
-    .course-card a:hover {
-      color: #005fa3;
-    }
-  </style>
-</head>
+                  <!-- FUTURE COURSE: Enable when Science launches.
+                  <li class="course-menu__item">
+                    <a class="course-menu__link" href="courses/science/index.html">Science</a>
+                  </li>
+                  -->
 
-<body>
+                  <!-- FUTURE COURSE: Enable when Computer Studies launches.
+                  <li class="course-menu__item">
+                    <a class="course-menu__link" href="courses/computer-studies/index.html">Computer Studies</a>
+                  </li>
+                  -->
+                </ul>
+              </div>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="resources.html">Resources</a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="about.html">About</a>
+            </li>
+            <li class="site-nav__item">
+              <a class="site-nav__link" href="contact.html">Contact</a>
+            </li>
+          </ul>
 
-  <div id="menu-placeholder"></div>
-
-  <script>
-    fetch("menu.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("menu-placeholder").innerHTML = data;
-      });
-  </script>
-
-  <div class="courses-container">
-
-    <h1>Our Courses</h1>
-
-    <div class="course-grid">
-
-      <div class="course-card">
-        <a href="Numeration.html">Numeration</a>
+          <div class="site-header__account-actions">
+            <a class="button button--text" href="login.html">Log in</a>
+            <a class="button button--small button--primary" href="register.html">Register</a>
+          </div>
+        </nav>
       </div>
+    </header>
 
-      <div class="course-card">
-        <a href="Algebra.html">Algebra</a>
+    <main id="main-content">
+      <!-- =========================================================
+           THE SOCRATIAN ACADEMY
+           ========================================================= -->
+      <section class="academy-hero" aria-labelledby="academy-title">
+        <div class="academy-hero__container container">
+          <p class="academy-hero__eyebrow">The Socratian Academy</p>
+          <h1 class="academy-hero__title" id="academy-title">Choose what you want to understand.</h1>
+          <p class="academy-hero__description">
+            Enter a subject, follow a course, strengthen your foundations or go directly to the idea
+            you want to master. The right path begins with the right question.
+          </p>
+
+          <div class="academy-hero__line" aria-hidden="true">
+            <span></span>
+            <span class="academy-hero__mark">◇</span>
+            <span></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           SUBJECT GALLERY
+           Keep future subjects commented until content is ready.
+           ========================================================= -->
+      <section class="academy-gallery section" id="academy-subjects" aria-labelledby="subjects-title">
+        <div class="container">
+          <div class="section-heading section-heading--centered">
+            <p class="section-heading__eyebrow">Enter the Academy</p>
+            <h2 class="section-heading__title" id="subjects-title">Choose a subject</h2>
+            <p class="section-heading__description">
+              Each entrance leads to its own learning world, with courses, topics and resources that
+              can grow over time.
+            </p>
+          </div>
+
+          <div class="academy-portals">
+            <!-- MATHEMATICS -->
+            <article class="academy-portal academy-portal--mathematics">
+              <a class="academy-portal__link" href="courses/mathematics/index.html" aria-label="Enter Mathematics">
+                <div class="academy-portal__arch">
+                  <img
+                    class="academy-portal__image"
+                    src="assets/images/mathematics/mathematicians-gathering.png"
+                    width="1024"
+                    height="1024"
+                    alt="A classical gathering of mathematicians from different eras."
+                    loading="eager"
+                  >
+                  <div class="academy-portal__veil" aria-hidden="true"></div>
+                  <div class="academy-portal__inside">
+                    <p class="academy-portal__label">Enter</p>
+                    <h3 class="academy-portal__title">Mathematics</h3>
+                    <p class="academy-portal__motto">Patterns · Relationships · Reason</p>
+                    <span class="academy-portal__action">
+                      Explore Mathematics
+                      <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true">
+                        <path d="M4 10h12m-4.5-4.5L16 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <!-- FRENCH -->
+            <article class="academy-portal academy-portal--french">
+              <a class="academy-portal__link" href="courses/french/index.html" aria-label="Enter French">
+                <div class="academy-portal__arch">
+                  <div class="academy-portal__french-art" aria-hidden="true">
+                    <span class="academy-portal__french-monogram">FR</span>
+                    <svg class="academy-portal__french-lines" viewBox="0 0 420 520">
+                      <path d="M78 356c62-92 121-134 188-139 47-3 83 15 109 52" fill="none" stroke="currentColor" stroke-width="2"/>
+                      <path d="M72 397h276M98 422h224" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" opacity=".5"/>
+                      <path d="M209 84v101m-44-51h88" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.5" opacity=".65"/>
+                      <circle cx="209" cy="134" r="78" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".25"/>
+                    </svg>
+                    <span class="academy-portal__french-word academy-portal__french-word--one">langue</span>
+                    <span class="academy-portal__french-word academy-portal__french-word--two">culture</span>
+                    <span class="academy-portal__french-word academy-portal__french-word--three">expression</span>
+                  </div>
+                  <div class="academy-portal__veil" aria-hidden="true"></div>
+                  <div class="academy-portal__inside">
+                    <p class="academy-portal__label">Enter</p>
+                    <h3 class="academy-portal__title">French</h3>
+                    <p class="academy-portal__motto">Language · Culture · Expression</p>
+                    <span class="academy-portal__action">
+                      Explore French
+                      <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true">
+                        <path d="M4 10h12m-4.5-4.5L16 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <!-- =====================================================
+                 FUTURE SUBJECT: SCIENCE
+                 Uncomment when Science has real content.
+            <article class="academy-portal academy-portal--science">
+              <a class="academy-portal__link" href="courses/science/index.html">
+                <div class="academy-portal__arch">
+                  <div class="academy-portal__inside">
+                    <p class="academy-portal__label">Enter</p>
+                    <h3 class="academy-portal__title">Science</h3>
+                    <p class="academy-portal__motto">Observe · Question · Discover</p>
+                  </div>
+                </div>
+              </a>
+            </article>
+                 ===================================================== -->
+
+            <!-- =====================================================
+                 FUTURE SUBJECT: COMPUTER STUDIES
+                 Uncomment when Computer Studies has real content.
+            <article class="academy-portal academy-portal--computer-studies">
+              <a class="academy-portal__link" href="courses/computer-studies/index.html">
+                <div class="academy-portal__arch">
+                  <div class="academy-portal__inside">
+                    <p class="academy-portal__label">Enter</p>
+                    <h3 class="academy-portal__title">Computer Studies</h3>
+                    <p class="academy-portal__motto">Logic · Systems · Creation</p>
+                  </div>
+                </div>
+              </a>
+            </article>
+                 ===================================================== -->
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           INTENTION PATHWAYS
+           Organize learning by the learner's purpose.
+           ========================================================= -->
+      <section class="academy-intentions section section--tinted" aria-labelledby="intentions-title">
+        <div class="container">
+          <div class="academy-intentions__heading">
+            <p class="section-heading__eyebrow">A Socratian starting point</p>
+            <h2 class="academy-intentions__title" id="intentions-title">What are you trying to do?</h2>
+            <p class="academy-intentions__description">
+              Sometimes the best first choice is not a subject. It is knowing what kind of help you need.
+            </p>
+          </div>
+
+          <div class="academy-intentions__grid">
+            <article class="academy-intention">
+              <span class="academy-intention__number" aria-hidden="true">01</span>
+              <div class="academy-intention__icon" aria-hidden="true">
+                <svg viewBox="0 0 32 32" width="30" height="30">
+                  <path d="M6 25h20M9 25V13l7-6 7 6v12M13 25v-7h6v7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+                </svg>
+              </div>
+              <h3 class="academy-intention__title">Build my foundations</h3>
+              <p class="academy-intention__description">
+                Strengthen the essential ideas that make later learning easier and more confident.
+              </p>
+              <a class="academy-intention__link" href="courses/mathematics/index.html#grade-levels">
+                Begin with foundations
+              </a>
+            </article>
+
+            <article class="academy-intention">
+              <span class="academy-intention__number" aria-hidden="true">02</span>
+              <div class="academy-intention__icon" aria-hidden="true">
+                <svg viewBox="0 0 32 32" width="30" height="30">
+                  <path d="M7 7h18v18H7zM7 13h18M13 7v18" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"/>
+                </svg>
+              </div>
+              <h3 class="academy-intention__title">Follow my course or grade</h3>
+              <p class="academy-intention__description">
+                Move through connected material in an intentional sequence appropriate to your level.
+              </p>
+              <a class="academy-intention__link" href="#academy-subjects">Choose a subject</a>
+            </article>
+
+            <article class="academy-intention">
+              <span class="academy-intention__number" aria-hidden="true">03</span>
+              <div class="academy-intention__icon" aria-hidden="true">
+                <svg viewBox="0 0 32 32" width="30" height="30">
+                  <circle cx="16" cy="16" r="10" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                  <circle cx="16" cy="16" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="m19 13 7-7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/>
+                </svg>
+              </div>
+              <h3 class="academy-intention__title">Master one topic</h3>
+              <p class="academy-intention__description">
+                Go directly to a concept for clarification, review, deeper study or focused practice.
+              </p>
+              <a class="academy-intention__link" href="courses/mathematics/index.html#mathematics-topics">
+                Explore Mathematics topics
+              </a>
+            </article>
+
+            <article class="academy-intention">
+              <span class="academy-intention__number" aria-hidden="true">04</span>
+              <div class="academy-intention__icon" aria-hidden="true">
+                <svg viewBox="0 0 32 32" width="30" height="30">
+                  <path d="M16 5v22M5 16h22M9 9l14 14m0-14L9 23" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.6"/>
+                  <circle cx="16" cy="16" r="11" fill="none" stroke="currentColor" stroke-width="1.4" opacity=".45"/>
+                </svg>
+              </div>
+              <h3 class="academy-intention__title">Explore something new</h3>
+              <p class="academy-intention__description">
+                Follow curiosity beyond the immediate assignment and discover a new way of thinking.
+              </p>
+              <a class="academy-intention__link" href="#academy-subjects">Enter the Academy</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           CLOSING THOUGHT
+           ========================================================= -->
+      <section class="academy-closing section" aria-labelledby="academy-closing-title">
+        <div class="academy-closing__container container">
+          <div class="academy-closing__ornament" aria-hidden="true">◇</div>
+          <p class="academy-closing__eyebrow">Learn Socratian</p>
+          <h2 class="academy-closing__title" id="academy-closing-title">
+            The right course begins with the right question.
+          </h2>
+          <p class="academy-closing__description">
+            Choose an entrance. Ask why. Follow the reasoning.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__container container">
+        <div class="site-footer__primary">
+          <div class="site-footer__brand">
+            <a class="site-footer__brand-link" href="index.html" aria-label="Learn Socratian home">
+              <img
+                class="site-footer__logo"
+                src="assets/images/logo/learn-socratian-logo.svg"
+                width="440"
+                height="130"
+                alt=""
+                loading="lazy"
+              >
+            </a>
+            <p class="site-footer__tagline">Learning through questions, reason and discovery.</p>
+          </div>
+
+          <div class="site-footer__navigation">
+            <div class="site-footer__group">
+              <h2 class="site-footer__heading">Explore</h2>
+              <ul class="site-footer__links" role="list">
+                <li><a href="philosophy.html">Philosophy</a></li>
+                <li><a href="courses.html" aria-current="page">Courses</a></li>
+                <li><a href="resources.html">Resources</a></li>
+              </ul>
+            </div>
+            <div class="site-footer__group">
+              <h2 class="site-footer__heading">Courses</h2>
+              <ul class="site-footer__links" role="list">
+                <li><a href="courses/mathematics/index.html">Mathematics</a></li>
+                <li><a href="courses/french/index.html">French</a></li>
+              </ul>
+            </div>
+            <div class="site-footer__group">
+              <h2 class="site-footer__heading">Learn Socratian</h2>
+              <ul class="site-footer__links" role="list">
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Log in</a></li>
+                <li><a href="register.html">Register</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="site-footer__secondary">
+          <p class="site-footer__copyright">
+            &copy; <span data-current-year>2026</span> Learn Socratian. All rights reserved.
+          </p>
+          <ul class="site-footer__legal" role="list">
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="accessibility.html">Accessibility</a></li>
+          </ul>
+        </div>
       </div>
+    </footer>
 
-      <div class="course-card">
-        <a href="Calculus.html">Calculus</a>
-      </div>
-
-      <div class="course-card">
-        <a href="Trigonometry.html">Trigonometry</a>
-      </div>
-
-      <div class="course-card">
-        <a href="Geometry.html">Geometry</a>
-      </div>
-
-    </div>
-
-  </div>
-
-</body>
-
+    <noscript>
+      <p class="noscript-message">
+        JavaScript is disabled. All page content remains available, but the mobile and course menus may
+        require a wider screen to navigate.
+      </p>
+    </noscript>
+  </body>
 </html>
