@@ -1514,6 +1514,17 @@ p {
    ========================================================= */
 
 @media (hover: hover) and (min-width: 62rem) {
+  /* Invisible bridge between Courses and the dropdown menu. */
+  .site-nav__item--has-menu::after {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 10rem;
+    height: var(--space-4);
+    content: "";
+    transform: translateX(-50%);
+  }
+
   .site-nav__item--has-menu:hover .course-menu {
     opacity: 1;
     pointer-events: auto;
