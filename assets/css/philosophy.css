@@ -1,0 +1,157 @@
+/* Philosophy page film experience. */
+
+.philosophy-film {
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: calc(100vh - var(--header-height, 5.5rem));
+  height: calc(100svh - var(--header-height, 5.5rem));
+  min-height: 32rem;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(145, 116, 191, 0.3), transparent 52%),
+    #171329;
+}
+
+.philosophy-film__video {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: #171329;
+  object-fit: cover;
+}
+
+.philosophy-film__shade {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(23, 19, 41, 0.04) 45%, rgba(23, 19, 41, 0.62) 100%),
+    radial-gradient(circle at center, transparent 25%, rgba(23, 19, 41, 0.16) 100%);
+  opacity: 1;
+  transition: opacity 360ms ease;
+}
+
+.philosophy-film.is-started .philosophy-film__shade {
+  opacity: 0;
+}
+
+.philosophy-film__play {
+  display: none;
+}
+
+.has-js .philosophy-film__play {
+  position: absolute;
+  bottom: clamp(2rem, 7vh, 5rem);
+  left: 50%;
+  z-index: 3;
+  display: inline-flex;
+  min-width: min(20rem, calc(100% - 2.5rem));
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  padding: 0.85rem 1.25rem 0.85rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 999px;
+  background: rgba(23, 19, 41, 0.82);
+  box-shadow: 0 18px 48px rgba(7, 5, 15, 0.34);
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  backdrop-filter: blur(16px);
+  transition:
+    opacity 240ms ease,
+    visibility 240ms ease,
+    transform 240ms ease,
+    background-color 240ms ease;
+}
+
+.has-js .philosophy-film__play:hover {
+  background: rgba(68, 53, 94, 0.92);
+  transform: translateX(-50%) translateY(-3px);
+}
+
+.has-js .philosophy-film__play:focus-visible {
+  outline: 3px solid #e8c468;
+  outline-offset: 5px;
+}
+
+.has-js .philosophy-film__play,
+.has-js .philosophy-film__play:active {
+  transform: translateX(-50%);
+}
+
+.has-js .philosophy-film.is-started .philosophy-film__play {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(0.75rem);
+}
+
+.philosophy-film__play-icon {
+  display: grid;
+  width: 3.5rem;
+  height: 3.5rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: #fdfcfe;
+  color: #60478b;
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.18);
+}
+
+.philosophy-film__play-icon svg {
+  margin-left: 0.18rem;
+}
+
+.philosophy-film__play-label,
+.philosophy-film__play-meta {
+  display: block;
+}
+
+.philosophy-film__play-label {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.philosophy-film__play-meta {
+  margin-top: 0.18rem;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+@media (orientation: portrait) {
+  .philosophy-film__video {
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 40rem) {
+  .philosophy-film {
+    min-height: 28rem;
+  }
+
+  .has-js .philosophy-film__play {
+    bottom: 1.5rem;
+  }
+
+  .philosophy-film__play-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .philosophy-film__shade,
+  .has-js .philosophy-film__play {
+    transition: none;
+  }
+}
