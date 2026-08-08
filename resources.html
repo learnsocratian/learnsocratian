@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Resources | Learn Socratian</title>
+    <meta
+      name="description"
+      content="Explore Learn Socratian learning resources for mathematics, French, study support and enrolled students."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/main.js" defer></script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header" data-site-header>
+      <div class="site-header__container container">
+        <a class="site-header__brand" href="index.html" aria-label="Learn Socratian home">
+          <img
+            class="site-header__logo"
+            src="assets/images/logo/learn-socratian-logo.svg"
+            alt="Learn Socratian"
+            width="440"
+            height="130"
+          >
+        </a>
+
+        <button
+          class="site-header__menu-button"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+          data-menu-button
+        >
+          <span class="site-header__menu-icon" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </span>
+          <span class="site-header__menu-label">Menu</span>
+        </button>
+
+        <div class="site-header__navigation" id="site-navigation" data-site-navigation>
+          <nav aria-label="Primary navigation">
+            <ul class="site-nav" role="list">
+              <li class="site-nav__item">
+                <a class="site-nav__link" href="index.html">Home</a>
+              </li>
+
+              <li class="site-nav__item site-nav__item--has-menu" data-course-menu>
+                <div class="site-nav__link-group">
+                  <a class="site-nav__link" href="courses.html">Courses</a>
+                  <button
+                    class="site-nav__submenu-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="courses-menu"
+                    aria-label="Open Courses menu"
+                    data-course-menu-toggle
+                  >
+                    <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+                      <path d="M3 5.25 7 9l4-3.75" fill="none" stroke="currentColor"
+                        stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="course-menu" id="courses-menu" data-course-menu-panel>
+                  <div class="course-menu__intro">
+                    <p class="course-menu__eyebrow">Explore</p>
+                    <p class="course-menu__title">Learn by subject, grade, or individual topic.</p>
+                    <a class="course-menu__all-link" href="courses.html">View all courses →</a>
+                  </div>
+
+                  <ul class="course-menu__list" role="list">
+                    <li class="course-menu__item">
+                      <a class="course-menu__link" href="courses/mathematics/index.html">
+                        <span class="course-menu__icon" aria-hidden="true">∑</span>
+                        <span>
+                          <span class="course-menu__name">Mathematics</span>
+                          <span class="course-menu__description">Grades, foundations and focused topics</span>
+                        </span>
+                      </a>
+                    </li>
+
+                    <li class="course-menu__item">
+                      <a class="course-menu__link" href="courses/french/index.html">
+                        <span class="course-menu__icon" aria-hidden="true">Fr</span>
+                        <span>
+                          <span class="course-menu__name">French</span>
+                          <span class="course-menu__description">Language learning and communication</span>
+                        </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="site-nav__item">
+                <a class="site-nav__link" href="philosophy.html">Philosophy</a>
+              </li>
+              <li class="site-nav__item">
+                <a class="site-nav__link site-nav__link--active" href="resources.html" aria-current="page">Resources</a>
+              </li>
+              <li class="site-nav__item">
+                <a class="site-nav__link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="site-header__account-actions">
+            <a class="button button--text button--small" href="login.html">Log in</a>
+            <a class="button button--primary button--small" href="register.html">Register</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="resources-hero">
+        <div class="resources-hero__container container">
+          <div class="resources-hero__content">
+            <p class="resources-hero__eyebrow">Learning resources</p>
+            <h1 class="resources-hero__title">Useful material, organized around understanding.</h1>
+            <p class="resources-hero__description">
+              Resources will grow alongside Learn Socratian's courses: explanations, practice,
+              reference material and protected course documents for enrolled learners.
+            </p>
+          </div>
+
+          <div class="resources-hero__map" aria-hidden="true">
+            <span class="resources-hero__node resources-hero__node--center">?</span>
+            <span class="resources-hero__node resources-hero__node--one">Learn</span>
+            <span class="resources-hero__node resources-hero__node--two">Practice</span>
+            <span class="resources-hero__node resources-hero__node--three">Review</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="resources-directory section" aria-labelledby="resources-directory-title">
+        <div class="container">
+          <div class="section-heading section-heading--split">
+            <div>
+              <p class="section-heading__eyebrow">Resource library</p>
+              <h2 class="section-heading__title" id="resources-directory-title">Find the kind of help you need.</h2>
+            </div>
+            <p class="section-heading__description">
+              The library is being built progressively. Public resources and enrolled-student materials
+              will remain clearly separated.
+            </p>
+          </div>
+
+          <div class="resources-grid">
+            <article class="resource-card">
+              <div class="resource-card__icon" aria-hidden="true">∑</div>
+              <p class="resource-card__label">Mathematics</p>
+              <h3 class="resource-card__title">Mathematics resources</h3>
+              <p class="resource-card__description">
+                Explanations, topic reviews, reference material and practice organized around mathematical understanding.
+              </p>
+              <a class="resource-card__link" href="courses/mathematics/index.html">
+                Explore Mathematics <span aria-hidden="true">→</span>
+              </a>
+            </article>
+
+            <article class="resource-card">
+              <div class="resource-card__icon resource-card__icon--rose" aria-hidden="true">Fr</div>
+              <p class="resource-card__label">French</p>
+              <h3 class="resource-card__title">French resources</h3>
+              <p class="resource-card__description">
+                Language-learning resources will support vocabulary, grammar, comprehension and communication.
+              </p>
+              <a class="resource-card__link" href="courses/french/index.html">
+                Explore French <span aria-hidden="true">→</span>
+              </a>
+            </article>
+
+            <article class="resource-card">
+              <div class="resource-card__icon resource-card__icon--green" aria-hidden="true">✓</div>
+              <p class="resource-card__label">Study support</p>
+              <h3 class="resource-card__title">Practice &amp; review</h3>
+              <p class="resource-card__description">
+                Future practice sets, formula sheets, review guides and exam-preparation material will live here.
+              </p>
+              <span class="resource-card__status">More resources coming</span>
+            </article>
+
+            <article class="resource-card resource-card--protected">
+              <div class="resource-card__topline">
+                <div class="resource-card__icon resource-card__icon--locked" aria-hidden="true">⌁</div>
+                <span class="resource-card__badge">Enrolled students</span>
+              </div>
+              <p class="resource-card__label">Protected library</p>
+              <h3 class="resource-card__title">Course materials</h3>
+              <p class="resource-card__description">
+                Paid course documents will be available only to logged-in students with an active enrollment.
+                Materials will be viewed through the protected Learn Socratian student area rather than exposed
+                as public download links.
+              </p>
+              <a class="button button--primary button--small" href="login.html">Student login</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="resources-principle section section--tinted" aria-labelledby="resources-principle-title">
+        <div class="resources-principle__container container">
+          <div class="resources-principle__symbol" aria-hidden="true">≠</div>
+          <div class="resources-principle__content">
+            <p class="section-heading__eyebrow">A useful distinction</p>
+            <h2 class="resources-principle__title" id="resources-principle-title">
+              More material is not always better material.
+            </h2>
+            <p>
+              Learn Socratian resources are intended to support reasoning, practice and review—not simply create
+              a larger pile of worksheets. As the library grows, resources will be organized by subject, level,
+              topic and purpose so learners can find what actually helps.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="resources-coming section" aria-labelledby="resources-coming-title">
+        <div class="container">
+          <div class="section-heading section-heading--centered">
+            <p class="section-heading__eyebrow">Planned library</p>
+            <h2 class="section-heading__title" id="resources-coming-title">What will appear here over time</h2>
+          </div>
+
+          <ul class="resources-coming__list" role="list">
+            <li>Topic explanations</li>
+            <li>Practice sets</li>
+            <li>Formula sheets</li>
+            <li>Review guides</li>
+            <li>Practice tests</li>
+            <li>Recorded lessons</li>
+            <li>Articles</li>
+            <li>Course documents</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="closing-cta section" aria-labelledby="resources-cta-title">
+        <div class="closing-cta__container container">
+          <div class="closing-cta__content">
+            <p class="closing-cta__eyebrow">Need something specific?</p>
+            <h2 class="closing-cta__title" id="resources-cta-title">Start with the course—or ask the question.</h2>
+            <p class="closing-cta__description">
+              Explore the available subjects, or contact Learn Socratian if you are looking for a particular type of support.
+            </p>
+          </div>
+          <a class="button button--large" href="contact.html">Contact Learn Socratian</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__container container">
+        <div class="site-footer__primary">
+          <div class="site-footer__brand">
+            <a class="site-footer__brand-link" href="index.html" aria-label="Learn Socratian home">
+              <img
+                class="site-footer__logo"
+                src="assets/images/logo/learn-socratian-logo.svg"
+                width="440"
+                height="130"
+                alt=""
+                loading="lazy"
+              >
+            </a>
+            <p class="site-footer__tagline">Learning through questions, reason and discovery.</p>
+          </div>
+
+          <div class="site-footer__navigation">
+            <div class="site-footer__group">
+              <h2 class="site-footer__heading">Explore</h2>
+              <ul class="site-footer__links" role="list">
+                <li><a href="philosophy.html">Philosophy</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="resources.html">Resources</a></li>
+              </ul>
+            </div>
+
+            <div class="site-footer__group">
+              <h2 class="site-footer__heading">Courses</h2>
+              <ul class="site-footer__links" role="list">
+                <li><a href="courses/mathematics/index.html">Mathematics</a></li>
+                <li><a href="courses/french/index.html">French</a></li>
+              </ul>
+            </div>
+
+            <div class="site-footer__group">
+              <h2 class="site-footer__heading">Learn Socratian</h2>
+              <ul class="site-footer__links" role="list">
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Log in</a></li>
+                <li><a href="register.html">Register</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="site-footer__secondary">
+          <p class="site-footer__copyright">
+            &copy; <span data-current-year>2026</span> Learn Socratian. All rights reserved.
+          </p>
+          <ul class="site-footer__legal" role="list">
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="accessibility.html">Accessibility</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <noscript>
+      <p class="noscript-message">
+        JavaScript is disabled. All page content remains available, but the mobile and course menus may
+        require a wider screen to navigate.
+      </p>
+    </noscript>
+  </body>
+</html>
