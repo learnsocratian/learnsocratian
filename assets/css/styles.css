@@ -1613,7 +1613,7 @@ p {
   min-width: 0;
   overflow: hidden;
   background: var(--color-primary-50);
-   transform: translateY(3rem);
+   transform: translateY(4rem);
 }
 
 .mathematics-hero__visual::after {
