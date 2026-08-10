@@ -1,726 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Learn Socratian</title>
+  <meta name="description" content="Contact Learn Socratian.">
 
-    <title>Contact | Learn Socratian</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 
-    <meta
-      name="description"
-      content="Contact Learn Socratian with questions about courses, tutoring, registration, scheduling, or learning support."
-    >
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/main.js" defer></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    .simple-contact {
+      min-height: calc(100svh - var(--header-height));
+      padding: var(--space-16) var(--container-gutter) var(--space-20);
+      background:
+        radial-gradient(circle at 85% 15%, rgba(222, 213, 239, 0.55), transparent 24rem),
+        var(--color-neutral-25);
+    }
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap"
-      rel="stylesheet"
-    >
+    .simple-contact__container {
+      width: min(100%, 42rem);
+      margin-inline: auto;
+    }
 
-    <link rel="stylesheet" href="assets/css/styles.css">
+    .simple-contact__heading {
+      margin-bottom: var(--space-8);
+      text-align: center;
+    }
 
-    <script src="assets/js/main.js" defer></script>
-  </head>
+    .simple-contact__title {
+      margin-bottom: var(--space-3);
+      color: var(--color-primary-900);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      letter-spacing: -0.04em;
+    }
 
-  <body>
-    <a class="skip-link" href="#main-content">Skip to main content</a>
+    .simple-contact__form {
+      display: grid;
+      gap: var(--space-5);
+      padding: clamp(var(--space-6), 4vw, var(--space-10));
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: var(--shadow-md);
+    }
 
-    <!-- =========================================================
-         SITE HEADER
-         ========================================================= -->
+    .simple-contact__field {
+      display: grid;
+      gap: var(--space-2);
+    }
 
-    <header class="site-header" data-site-header>
-      <div class="site-header__container container">
+    .simple-contact__label {
+      color: var(--color-neutral-800);
+      font-size: var(--font-size-sm);
+      font-weight: 700;
+    }
 
-        <a
-          class="site-header__brand"
-          href="index.html"
-          aria-label="Learn Socratian home"
-        >
-          <img
-            class="site-header__logo"
-            src="assets/images/logo/learn-socratian-logo.svg"
-            alt="Learn Socratian"
-            width="440"
-            height="130"
-          >
-        </a>
+    .simple-contact__input,
+    .simple-contact__textarea {
+      width: 100%;
+      border: 1px solid var(--color-neutral-300);
+      border-radius: var(--radius-sm);
+      background: var(--color-white);
+      color: var(--color-text);
+      font: inherit;
+    }
 
-        <button
-          class="site-header__menu-button"
-          type="button"
-          aria-expanded="false"
-          aria-controls="site-navigation"
-          data-menu-button
-        >
-          <span class="site-header__menu-icon" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
+    .simple-contact__input {
+      min-height: 3.2rem;
+      padding: 0.75rem 0.9rem;
+    }
 
-          <span class="site-header__menu-label">Menu</span>
-        </button>
+    .simple-contact__textarea {
+      min-height: 11rem;
+      padding: 0.85rem 0.9rem;
+      line-height: var(--line-height-body);
+      resize: vertical;
+    }
 
-        <div
-          class="site-header__navigation"
-          id="site-navigation"
-          data-site-navigation
-        >
+    .simple-contact__input:focus,
+    .simple-contact__textarea:focus {
+      border-color: var(--color-primary-600);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(145, 116, 191, 0.16);
+    }
 
-          <nav aria-label="Primary navigation">
-            <ul class="site-nav" role="list">
+    .simple-contact__submit {
+      width: 100%;
+      margin-top: var(--space-2);
+    }
 
-              <li class="site-nav__item">
-                <a class="site-nav__link" href="index.html">
-                  Home
-                </a>
-              </li>
+    .simple-contact__status {
+      padding: var(--space-5);
+      border-radius: var(--radius-md);
+      font-size: var(--font-size-sm);
+    }
 
-              <li class="site-nav__item site-nav__item--has-menu" data-course-menu>
-                <div class="site-nav__link-group">
+    .simple-contact__status p {
+      margin: var(--space-1) 0 0;
+    }
 
-                  <a class="site-nav__link" href="courses.html">
-                    Courses
-                  </a>
+    .simple-contact__status--success {
+      border: 1px solid #b9d8cf;
+      background: var(--color-secondary-50);
+      color: var(--color-secondary-700);
+    }
 
-                  <button
-                    class="site-nav__submenu-toggle"
-                    type="button"
-                    aria-expanded="false"
-                    aria-controls="courses-menu"
-                    aria-label="Open Courses menu"
-                    data-course-menu-toggle
-                  >
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      aria-hidden="true"
-                    >
-                      <path
-                        d="M3 5.25 7 9l4-3.75"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.6"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </button>
+    .simple-contact__status--error {
+      border: 1px solid #e6c3ca;
+      background: var(--color-accent-rose-soft);
+      color: #74404c;
+    }
+  </style>
+</head>
 
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header" data-site-header>
+    <div class="site-header__container container">
+      <a class="site-header__brand" href="index.html" aria-label="Learn Socratian home">
+        <img class="site-header__logo" src="assets/images/logo/learn-socratian-logo.svg" alt="Learn Socratian" width="440" height="130">
+      </a>
+
+      <button class="site-header__menu-button" type="button" aria-expanded="false" aria-controls="site-navigation" data-menu-button>
+        <span class="site-header__menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="site-header__menu-label">Menu</span>
+      </button>
+
+      <div class="site-header__navigation" id="site-navigation" data-site-navigation>
+        <nav aria-label="Primary navigation">
+          <ul class="site-nav" role="list">
+            <li class="site-nav__item"><a class="site-nav__link" href="index.html">Home</a></li>
+
+            <li class="site-nav__item site-nav__item--has-menu" data-course-menu>
+              <div class="site-nav__link-group">
+                <a class="site-nav__link" href="courses.html">Courses</a>
+                <button class="site-nav__submenu-toggle" type="button" aria-expanded="false" aria-controls="courses-menu" aria-label="Open Courses menu" data-course-menu-toggle>
+                  <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+                    <path d="M3 5.25 7 9l4-3.75" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+
+              <div class="course-menu" id="courses-menu" data-course-menu-panel>
+                <div class="course-menu__intro">
+                  <p class="course-menu__eyebrow">Explore</p>
+                  <p class="course-menu__title">Learn by subject, grade, or individual topic.</p>
+                  <a class="course-menu__all-link" href="courses.html">View all courses →</a>
                 </div>
 
-                <div
-                  class="course-menu"
-                  id="courses-menu"
-                  data-course-menu-panel
-                >
-                  <div class="course-menu__intro">
-                    <p class="course-menu__eyebrow">Explore</p>
-
-                    <p class="course-menu__title">
-                      Learn by subject, grade, or individual topic.
-                    </p>
-
-                    <a
-                      class="course-menu__all-link"
-                      href="courses.html"
-                    >
-                      View all courses →
+                <ul class="course-menu__list" role="list">
+                  <li class="course-menu__item">
+                    <a class="course-menu__link" href="courses/mathematics/index.html">
+                      <span class="course-menu__icon" aria-hidden="true">∑</span>
+                      <span><span class="course-menu__name">Mathematics</span><span class="course-menu__description">Grades, foundations and focused topics</span></span>
                     </a>
-                  </div>
-
-                  <ul class="course-menu__list" role="list">
-
-                    <li class="course-menu__item">
-                      <a
-                        class="course-menu__link"
-                        href="courses/mathematics/index.html"
-                      >
-                        <span class="course-menu__icon" aria-hidden="true">
-                          ∑
-                        </span>
-
-                        <span>
-                          <span class="course-menu__name">
-                            Mathematics
-                          </span>
-
-                          <span class="course-menu__description">
-                            Grades, foundations and focused topics
-                          </span>
-                        </span>
-                      </a>
-                    </li>
-
-                    <li class="course-menu__item">
-                      <a
-                        class="course-menu__link"
-                        href="courses/french/index.html"
-                      >
-                        <span class="course-menu__icon" aria-hidden="true">
-                          Fr
-                        </span>
-
-                        <span>
-                          <span class="course-menu__name">
-                            French
-                          </span>
-
-                          <span class="course-menu__description">
-                            Language learning and communication
-                          </span>
-                        </span>
-                      </a>
-                    </li>
-
-                  </ul>
-                </div>
-              </li>
-
-              <li class="site-nav__item">
-                <a
-                  class="site-nav__link"
-                  href="philosophy.html"
-                >
-                  Philosophy
-                </a>
-              </li>
-
-              <li class="site-nav__item">
-                <a
-                  class="site-nav__link"
-                  href="resources.html"
-                >
-                  Resources
-                </a>
-              </li>
-
-              <li class="site-nav__item">
-                <a
-                  class="site-nav__link site-nav__link--active"
-                  href="contact.html"
-                  aria-current="page"
-                >
-                  Contact
-                </a>
-              </li>
-
-            </ul>
-          </nav>
-
-          <div class="site-header__account-actions">
-            <a
-              class="button button--text button--small"
-              href="login.html"
-            >
-              Log in
-            </a>
-
-            <a
-              class="button button--primary button--small"
-              href="register.html"
-            >
-              Register
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </header>
-
-
-    <!-- =========================================================
-         MAIN CONTENT
-         ========================================================= -->
-
-    <main id="main-content">
-
-      <!-- CONTACT INTRO -->
-
-      <section class="contact-hero">
-        <div class="contact-hero__container container">
-
-          <p class="contact-hero__eyebrow">
-            Contact Learn Socratian
-          </p>
-
-          <h1 class="contact-hero__title">
-            Have a question?
-          </h1>
-
-          <p class="contact-hero__description">
-            Questions are where learning begins. Whether you are
-            wondering about a course, tutoring, registration, or
-            the right place to start, send us a message.
-          </p>
-
-        </div>
-      </section>
-
-
-      <!-- CONTACT AREA -->
-
-      <section class="contact-section">
-        <div class="contact-layout container">
-
-          <!-- LEFT SIDE -->
-
-          <div class="contact-guide">
-
-            <p class="contact-guide__eyebrow">
-              How can we help?
-            </p>
-
-            <h2 class="contact-guide__title">
-              Start with the question.
-            </h2>
-
-            <p class="contact-guide__description">
-              You do not need to know exactly which course or type
-              of support you need. Tell us what you are trying to
-              understand or accomplish, and we can help you find
-              the appropriate starting point.
-            </p>
-
-
-            <div class="contact-topics">
-
-              <div class="contact-topic">
-                <div class="contact-topic__marker" aria-hidden="true">
-                  01
-                </div>
-
-                <div>
-                  <h3 class="contact-topic__title">
-                    Courses &amp; tutoring
-                  </h3>
-
-                  <p class="contact-topic__text">
-                    Ask about mathematics, French, individual
-                    topics, tutoring, or course structure.
-                  </p>
-                </div>
+                  </li>
+                  <li class="course-menu__item">
+                    <a class="course-menu__link" href="courses/french/index.html">
+                      <span class="course-menu__icon" aria-hidden="true">Fr</span>
+                      <span><span class="course-menu__name">French</span><span class="course-menu__description">Language learning and communication</span></span>
+                    </a>
+                  </li>
+                </ul>
               </div>
-
-
-              <div class="contact-topic">
-                <div class="contact-topic__marker" aria-hidden="true">
-                  02
-                </div>
-
-                <div>
-                  <h3 class="contact-topic__title">
-                    Registration &amp; access
-                  </h3>
-
-                  <p class="contact-topic__text">
-                    Questions about registration, enrollment,
-                    payment, or accessing learning materials.
-                  </p>
-                </div>
-              </div>
-
-
-              <div class="contact-topic">
-                <div class="contact-topic__marker" aria-hidden="true">
-                  03
-                </div>
-
-                <div>
-                  <h3 class="contact-topic__title">
-                    Scheduling
-                  </h3>
-
-                  <p class="contact-topic__text">
-                    Ask about lesson availability, online sessions,
-                    or arranging learning support.
-                  </p>
-                </div>
-              </div>
-
-
-              <div class="contact-topic">
-                <div class="contact-topic__marker" aria-hidden="true">
-                  04
-                </div>
-
-                <div>
-                  <h3 class="contact-topic__title">
-                    Something else?
-                  </h3>
-
-                  <p class="contact-topic__text">
-                    If your question does not fit a category,
-                    simply tell us what you would like to know.
-                  </p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-
-          <!-- FORM -->
-
-          <div class="contact-form-card">
-
-            <div class="contact-form-card__heading">
-              <p class="contact-form-card__eyebrow">
-                Send a message
-              </p>
-
-              <h2 class="contact-form-card__title">
-                What would you like to ask?
-              </h2>
-            </div>
-
-
-            <form
-              class="contact-form"
-              id="contactForm"
-              action="https://formspree.io/f/mgvzpler"
-              method="POST"
-            >
-
-              <div class="contact-form__field">
-                <label
-                  class="contact-form__label"
-                  for="name"
-                >
-                  Full name
-                </label>
-
-                <input
-                  class="contact-form__input"
-                  type="text"
-                  id="name"
-                  name="name"
-                  autocomplete="name"
-                  required
-                >
-              </div>
-
-
-              <div class="contact-form__field">
-                <label
-                  class="contact-form__label"
-                  for="email"
-                >
-                  Email address
-                </label>
-
-                <input
-                  class="contact-form__input"
-                  type="email"
-                  id="email"
-                  name="email"
-                  autocomplete="email"
-                  required
-                >
-              </div>
-
-
-              <div class="contact-form__field">
-                <label
-                  class="contact-form__label"
-                  for="subject"
-                >
-                  Subject
-                </label>
-
-                <input
-                  class="contact-form__input"
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  required
-                >
-              </div>
-
-
-              <div class="contact-form__field">
-                <label
-                  class="contact-form__label"
-                  for="message"
-                >
-                  Your question
-                </label>
-
-                <textarea
-                  class="contact-form__textarea"
-                  id="message"
-                  name="message"
-                  rows="7"
-                  required
-                ></textarea>
-              </div>
-
-
-              <button
-                class="button button--primary button--large contact-form__submit"
-                type="submit"
-                id="submitBtn"
-              >
-                Send Message
-              </button>
-
-            </form>
-
-
-            <div
-              class="contact-form__status contact-form__status--success"
-              id="thankYouMessage"
-              role="status"
-              aria-live="polite"
-              hidden
-            >
-              <strong>Message sent.</strong>
-
-              <p>
-                Thank you for contacting Learn Socratian.
-                We'll get back to you as soon as possible.
-              </p>
-            </div>
-
-
-            <div
-              class="contact-form__status contact-form__status--error"
-              id="errorMessage"
-              role="alert"
-              hidden
-            >
-              <strong>Something went wrong.</strong>
-
-              <p>
-                Your message could not be sent. Please try again.
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-
-      <!-- REASSURANCE -->
-
-      <section class="contact-reassurance">
-        <div class="contact-reassurance__container container">
-
-          <span
-            class="contact-reassurance__symbol"
-            aria-hidden="true"
-          >
-            ?
-          </span>
-
-          <div>
-            <h2 class="contact-reassurance__title">
-              Ask before you commit.
-            </h2>
-
-            <p class="contact-reassurance__text">
-              Not sure which course or type of support is right
-              for you? Send us a message. We'll help you determine
-              the best starting point.
-            </p>
-          </div>
-
-        </div>
-      </section>
-
-    </main>
-
-
-    <!-- =========================================================
-         SITE FOOTER
-         ========================================================= -->
-
-    <footer class="site-footer">
-      <div class="site-footer__container container">
-
-        <div class="site-footer__primary">
-
-          <div class="site-footer__brand">
-            <a
-              class="site-footer__brand-link"
-              href="index.html"
-              aria-label="Learn Socratian home"
-            >
-              <img
-                class="site-footer__logo"
-                src="assets/images/logo/learn-socratian-logo.svg"
-                width="440"
-                height="130"
-                alt=""
-                loading="lazy"
-              >
-            </a>
-
-            <p class="site-footer__tagline">
-              Learning through questions, reason and discovery.
-            </p>
-          </div>
-
-
-          <div class="site-footer__navigation">
-
-            <div class="site-footer__group">
-              <h2 class="site-footer__heading">
-                Explore
-              </h2>
-
-              <ul class="site-footer__links" role="list">
-                <li>
-                  <a href="philosophy.html">Philosophy</a>
-                </li>
-
-                <li>
-                  <a href="courses.html">Courses</a>
-                </li>
-
-                <li>
-                  <a href="resources.html">Resources</a>
-                </li>
-              </ul>
-            </div>
-
-
-            <div class="site-footer__group">
-              <h2 class="site-footer__heading">
-                Courses
-              </h2>
-
-              <ul class="site-footer__links" role="list">
-                <li>
-                  <a href="courses/mathematics/index.html">
-                    Mathematics
-                  </a>
-                </li>
-
-                <li>
-                  <a href="courses/french/index.html">
-                    French
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-
-            <div class="site-footer__group">
-              <h2 class="site-footer__heading">
-                Learn Socratian
-              </h2>
-
-              <ul class="site-footer__links" role="list">
-                <li>
-                  <a href="about.html">About</a>
-                </li>
-
-                <li>
-                  <a href="contact.html">Contact</a>
-                </li>
-
-                <li>
-                  <a href="login.html">Log in</a>
-                </li>
-
-                <li>
-                  <a href="register.html">Register</a>
-                </li>
-              </ul>
-            </div>
-
-          </div>
-        </div>
-
-
-        <div class="site-footer__secondary">
-
-          <p class="site-footer__copyright">
-            &copy;
-            <span data-current-year>2026</span>
-            Learn Socratian. All rights reserved.
-          </p>
-
-          <ul class="site-footer__legal" role="list">
-            <li>
-              <a href="privacy.html">Privacy</a>
             </li>
 
-            <li>
-              <a href="terms.html">Terms</a>
-            </li>
-
-            <li>
-              <a href="accessibility.html">Accessibility</a>
-            </li>
+            <li class="site-nav__item"><a class="site-nav__link" href="philosophy.html">Philosophy</a></li>
+            <li class="site-nav__item"><a class="site-nav__link" href="resources.html">Resources</a></li>
+            <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="contact.html" aria-current="page">Contact</a></li>
           </ul>
+        </nav>
 
+        <div class="site-header__account-actions">
+          <a class="button button--text button--small" href="login.html">Log in</a>
+          <a class="button button--primary button--small" href="register.html">Register</a>
         </div>
       </div>
-    </footer>
+    </div>
+  </header>
 
+  <main id="main-content">
+    <section class="simple-contact">
+      <div class="simple-contact__container">
+        <div class="simple-contact__heading">
+          <h1 class="simple-contact__title">Contact Us</h1>
+        </div>
 
-    <noscript>
-      <p class="noscript-message">
-        JavaScript is disabled. The contact form can still be
-        submitted, but some navigation features may require a
-        wider screen.
-      </p>
-    </noscript>
+        <form class="simple-contact__form" id="contactForm" action="https://formspree.io/f/mgvzpler" method="POST">
+          <div class="simple-contact__field">
+            <label class="simple-contact__label" for="name">Full Name</label>
+            <input class="simple-contact__input" type="text" id="name" name="name" autocomplete="name" required>
+          </div>
 
+          <div class="simple-contact__field">
+            <label class="simple-contact__label" for="email">Email Address</label>
+            <input class="simple-contact__input" type="email" id="email" name="email" autocomplete="email" required>
+          </div>
 
-    <!-- =========================================================
-         CONTACT FORM
-         ========================================================= -->
+          <div class="simple-contact__field">
+            <label class="simple-contact__label" for="subject">Subject</label>
+            <input class="simple-contact__input" type="text" id="subject" name="subject" required>
+          </div>
 
-    <script>
-      const contactForm = document.getElementById("contactForm");
-      const submitBtn = document.getElementById("submitBtn");
-      const thankYouMessage =
-        document.getElementById("thankYouMessage");
-      const errorMessage =
-        document.getElementById("errorMessage");
+          <div class="simple-contact__field">
+            <label class="simple-contact__label" for="message">Message</label>
+            <textarea class="simple-contact__textarea" id="message" name="message" rows="7" required></textarea>
+          </div>
 
-      contactForm.addEventListener("submit", async (event) => {
-        event.preventDefault();
+          <button class="button button--primary button--large simple-contact__submit" type="submit" id="submitBtn">Send Message</button>
 
-        thankYouMessage.hidden = true;
-        errorMessage.hidden = true;
+          <div class="simple-contact__status simple-contact__status--success" id="thankYouMessage" role="status" aria-live="polite" hidden>
+            <strong>Message sent.</strong>
+            <p>Thank you. We'll get back to you as soon as possible.</p>
+          </div>
 
-        submitBtn.disabled = true;
-        submitBtn.textContent = "Sending...";
+          <div class="simple-contact__status simple-contact__status--error" id="errorMessage" role="alert" hidden>
+            <strong>Something went wrong.</strong>
+            <p>Your message could not be sent. Please try again.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
 
-        try {
-          const response = await fetch(contactForm.action, {
-            method: "POST",
-            body: new FormData(contactForm),
-            headers: {
-              Accept: "application/json"
-            }
-          });
+  <footer class="site-footer">
+    <div class="site-footer__container container">
+      <div class="site-footer__primary">
+        <div class="site-footer__brand">
+          <a class="site-footer__brand-link" href="index.html" aria-label="Learn Socratian home">
+            <img class="site-footer__logo" src="assets/images/logo/learn-socratian-logo.svg" width="440" height="130" alt="" loading="lazy">
+          </a>
+          <p class="site-footer__tagline">Learning through questions, reason and discovery.</p>
+        </div>
 
-          if (!response.ok) {
-            throw new Error("Form submission failed.");
-          }
+        <div class="site-footer__navigation">
+          <div class="site-footer__group">
+            <h2 class="site-footer__heading">Explore</h2>
+            <ul class="site-footer__links" role="list">
+              <li><a href="philosophy.html">Philosophy</a></li>
+              <li><a href="courses.html">Courses</a></li>
+              <li><a href="resources.html">Resources</a></li>
+            </ul>
+          </div>
 
-          contactForm.reset();
+          <div class="site-footer__group">
+            <h2 class="site-footer__heading">Courses</h2>
+            <ul class="site-footer__links" role="list">
+              <li><a href="courses/mathematics/index.html">Mathematics</a></li>
+              <li><a href="courses/french/index.html">French</a></li>
+            </ul>
+          </div>
 
-          thankYouMessage.hidden = false;
+          <div class="site-footer__group">
+            <h2 class="site-footer__heading">Learn Socratian</h2>
+            <ul class="site-footer__links" role="list">
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="login.html">Log in</a></li>
+              <li><a href="register.html">Register</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-          submitBtn.textContent = "Message Sent";
-        } catch (error) {
-          errorMessage.hidden = false;
+      <div class="site-footer__secondary">
+        <p class="site-footer__copyright">&copy; <span data-current-year>2026</span> Learn Socratian. All rights reserved.</p>
+        <ul class="site-footer__legal" role="list">
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+          <li><a href="accessibility.html">Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 
-          submitBtn.disabled = false;
-          submitBtn.textContent = "Send Message";
-        }
-      });
-    </script>
+  <script>
+    const contactForm = document.getElementById("contactForm");
+    const submitBtn = document.getElementById("submitBtn");
+    const thankYouMessage = document.getElementById("thankYouMessage");
+    const errorMessage = document.getElementById("errorMessage");
 
-  </body>
+    contactForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      thankYouMessage.hidden = true;
+      errorMessage.hidden = true;
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          body: new FormData(contactForm),
+          headers: { Accept: "application/json" }
+        });
+
+        if (!response.ok) throw new Error("Form submission failed.");
+
+        contactForm.reset();
+        thankYouMessage.hidden = false;
+        submitBtn.textContent = "Message Sent";
+      } catch (error) {
+        errorMessage.hidden = false;
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send Message";
+      }
+    });
+  </script>
+</body>
 </html>
