@@ -187,213 +187,188 @@
 
     <main id="main-content">
       <!-- =========================================================
-           THE SOCRATIAN ACADEMY
+           COURSES — COMPACT SUBJECT SELECTOR
            ========================================================= -->
-      <section class="academy-hero" aria-labelledby="academy-title">
-        <div class="academy-hero__container container">
-          <p class="academy-hero__eyebrow">The Socratian Academy</p>
-          <h1 class="academy-hero__title" id="academy-title">Choose what you want to understand.</h1>
-          <p class="academy-hero__description">
-            Enter a subject, follow a course, strengthen your foundations or go directly to the idea
-            you want to master. The right path begins with the right question.
-          </p>
-
-          <div class="academy-hero__line" aria-hidden="true">
-            <span></span>
-            <span class="academy-hero__mark">◇</span>
-            <span></span>
-          </div>
-        </div>
-      </section>
-
-      <!-- =========================================================
-           SUBJECT GALLERY
-           Keep future subjects commented until content is ready.
-           ========================================================= -->
-      <section class="academy-gallery section" id="academy-subjects" aria-labelledby="subjects-title">
-        <div class="container">
-          <div class="section-heading section-heading--centered">
-            <p class="section-heading__eyebrow">Enter the Academy</p>
-            <h2 class="section-heading__title" id="subjects-title">Choose a subject</h2>
-            <p class="section-heading__description">
-              Each entrance leads to its own learning world, with courses, topics and resources that
-              can grow over time.
+      <section class="subjects-page" aria-labelledby="subjects-title">
+        <div class="subjects-page__container container">
+          <header class="subjects-page__header">
+            <p class="subjects-page__eyebrow">Learn Socratian Courses</p>
+            <h1 class="subjects-page__title" id="subjects-title">Choose a subject</h1>
+            <div class="subjects-page__ornament" aria-hidden="true">
+              <span></span>
+              <span>◇</span>
+              <span></span>
+            </div>
+            <p class="subjects-page__subtitle">
+              Choose where you want to begin, then learn with clarity, reasoning and confidence.
             </p>
-          </div>
+          </header>
 
-          <div class="academy-portals">
+          <div class="subject-grid">
             <!-- MATHEMATICS -->
-            <article class="academy-portal academy-portal--mathematics">
-              <a class="academy-portal__link" href="courses/mathematics/index.html" aria-label="Enter Mathematics">
-                <div class="academy-portal__arch">
-                  <img
-                    class="academy-portal__image"
-                    src="assets/images/mathematics/mathematicians-gathering.png"
-                    width="1024"
-                    height="1024"
-                    alt="A classical gathering of mathematicians from different eras."
-                    loading="eager"
-                  >
-                  <div class="academy-portal__veil" aria-hidden="true"></div>
-                  <div class="academy-portal__inside">
-                    <p class="academy-portal__label">Enter</p>
-                    <h3 class="academy-portal__title">Mathematics</h3>
-                    <p class="academy-portal__motto">Patterns · Relationships · Reason</p>
-                    <span class="academy-portal__action">
-                      Explore Mathematics
-                      <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true">
-                        <path d="M4 10h12m-4.5-4.5L16 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/>
-                      </svg>
-                    </span>
-                  </div>
+            <article class="subject-card">
+              <div class="subject-card__visual">
+                <img
+                  class="subject-card__image"
+                  src="assets/images/mathematics/mathematicians-gathering.png"
+                  width="1200"
+                  height="900"
+                  alt="A classical gathering of mathematicians from different eras."
+                  fetchpriority="high"
+                >
+              </div>
+
+              <div class="subject-card__content">
+                <div class="subject-card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 40 40" width="30" height="30">
+                    <circle cx="20" cy="20" r="15" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                    <path d="M20 8 31 28H9L20 8Zm0 0v20M9 28h22" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"/>
+                    <circle cx="20" cy="8" r="2" fill="currentColor"/>
+                    <circle cx="9" cy="28" r="2" fill="currentColor"/>
+                    <circle cx="31" cy="28" r="2" fill="currentColor"/>
+                  </svg>
                 </div>
-              </a>
+
+                <h2 class="subject-card__title">Mathematics</h2>
+                <span class="subject-card__rule" aria-hidden="true"></span>
+
+                <ul class="subject-card__benefits" role="list">
+                  <li>Build strong foundations</li>
+                  <li>Work through your course</li>
+                  <li>Master any topic step by step</li>
+                </ul>
+
+                <a class="subject-card__button" href="courses/mathematics/index.html">
+                  Explore Mathematics
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
             </article>
 
             <!-- FRENCH -->
-            <article class="academy-portal academy-portal--french">
-              <a class="academy-portal__link" href="courses/french/index.html" aria-label="Enter French">
-                <div class="academy-portal__arch">
-                  <div class="academy-portal__french-art" aria-hidden="true">
-                    <span class="academy-portal__french-monogram">FR</span>
-                    <svg class="academy-portal__french-lines" viewBox="0 0 420 520">
-                      <path d="M78 356c62-92 121-134 188-139 47-3 83 15 109 52" fill="none" stroke="currentColor" stroke-width="2"/>
-                      <path d="M72 397h276M98 422h224" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" opacity=".5"/>
-                      <path d="M209 84v101m-44-51h88" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.5" opacity=".65"/>
-                      <circle cx="209" cy="134" r="78" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".25"/>
-                    </svg>
-                    <span class="academy-portal__french-word academy-portal__french-word--one">langue</span>
-                    <span class="academy-portal__french-word academy-portal__french-word--two">culture</span>
-                    <span class="academy-portal__french-word academy-portal__french-word--three">expression</span>
-                  </div>
-                  <div class="academy-portal__veil" aria-hidden="true"></div>
-                  <div class="academy-portal__inside">
-                    <p class="academy-portal__label">Enter</p>
-                    <h3 class="academy-portal__title">French</h3>
-                    <p class="academy-portal__motto">Language · Culture · Expression</p>
-                    <span class="academy-portal__action">
-                      Explore French
-                      <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true">
-                        <path d="M4 10h12m-4.5-4.5L16 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/>
-                      </svg>
-                    </span>
-                  </div>
+            <article class="subject-card">
+              <div class="subject-card__visual">
+                <img
+                  class="subject-card__image"
+                  src="assets/images/french/french-course.jpg"
+                  width="1200"
+                  height="900"
+                  alt="A Paris-inspired study scene with the Eiffel Tower, books and lavender flowers."
+                  loading="lazy"
+                >
+              </div>
+
+              <div class="subject-card__content">
+                <div class="subject-card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 40 40" width="30" height="30">
+                    <path d="M30 7c-7 1-13 5-16 11-2 4-3 9-3 15M13 25c5-1 10-4 14-9M11 33l-3 2"
+                      fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+                    <path d="M16 17c3 1 6 1 9 0M14 22c3 1 6 1 9 0"
+                      fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.4" opacity=".65"/>
+                  </svg>
                 </div>
-              </a>
+
+                <h2 class="subject-card__title">French</h2>
+                <span class="subject-card__rule" aria-hidden="true"></span>
+
+                <ul class="subject-card__benefits" role="list">
+                  <li>Learn the language</li>
+                  <li>Understand the culture</li>
+                  <li>Express yourself with confidence</li>
+                </ul>
+
+                <a class="subject-card__button" href="courses/french/index.html">
+                  Explore French
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
             </article>
 
             <!-- =====================================================
-                 FUTURE SUBJECT: SCIENCE
-                 Uncomment when Science has real content.
-            <article class="academy-portal academy-portal--science">
-              <a class="academy-portal__link" href="courses/science/index.html">
-                <div class="academy-portal__arch">
-                  <div class="academy-portal__inside">
-                    <p class="academy-portal__label">Enter</p>
-                    <h3 class="academy-portal__title">Science</h3>
-                    <p class="academy-portal__motto">Observe · Question · Discover</p>
-                  </div>
-                </div>
-              </a>
-            </article>
-                 ===================================================== -->
+                 FUTURE SUBJECTS
+                 Keep these blocks commented out until each subject
+                 is ready. The grid rearranges itself automatically.
+                 =====================================================
 
-            <!-- =====================================================
-                 FUTURE SUBJECT: COMPUTER STUDIES
-                 Uncomment when Computer Studies has real content.
-            <article class="academy-portal academy-portal--computer-studies">
-              <a class="academy-portal__link" href="courses/computer-studies/index.html">
-                <div class="academy-portal__arch">
-                  <div class="academy-portal__inside">
-                    <p class="academy-portal__label">Enter</p>
-                    <h3 class="academy-portal__title">Computer Studies</h3>
-                    <p class="academy-portal__motto">Logic · Systems · Creation</p>
-                  </div>
-                </div>
-              </a>
-            </article>
-                 ===================================================== -->
-          </div>
-        </div>
-      </section>
-
-      <!-- =========================================================
-           INTENTION PATHWAYS
-           Organize learning by the learner's purpose.
-           ========================================================= -->
-      <section class="academy-intentions section section--tinted" aria-labelledby="intentions-title">
-        <div class="container">
-          <div class="academy-intentions__heading">
-            <p class="section-heading__eyebrow">A Socratian starting point</p>
-            <h2 class="academy-intentions__title" id="intentions-title">What are you trying to do?</h2>
-            <p class="academy-intentions__description">
-              Sometimes the best first choice is not a subject. It is knowing what kind of help you need.
-            </p>
-          </div>
-
-          <div class="academy-intentions__grid">
-            <article class="academy-intention">
-              <span class="academy-intention__number" aria-hidden="true">01</span>
-              <div class="academy-intention__icon" aria-hidden="true">
-                <svg viewBox="0 0 32 32" width="30" height="30">
-                  <path d="M6 25h20M9 25V13l7-6 7 6v12M13 25v-7h6v7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
-                </svg>
+            <article class="subject-card">
+              <div class="subject-card__visual">
+                <img
+                  class="subject-card__image"
+                  src="assets/images/science/science-course.jpg"
+                  width="1200"
+                  height="900"
+                  alt="Science course illustration."
+                  loading="lazy"
+                >
               </div>
-              <h3 class="academy-intention__title">Build my foundations</h3>
-              <p class="academy-intention__description">
-                Strengthen the essential ideas that make later learning easier and more confident.
-              </p>
-              <a class="academy-intention__link" href="courses/mathematics/index.html#grade-levels">
-                Begin with foundations
-              </a>
+              <div class="subject-card__content">
+                <div class="subject-card__icon" aria-hidden="true">◎</div>
+                <h2 class="subject-card__title">Science</h2>
+                <span class="subject-card__rule" aria-hidden="true"></span>
+                <ul class="subject-card__benefits" role="list">
+                  <li>Explore how the world works</li>
+                  <li>Connect evidence and ideas</li>
+                  <li>Build scientific reasoning</li>
+                </ul>
+                <a class="subject-card__button" href="courses/science/index.html">
+                  Explore Science <span aria-hidden="true">→</span>
+                </a>
+              </div>
             </article>
 
-            <article class="academy-intention">
-              <span class="academy-intention__number" aria-hidden="true">02</span>
-              <div class="academy-intention__icon" aria-hidden="true">
-                <svg viewBox="0 0 32 32" width="30" height="30">
-                  <path d="M7 7h18v18H7zM7 13h18M13 7v18" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"/>
-                </svg>
+            <article class="subject-card">
+              <div class="subject-card__visual">
+                <img
+                  class="subject-card__image"
+                  src="assets/images/english/english-course.jpg"
+                  width="1200"
+                  height="900"
+                  alt="English course illustration."
+                  loading="lazy"
+                >
               </div>
-              <h3 class="academy-intention__title">Follow my course or grade</h3>
-              <p class="academy-intention__description">
-                Move through connected material in an intentional sequence appropriate to your level.
-              </p>
-              <a class="academy-intention__link" href="#academy-subjects">Choose a subject</a>
+              <div class="subject-card__content">
+                <div class="subject-card__icon" aria-hidden="true">Aa</div>
+                <h2 class="subject-card__title">English</h2>
+                <span class="subject-card__rule" aria-hidden="true"></span>
+                <ul class="subject-card__benefits" role="list">
+                  <li>Read with understanding</li>
+                  <li>Write with clarity</li>
+                  <li>Communicate with confidence</li>
+                </ul>
+                <a class="subject-card__button" href="courses/english/index.html">
+                  Explore English <span aria-hidden="true">→</span>
+                </a>
+              </div>
             </article>
 
-            <article class="academy-intention">
-              <span class="academy-intention__number" aria-hidden="true">03</span>
-              <div class="academy-intention__icon" aria-hidden="true">
-                <svg viewBox="0 0 32 32" width="30" height="30">
-                  <circle cx="16" cy="16" r="10" fill="none" stroke="currentColor" stroke-width="1.8"/>
-                  <circle cx="16" cy="16" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/>
-                  <path d="m19 13 7-7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/>
-                </svg>
+            <article class="subject-card">
+              <div class="subject-card__visual">
+                <img
+                  class="subject-card__image"
+                  src="assets/images/computer-studies/computer-studies-course.jpg"
+                  width="1200"
+                  height="900"
+                  alt="Computer Studies course illustration."
+                  loading="lazy"
+                >
               </div>
-              <h3 class="academy-intention__title">Master one topic</h3>
-              <p class="academy-intention__description">
-                Go directly to a concept for clarification, review, deeper study or focused practice.
-              </p>
-              <a class="academy-intention__link" href="courses/mathematics/index.html#mathematics-topics">
-                Explore Mathematics topics
-              </a>
+              <div class="subject-card__content">
+                <div class="subject-card__icon" aria-hidden="true">&lt;/&gt;</div>
+                <h2 class="subject-card__title">Computer Studies</h2>
+                <span class="subject-card__rule" aria-hidden="true"></span>
+                <ul class="subject-card__benefits" role="list">
+                  <li>Think computationally</li>
+                  <li>Understand digital systems</li>
+                  <li>Build practical skills</li>
+                </ul>
+                <a class="subject-card__button" href="courses/computer-studies/index.html">
+                  Explore Computer Studies <span aria-hidden="true">→</span>
+                </a>
+              </div>
             </article>
 
-            <article class="academy-intention">
-              <span class="academy-intention__number" aria-hidden="true">04</span>
-              <div class="academy-intention__icon" aria-hidden="true">
-                <svg viewBox="0 0 32 32" width="30" height="30">
-                  <path d="M16 5v22M5 16h22M9 9l14 14m0-14L9 23" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.6"/>
-                  <circle cx="16" cy="16" r="11" fill="none" stroke="currentColor" stroke-width="1.4" opacity=".45"/>
-                </svg>
-              </div>
-              <h3 class="academy-intention__title">Explore something new</h3>
-              <p class="academy-intention__description">
-                Follow curiosity beyond the immediate assignment and discover a new way of thinking.
-              </p>
-              <a class="academy-intention__link" href="#academy-subjects">Enter the Academy</a>
-            </article>
+            END FUTURE SUBJECTS -->
           </div>
         </div>
       </section>
@@ -401,18 +376,16 @@
       <!-- =========================================================
            CLOSING THOUGHT
            ========================================================= -->
-      <section class="academy-closing section" aria-labelledby="academy-closing-title">
-        <div class="academy-closing__container container">
-          <div class="academy-closing__ornament" aria-hidden="true">◇</div>
-          <p class="academy-closing__eyebrow">Learn Socratian</p>
-          <h2 class="academy-closing__title" id="academy-closing-title">
-            The right course begins with the right question.
-          </h2>
-          <p class="academy-closing__description">
-            Choose an entrance. Ask why. Follow the reasoning.
-          </p>
+      <aside class="subjects-closing" aria-label="Learn Socratian thought">
+        <div class="subjects-closing__container container">
+          <div class="subjects-closing__mark" aria-hidden="true">❧</div>
+          <div class="subjects-closing__divider" aria-hidden="true"></div>
+          <div>
+            <p class="subjects-closing__quote">The right question leads to the right path.</p>
+            <p class="subjects-closing__note">Learn with curiosity. Understand with reason.</p>
+          </div>
         </div>
-      </section>
+      </aside>
     </main>
 
     <footer class="site-footer">
