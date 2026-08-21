@@ -2670,3 +2670,22 @@ p {
 .site-header__menu-button {
   display: none;
 }
+
+/* =========================================================
+   SHARED HEADER — STICKY WRAPPER FIX
+   The shared <header> is injected inside #site-header.
+   The wrapper must be sticky so it can remain at the top
+   for the full page scroll.
+   ========================================================= */
+
+#site-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+}
+
+#site-header .site-header {
+  position: relative;
+  top: auto;
+}
+
