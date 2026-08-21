@@ -2633,3 +2633,40 @@ p {
   }
 }
 
+/* =========================================================
+   SHARED HEADER — ALWAYS VISIBLE SIMPLE NAVIGATION
+   ========================================================= */
+
+.site-header__navigation {
+  position: static;
+  display: flex;
+  width: auto;
+  align-items: center;
+  flex-direction: row;
+  gap: clamp(var(--space-4), 2vw, var(--space-8));
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+  visibility: visible;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: clamp(0.15rem, 0.55vw, var(--space-2));
+}
+
+.site-header__account-actions {
+  display: flex;
+  align-items: center;
+}
+
+.site-header__menu-button {
+  display: none;
+}
