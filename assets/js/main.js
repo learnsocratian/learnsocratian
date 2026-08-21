@@ -35,7 +35,25 @@ const FOCUSABLE_ELEMENTS = [
   "[tabindex]:not([tabindex='-1'])",
 ].join(",");
 
-loadSharedHeader()
+async function loadSharedHeader() {
+  const headerPlaceholder = document.getElementById("site-header");
+
+  if (!headerPlaceholder) {
+    return;
+  }
+
+  try {
+    const response = await fetch("/components/header.html");
+
+    if (!response.ok) {
+      throw new Error(`Could not load header: ${response.status}`);
+    }
+
+    headerPlaceholder.innerHTML = await response.text();
+  } catch (error) {
+    console.error("Error loading shared header:", error);
+  }
+}
 
 /**
  * Return focusable, visible descendants of an element.
