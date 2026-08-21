@@ -51,7 +51,9 @@ async function loadSharedHeader() {
       throw new Error(`Could not load header: ${response.status}`);
     }
 
-    headerPlaceholder.innerHTML = await response.text();
+    const headerMarkup = await response.text();
+    headerPlaceholder.outerHTML = headerMarkup;
+    
   } catch (error) {
     console.error("Error loading shared header:", error);
   }
