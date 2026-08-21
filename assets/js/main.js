@@ -35,6 +35,8 @@ const FOCUSABLE_ELEMENTS = [
   "[tabindex]:not([tabindex='-1'])",
 ].join(",");
 
+loadSharedHeader()
+
 /**
  * Return focusable, visible descendants of an element.
  * @param {Element} container
@@ -298,8 +300,11 @@ function initializeSubmenus() {
 /**
  * Start site-wide functionality after the document is ready.
  */
-function initializeApp() {
+async function initializeApp() {
   document.documentElement.classList.add("has-js");
+
+  await loadSharedHeader();
+
   initializeCurrentYear();
   initializeStickyHeader();
   initializePrimaryNavigation();
