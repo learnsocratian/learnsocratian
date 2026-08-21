@@ -43,7 +43,9 @@ async function loadSharedHeader() {
   }
 
   try {
-    const response = await fetch("/components/header.html");
+    const response = await fetch("/components/header.html", {
+  cache: "no-store"
+});
 
     if (!response.ok) {
       throw new Error(`Could not load header: ${response.status}`);
