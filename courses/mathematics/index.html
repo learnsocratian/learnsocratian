@@ -435,10 +435,54 @@
       }
     </style>
 
+
+<style>
+/* Preview-only fallback so the shared menu is visible when opened locally. */
+.preview-shared-header{
+  position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid rgba(111,90,168,.15)
+}
+.preview-shared-header .site-header__container{
+  max-width:1180px;margin:0 auto;padding:10px 22px;display:flex;align-items:center;justify-content:space-between;gap:24px
+}
+.preview-shared-header .site-header__brand{display:flex;align-items:center;min-width:150px}
+.preview-shared-header .site-header__logo{width:180px;height:auto;max-height:54px;object-fit:contain}
+.preview-shared-header .site-header__navigation{display:flex;align-items:center;gap:22px;margin-left:auto}
+.preview-shared-header .site-nav{display:flex;align-items:center;gap:18px;list-style:none;margin:0;padding:0}
+.preview-shared-header .site-nav__link,
+.preview-shared-header .button--text{color:#302a3d;text-decoration:none;font-size:14px;font-weight:600}
+.preview-shared-header .site-header__account-actions{display:flex;align-items:center}
+@media(max-width:760px){
+  .preview-shared-header .site-header__container{padding:10px 14px}
+  .preview-shared-header .site-header__logo{width:145px}
+  .preview-shared-header .site-header__navigation{gap:10px}
+  .preview-shared-header .site-nav{gap:10px;flex-wrap:wrap}
+}
+</style>
+
 </head>
 
   <body>
-    <div id="site-header"></div>
+    <header class="site-header preview-shared-header" data-site-header>
+  <div class="site-header__container container">
+    <a class="site-header__brand" href="/index.html" aria-label="Learn Socratian home">
+      <img class="site-header__logo" src="/assets/images/logo/learn-socratian-logo.svg" width="440" height="130" alt="">
+    </a>
+    <nav class="site-header__navigation" id="primary-navigation" aria-label="Primary navigation" data-primary-navigation>
+      <ul class="site-nav" role="list">
+        <li class="site-nav__item"><a class="site-nav__link" href="/index.html">Home</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="/philosophy.html">Philosophy</a></li>
+        <li class="site-nav__item site-nav__item--has-menu">
+          <a class="site-nav__link" href="/courses.html">Courses</a>
+        </li>
+        <li class="site-nav__item"><a class="site-nav__link" href="/about.html">About</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="/contact.html">Contact</a></li>
+      </ul>
+      <div class="site-header__account-actions">
+        <a class="button button--text" href="/login.html">Log in</a>
+      </div>
+    </nav>
+  </div>
+</header>
 <main id="main-content">
       <section class="mathematics-hero mathematics-hero--compact" aria-labelledby="mathematics-title">
         <div class="mathematics-hero__container container mathematics-hero__container--compact">
@@ -474,9 +518,7 @@
                   <a href="grade-10/index.html"><span>Grade 10</span></a>
                   <a href="grade-11/index.html"><span>Grade 11</span></a>
                   <a href="grade-12/index.html"><span>Grade 12</span></a>
-                  <a href="ap/index.html" class="has-tooltip" data-tooltip="Advanced Placement">
-                    <span>AP</span>
-                  </a>
+                  <a href="ap/index.html" class="has-tooltip" data-tooltip="Advanced Placement"><span>AP</span></a>
                 </div>
               </section>
 
@@ -493,9 +535,7 @@
                   <a href="topics/functions/index.html"><span>Functions</span></a>
                   <a href="topics/calculus/index.html"><span>Calculus</span></a>
                   <a href="topics/probabilities/index.html"><span>Probabilities</span></a>
-                  <a href="topics/database-management/index.html" class="has-tooltip" data-tooltip="Database Management">
-                    <span>DB Management</span>
-                  </a>
+                  <a href="topics/database-management/index.html" class="has-tooltip" data-tooltip="Database Management"><span>DB Management</span></a>
                   <a href="topics/vectors/index.html"><span>Vectors</span></a>
                 </div>
               </section>
