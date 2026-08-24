@@ -1,0 +1,33 @@
+/* Learn Socratian — shared styling for Numeration topic pages */
+.topic-page { background: var(--color-background, #faf8ff); }
+.topic-hero { padding: clamp(2.2rem, 5vw, 4.5rem) 0 1.8rem; }
+.topic-hero__inner { max-width: 920px; }
+.topic-breadcrumbs { display:flex; flex-wrap:wrap; gap:.45rem; margin-bottom:1.4rem; font-size:.9rem; color:#625b70; }
+.topic-breadcrumbs a { color:inherit; text-decoration:none; }
+.topic-breadcrumbs a:hover { text-decoration:underline; }
+.topic-hero__eyebrow,.topic-panel__label { margin:0 0 .45rem; font-size:.78rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#6f5aa8; }
+.topic-hero h1 { margin:.15rem 0 .7rem; font-family:"Libre Baskerville", Georgia, serif; font-size:clamp(2rem,5vw,3.5rem); line-height:1.1; }
+.topic-hero__intro { max-width:720px; margin:0; line-height:1.7; color:#57515f; }
+.topic-content { padding-top:1rem; }
+.topic-content__grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.2rem; }
+.topic-panel { padding:1.5rem; border:1px solid rgba(111,90,168,.18); border-radius:18px; background:#fff; box-shadow:0 10px 30px rgba(48,38,78,.05); }
+.topic-panel h2,.topic-section-heading h2 { margin:.15rem 0 .9rem; font-family:"Libre Baskerville", Georgia, serif; }
+.topic-placeholder { min-height:190px; display:grid; place-content:center; gap:.4rem; padding:1.4rem; text-align:center; border:1px dashed rgba(111,90,168,.38); border-radius:14px; background:#faf8ff; color:#625b70; }
+.topic-placeholder strong { color:#312a3d; }
+.topic-placeholder--text { min-height:190px; }
+.topic-levels { padding-top:1.5rem; }
+.topic-section-heading { max-width:720px; margin-bottom:1.2rem; }
+.topic-section-heading p:last-child { margin-bottom:0; color:#625b70; line-height:1.65; }
+.level-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; }
+.level-card { display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:.9rem; min-height:105px; padding:1.1rem; border:1px solid rgba(111,90,168,.2); border-radius:16px; background:#fff; color:#312a3d; text-decoration:none; transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease; }
+.level-card:hover { transform:translateY(-2px); border-color:rgba(111,90,168,.48); box-shadow:0 10px 24px rgba(48,38,78,.08); }
+.level-card__number { display:grid; place-items:center; width:2.6rem; height:2.6rem; border-radius:50%; background:#eee8fb; color:#5f4b96; font-weight:700; }
+.level-card__content { display:grid; gap:.2rem; }
+.level-card__content small { color:#6b6472; line-height:1.35; }
+.level-card__arrow { font-size:1.25rem; }
+.level-card--locked { background:#f7f5fa; }
+.level-card__lock { font-size:1rem; }
+.topic-next { padding-top:.5rem; }
+.topic-next__inner { display:flex; justify-content:flex-start; }
+@media (max-width:760px) { .topic-content__grid,.level-grid { grid-template-columns:1fr; } .topic-hero { padding-top:1.7rem; } }
+@media (prefers-reduced-motion:reduce) { .level-card { transition:none; } }
