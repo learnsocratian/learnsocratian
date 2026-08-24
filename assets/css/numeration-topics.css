@@ -1,33 +1,18 @@
-/* Learn Socratian — shared styling for Numeration topic pages */
-.topic-page { background: var(--color-background, #faf8ff); }
-.topic-hero { padding: clamp(2.2rem, 5vw, 4.5rem) 0 1.8rem; }
-.topic-hero__inner { max-width: 920px; }
-.topic-breadcrumbs { display:flex; flex-wrap:wrap; gap:.45rem; margin-bottom:1.4rem; font-size:.9rem; color:#625b70; }
-.topic-breadcrumbs a { color:inherit; text-decoration:none; }
-.topic-breadcrumbs a:hover { text-decoration:underline; }
-.topic-hero__eyebrow,.topic-panel__label { margin:0 0 .45rem; font-size:.78rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#6f5aa8; }
-.topic-hero h1 { margin:.15rem 0 .7rem; font-family:"Libre Baskerville", Georgia, serif; font-size:clamp(2rem,5vw,3.5rem); line-height:1.1; }
-.topic-hero__intro { max-width:720px; margin:0; line-height:1.7; color:#57515f; }
-.topic-content { padding-top:1rem; }
-.topic-content__grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.2rem; }
-.topic-panel { padding:1.5rem; border:1px solid rgba(111,90,168,.18); border-radius:18px; background:#fff; box-shadow:0 10px 30px rgba(48,38,78,.05); }
-.topic-panel h2,.topic-section-heading h2 { margin:.15rem 0 .9rem; font-family:"Libre Baskerville", Georgia, serif; }
-.topic-placeholder { min-height:190px; display:grid; place-content:center; gap:.4rem; padding:1.4rem; text-align:center; border:1px dashed rgba(111,90,168,.38); border-radius:14px; background:#faf8ff; color:#625b70; }
-.topic-placeholder strong { color:#312a3d; }
-.topic-placeholder--text { min-height:190px; }
-.topic-levels { padding-top:1.5rem; }
-.topic-section-heading { max-width:720px; margin-bottom:1.2rem; }
-.topic-section-heading p:last-child { margin-bottom:0; color:#625b70; line-height:1.65; }
-.level-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; }
-.level-card { display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:.9rem; min-height:105px; padding:1.1rem; border:1px solid rgba(111,90,168,.2); border-radius:16px; background:#fff; color:#312a3d; text-decoration:none; transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease; }
-.level-card:hover { transform:translateY(-2px); border-color:rgba(111,90,168,.48); box-shadow:0 10px 24px rgba(48,38,78,.08); }
-.level-card__number { display:grid; place-items:center; width:2.6rem; height:2.6rem; border-radius:50%; background:#eee8fb; color:#5f4b96; font-weight:700; }
-.level-card__content { display:grid; gap:.2rem; }
-.level-card__content small { color:#6b6472; line-height:1.35; }
-.level-card__arrow { font-size:1.25rem; }
-.level-card--locked { background:#f7f5fa; }
-.level-card__lock { font-size:1rem; }
-.topic-next { padding-top:.5rem; }
-.topic-next__inner { display:flex; justify-content:flex-start; }
-@media (max-width:760px) { .topic-content__grid,.level-grid { grid-template-columns:1fr; } .topic-hero { padding-top:1.7rem; } }
-@media (prefers-reduced-motion:reduce) { .level-card { transition:none; } }
+/* Learn Socratian — Numeration topic master layout */
+.topic-page{padding:1.15rem 0 2rem}.topic-shell{max-width:980px}
+.topic-compact-head{margin-bottom:.9rem}.topic-breadcrumbs{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center;margin-bottom:.3rem;font-size:.84rem}
+.topic-breadcrumbs a{text-decoration:none}.topic-title-row h1{margin:0;font-size:clamp(1.8rem,4vw,2.45rem);line-height:1.1}
+.topic-video-box{display:grid;grid-template-columns:minmax(250px,42%) 1fr;overflow:hidden;border:1px solid rgba(111,90,168,.22);border-radius:1rem;background:#fff}
+.topic-video-box__media{min-height:190px}.topic-video-box__placeholder{display:grid;place-items:center;width:100%;height:100%;min-height:190px;background:linear-gradient(rgba(111,90,168,.12),rgba(111,90,168,.12)),#f5f1fb;cursor:pointer}
+.topic-video-box__play{display:grid;place-items:center;width:3.8rem;height:3.8rem;border:1px solid currentColor;border-radius:50%;font-size:1.35rem}
+.topic-video-box__content{display:flex;flex-direction:column;justify-content:center;padding:1.15rem 1.35rem}.topic-video-box__eyebrow{margin:0 0 .25rem;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.topic-video-box__content h2{margin:0;font-size:1.45rem}.topic-video-box__status{margin:.45rem 0 0}
+.topic-read-link{display:flex;justify-content:space-between;align-items:center;margin-top:.7rem;padding:.8rem 1rem;border:1px solid rgba(111,90,168,.22);border-radius:.75rem;background:#fff;color:inherit;font-weight:700;text-decoration:none}
+.topic-levels{margin-top:1.15rem}.topic-levels__head{display:flex;justify-content:space-between;gap:1rem;align-items:end;margin-bottom:.6rem}.topic-levels__head h2,.topic-levels__head p{margin:0}.topic-levels__head h2{font-size:1.4rem}.topic-levels__head p{font-size:.9rem}
+.level-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem}.level-card{display:flex;align-items:center;justify-content:space-between;min-height:3.6rem;padding:.8rem 1rem;border:1px solid rgba(111,90,168,.22);border-radius:.8rem;background:#fff;color:inherit;text-decoration:none}.level-card--locked{opacity:.68}
+.topic-back{margin:1.1rem 0 0;font-size:.9rem}
+.lesson-dialog{width:min(94vw,1100px);height:min(90vh,760px);padding:0;border:0;border-radius:1rem;overflow:hidden}
+.lesson-dialog::backdrop{background:rgba(20,16,28,.72)}.lesson-dialog__bar{display:flex;align-items:center;justify-content:space-between;padding:.8rem 1rem;background:#fff;border-bottom:1px solid rgba(111,90,168,.18)}
+.lesson-dialog__close{border:0;background:transparent;font-size:1.8rem;line-height:1;cursor:pointer}.lesson-dialog__body{height:calc(100% - 55px);background:#faf9fc;overflow:auto}
+.video-placeholder,.reading-placeholder{min-height:100%;display:grid;place-items:center;padding:2rem;text-align:center}.video-placeholder{background:#191622;color:#fff}.reading-placeholder__paper{width:min(760px,100%);min-height:85%;padding:2rem;background:#fff;border:1px solid rgba(111,90,168,.18);border-radius:.5rem;text-align:left}
+@media(max-width:44rem){.topic-video-box{grid-template-columns:1fr}.topic-video-box__media,.topic-video-box__placeholder{min-height:155px}.topic-levels__head{display:block}.topic-levels__head p{margin-top:.25rem}.level-grid{grid-template-columns:1fr}.lesson-dialog{width:96vw;height:92vh}}
