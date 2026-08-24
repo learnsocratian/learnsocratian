@@ -10,68 +10,196 @@
   <script type="module" src="/assets/js/main.js"></script>
   <script type="module" src="/assets/js/numeration-topic-page.js"></script>
 </head>
-<body>
+<body data-topic="fractions" data-topic-name="Fractions">
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <div id="site-header"></div>
 
   <main id="main-content" class="topic-page">
-    <div class="container topic-shell">
-      <header class="topic-compact-head">
-        <nav class="topic-breadcrumbs" aria-label="Breadcrumb">
-          <a href="/courses/mathematics/">Mathematics</a><span aria-hidden="true">›</span>
-          <a href="/courses/mathematics/topics/numeration/">Numeration</a><span aria-hidden="true">›</span>
-          <span aria-current="page">Fractions</span>
-        </nav>
-        <div class="topic-title-row"><h1>Fractions</h1></div>
-      </header>
+    <div class="topic-shell">
+      <div class="topic-breadcrumbs">
+        <a href="/courses/mathematics/">Mathematics</a> ›
+        <a href="/courses/mathematics/topics/numeration/">Numeration</a> ›
+        <span aria-current="page">Fractions</span>
+      </div>
 
-      <section aria-labelledby="video-title">
-        <div class="topic-video-box">
-          <div class="topic-video-box__media">
-            <button class="topic-video-box__placeholder" type="button" data-open-dialog="video-dialog" aria-label="Open Fractions video lesson">
-              <span class="topic-video-box__play" aria-hidden="true">▶</span>
-            </button>
-          </div>
-          <div class="topic-video-box__content">
-            <p class="topic-video-box__eyebrow">Video lesson</p>
-            <h2 id="video-title">Fractions</h2>
-            <p class="topic-video-box__status">Lesson video will be added here.</p>
-          </div>
-        </div>
+      <h1>Fractions</h1>
 
-        <a class="topic-read-link" href="#" data-open-dialog="reading-dialog">
-          <span>Read the lesson</span><span aria-hidden="true">→</span>
-        </a>
-      </section>
+      <div class="topic-layout">
+        <section class="topic-lesson-column">
+          <button class="topic-video" type="button" data-open-dialog="video-dialog" aria-label="Open Fractions video lesson">
+            <span class="topic-video__play" aria-hidden="true">▶</span>
+          </button>
 
-      <section class="topic-levels" aria-labelledby="practice-title">
-        <div class="topic-levels__head">
-          <h2 id="practice-title">Practise</h2>
-          <p>Complete each level to unlock the next.</p>
-        </div>
-        <div class="level-grid">
-          <a class="level-card" href="levels/level-1.html"><strong>Level 1</strong><span aria-hidden="true">→</span></a>
-          <a class="level-card level-card--locked" href="levels/level-2.html" data-requires-level="1"><strong>Level 2</strong><span aria-label="Locked">🔒</span></a>
-          <a class="level-card level-card--locked" href="levels/level-3.html" data-requires-level="2"><strong>Level 3</strong><span aria-label="Locked">🔒</span></a>
-        </div>
-        <!-- Add future levels here. Firebase/Firestore will enforce real progression later. -->
-      </section>
+          <a class="topic-read-link" href="#" data-open-dialog="reading-dialog">
+            <span>Read the lesson</span>
+            <span aria-hidden="true">→</span>
+          </a>
 
-      <p class="topic-back"><a href="/courses/mathematics/topics/numeration/">← Back to Numeration</a></p>
+          <p class="topic-back">
+            <a href="/courses/mathematics/topics/numeration/">← Back to Numeration</a>
+          </p>
+        </section>
+
+        <aside class="topic-right-column">
+          <section class="topic-practice">
+            <div class="topic-practice-title-wrap">
+              <h2 class="topic-practice-title" tabindex="0">Practise - Levels:</h2>
+              <div class="topic-tooltip" role="tooltip">
+                Each level gradually increases in difficulty.
+              </div>
+            </div>
+
+            <article class="topic-level">
+              <span class="topic-level__number">1:</span>
+              <div class="topic-level__actions">
+                <a class="topic-button" href="#" data-practice-preview="1">Preview</a>
+                <a class="topic-button topic-button--buy" href="#" data-product="level1" data-viewer="practice-viewer-1">Buy</a>
+              </div>
+            </article>
+
+            <article class="topic-level">
+              <span class="topic-level__number">2:</span>
+              <div class="topic-level__actions">
+                <a class="topic-button" href="#" data-practice-preview="2">Preview</a>
+                <a class="topic-button topic-button--buy" href="#" data-product="level2" data-viewer="practice-viewer-2">Buy</a>
+              </div>
+            </article>
+
+            <article class="topic-level">
+              <span class="topic-level__number">3:</span>
+              <div class="topic-level__actions">
+                <a class="topic-button" href="#" data-practice-preview="3">Preview</a>
+                <a class="topic-button topic-button--buy" href="#" data-product="level3" data-viewer="practice-viewer-3">Buy</a>
+              </div>
+            </article>
+
+            <!-- FUTURE: Add Level 4, Level 5, etc. here. -->
+          </section>
+
+          <section class="topic-assessment">
+            <div class="topic-assessment-title-wrap">
+              <h2 class="topic-assessment-title" tabindex="0">Assessment</h2>
+              <div class="topic-tooltip" role="tooltip">
+                Test your understanding and receive a detailed results report.
+              </div>
+            </div>
+
+            <div class="topic-assessment__actions">
+              <a class="topic-button" href="#" data-open-dialog="assessment-preview-dialog">Preview</a>
+              <a class="topic-button topic-button--buy" href="#" data-product="assessment" data-viewer="assessment-viewer">Buy</a>
+            </div>
+          </section>
+
+          <section data-certificate-section hidden>
+            <h2>Certificate</h2>
+            <p>Reserved for possible future use.</p>
+          </section>
+        </aside>
+      </div>
     </div>
   </main>
 
-  <dialog class="lesson-dialog" id="video-dialog">
-    <div class="lesson-dialog__bar"><strong>Fractions — Video Lesson</strong><button class="lesson-dialog__close" type="button" data-close-dialog aria-label="Close video">×</button></div>
-    <div class="lesson-dialog__body">
-      <div class="video-placeholder"><div><div style="font-size:3rem">▶</div><p>The protected lesson video will play here.</p><p>You can close this window at any time with × or Esc.</p></div></div>
+  <dialog class="topic-dialog" id="video-dialog">
+    <div class="topic-dialog__bar">
+      <strong>Fractions — Video Lesson</strong>
+      <button class="topic-dialog__close" type="button" data-close-dialog aria-label="Close video">×</button>
+    </div>
+    <div class="topic-dialog__video">
+      <div>
+        <div style="font-size:52px">▶</div>
+        <p>The YouTube lesson will play here.</p>
+      </div>
     </div>
   </dialog>
 
-  <dialog class="lesson-dialog" id="reading-dialog">
-    <div class="lesson-dialog__bar"><strong>Fractions — Read the Lesson</strong><button class="lesson-dialog__close" type="button" data-close-dialog aria-label="Close lesson">×</button></div>
-    <div class="lesson-dialog__body">
-      <div class="reading-placeholder"><article class="reading-placeholder__paper"><h2>Fractions</h2><p>The lesson document will be displayed here.</p><p>This near-full-screen reader keeps the student on the same topic page. Close it with × or Esc to return to Practise.</p></article></div>
+  <dialog class="topic-dialog" id="reading-dialog">
+    <div class="topic-dialog__bar">
+      <strong>Fractions — Read the Lesson</strong>
+      <button class="topic-dialog__close" type="button" data-close-dialog aria-label="Close lesson">×</button>
+    </div>
+    <div class="topic-dialog__reader">
+      <article class="topic-dialog__paper">
+        <h2>Fractions</h2>
+        <p>The lesson document will appear here.</p>
+      </article>
+    </div>
+  </dialog>
+
+  <dialog class="topic-dialog" id="practice-preview-dialog">
+    <div class="topic-dialog__bar">
+      <strong id="practice-preview-title">Fractions — Practice Preview</strong>
+      <button class="topic-dialog__close" type="button" data-close-dialog aria-label="Close preview">×</button>
+    </div>
+    <div class="topic-dialog__reader">
+      <article class="topic-dialog__paper">
+        <h2 id="practice-preview-heading">Practice Preview</h2>
+        <p>A selected sample from the practice material will appear here.</p>
+      </article>
+    </div>
+  </dialog>
+
+  <dialog class="topic-dialog" id="assessment-preview-dialog">
+    <div class="topic-dialog__bar">
+      <strong>Fractions — Assessment Preview</strong>
+      <button class="topic-dialog__close" type="button" data-close-dialog aria-label="Close preview">×</button>
+    </div>
+    <div class="topic-dialog__reader">
+      <article class="topic-dialog__paper">
+        <h2>Assessment Preview</h2>
+        <p>A short sample or description of the assessment will appear here.</p>
+      </article>
+    </div>
+  </dialog>
+
+  <dialog class="topic-dialog" id="practice-viewer-1">
+    <div class="topic-dialog__bar">
+      <strong>Fractions — Level 1 Practice</strong>
+      <button class="topic-dialog__close" type="button" data-close-dialog aria-label="Close practice">×</button>
+    </div>
+    <div class="topic-dialog__reader">
+      <article class="topic-dialog__paper">
+        <h2>Level 1 Practice</h2>
+        <p>The purchased non-downloadable practice material will appear here.</p>
+      </article>
+    </div>
+  </dialog>
+
+  <dialog class="topic-dialog" id="practice-viewer-2">
+    <div class="topic-dialog__bar">
+      <strong>Fractions — Level 2 Practice</strong>
+      <button class="topic-dialog__close" type="button" data-close-dialog aria-label="Close practice">×</button>
+    </div>
+    <div class="topic-dialog__reader">
+      <article class="topic-dialog__paper">
+        <h2>Level 2 Practice</h2>
+        <p>The purchased non-downloadable practice material will appear here.</p>
+      </article>
+    </div>
+  </dialog>
+
+  <dialog class="topic-dialog" id="practice-viewer-3">
+    <div class="topic-dialog__bar">
+      <strong>Fractions — Level 3 Practice</strong>
+      <button class="topic-dialog__close" type="button" data-close-dialog aria-label="Close practice">×</button>
+    </div>
+    <div class="topic-dialog__reader">
+      <article class="topic-dialog__paper">
+        <h2>Level 3 Practice</h2>
+        <p>The purchased non-downloadable practice material will appear here.</p>
+      </article>
+    </div>
+  </dialog>
+
+  <dialog class="topic-dialog" id="assessment-viewer">
+    <div class="topic-dialog__bar">
+      <strong>Fractions — Assessment</strong>
+      <button class="topic-dialog__close" type="button" data-close-dialog aria-label="Close assessment">×</button>
+    </div>
+    <div class="topic-dialog__reader">
+      <article class="topic-dialog__paper">
+        <h2>Assessment</h2>
+        <p>The paid assessment will appear here.</p>
+      </article>
     </div>
   </dialog>
 
