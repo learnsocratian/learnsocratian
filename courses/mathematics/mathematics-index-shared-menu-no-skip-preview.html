@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en-CA">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Mathematics | Learn Socratian</title>
+    <meta
+      name="description"
+      content="Explore Learn Socratian Mathematics by grade or topic, from foundational algebra and geometry to calculus, statistics and university preparation."
+    >
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#6f5aa8">
+    <meta name="color-scheme" content="light">
+
+    <!-- Add an absolute canonical URL after final production metadata is confirmed. -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_CA">
+    <meta property="og:site_name" content="Learn Socratian">
+    <meta property="og:title" content="Mathematics | Learn Socratian">
+    <meta
+      property="og:description"
+      content="Build mathematical understanding through guided questions, clear reasoning and purposeful discovery."
+    >
+    <!-- Add og:url and og:image after final production metadata is confirmed. -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mathematics | Learn Socratian">
+    <meta
+      name="twitter:description"
+      content="Build mathematical understanding through guided questions, clear reasoning and purposeful discovery."
+    >
+
+    <link rel="icon" href="../../assets/images/logo/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../../assets/images/logo/apple-touch-icon.png">
+    <link rel="manifest" href="../../site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Libre+Baskerville:wght@400;700&amp;display=swap"
+    >
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Mathematics",
+        "description": "Explore Learn Socratian Mathematics by grade or topic.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Learn Socratian"
+        },
+        "inLanguage": "en-CA"
+      }
+    </script>
+    <script type="module" src="../../assets/js/main.js"></script>
+  
+    <style>
+      /* Mathematics page — compact one-screen directory */
+      .mathematics-hero--compact {
+        padding-block: clamp(1.25rem, 2.5vw, 2.25rem);
+      }
+
+      .mathematics-hero__container--compact {
+        display: grid;
+        grid-template-columns: minmax(250px, 0.78fr) minmax(0, 1.35fr);
+        gap: clamp(1.5rem, 3vw, 3rem);
+        align-items: center;
+      }
+
+      .mathematics-hero__content--compact {
+        min-width: 0;
+      }
+
+      .mathematics-hero__title--compact {
+        margin: 0.15rem 0 1rem;
+        font-size: clamp(2rem, 3.3vw, 3rem);
+        line-height: 1.05;
+      }
+
+      .mathematics-quick-links {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(0.85rem, 1.5vw, 1.25rem);
+        align-items: start;
+      }
+
+      .mathematics-quick-column {
+        min-width: 0;
+        padding: 0.9rem;
+        border: 1px solid rgba(111, 90, 168, 0.18);
+        border-radius: 0.9rem;
+        background: rgba(255, 255, 255, 0.88);
+      }
+
+      .mathematics-quick-column h2 {
+        margin: 0 0 0.6rem;
+        font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+      }
+
+      .mathematics-quick-list {
+        display: grid;
+        gap: 0.42rem;
+      }
+
+      .mathematics-quick-list a {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 0.25rem 0.7rem;
+        min-height: 2.35rem;
+        padding: 0.55rem 0.7rem;
+        border: 1px solid rgba(111, 90, 168, 0.15);
+        border-radius: 0.65rem;
+        background: #fff;
+        color: inherit;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        line-height: 1.2;
+      }
+
+      .mathematics-quick-list a:hover,
+      .mathematics-quick-list a:focus-visible {
+        border-color: rgba(111, 90, 168, 0.5);
+        background: rgba(111, 90, 168, 0.055);
+      }
+
+      .mathematics-quick-list small {
+        color: var(--color-text-muted, #6b6475);
+        font-size: 0.72rem;
+        font-weight: 500;
+      }
+
+      @media (max-width: 56rem) {
+        .mathematics-hero__container--compact {
+          grid-template-columns: minmax(210px, 0.72fr) minmax(0, 1.28fr);
+          gap: 1.25rem;
+        }
+
+        .mathematics-quick-list a {
+          font-size: 0.84rem;
+          padding: 0.48rem 0.6rem;
+        }
+      }
+
+      @media (max-width: 44rem) {
+        .mathematics-hero__container--compact {
+          grid-template-columns: 1fr;
+        }
+
+        .mathematics-hero__visual {
+          max-width: 32rem;
+          margin-inline: auto;
+        }
+
+        .mathematics-quick-links {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+
+  
+    <style>
+      /* Mathematics hero directory refinement */
+      .mathematics-hero__container--compact {
+        align-items: stretch;
+      }
+
+      .mathematics-hero__visual,
+      .mathematics-hero__content--compact {
+        min-height: 0;
+      }
+
+      .mathematics-hero__image-frame {
+        height: 100%;
+      }
+
+      .mathematics-hero__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .mathematics-hero__content--compact {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .mathematics-hero__eyebrow {
+        margin-bottom: 0.15rem;
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+      }
+
+      .mathematics-hero__title--compact {
+        margin: 0 0 0.65rem;
+        font-size: clamp(1.7rem, 2.8vw, 2.35rem);
+      }
+
+      .mathematics-quick-links {
+        flex: 1;
+        min-height: 0;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.8rem;
+      }
+
+      .mathematics-quick-column {
+        display: flex;
+        min-height: 0;
+        flex-direction: column;
+        padding: 0.72rem;
+        border-radius: 0.8rem;
+        background:
+          linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,248,253,0.98));
+        box-shadow: 0 7px 20px rgba(70, 54, 102, 0.05);
+      }
+
+      .mathematics-quick-column h2 {
+        margin: 0 0 0.48rem;
+        font-size: 1rem;
+        line-height: 1.1;
+      }
+
+      .mathematics-quick-list {
+        display: grid;
+        flex: 1;
+        min-height: 0;
+        gap: 0.34rem;
+      }
+
+      .mathematics-quick-list a {
+        min-height: 0;
+        padding: 0.42rem 0.55rem;
+        border-radius: 0.55rem;
+        font-size: clamp(0.75rem, 0.95vw, 0.86rem);
+        line-height: 1.12;
+      }
+
+      .mathematics-quick-list a::after {
+        content: "→";
+        margin-left: auto;
+        color: #6f5aa8;
+        font-size: 0.86em;
+      }
+
+      .mathematics-quick-list small {
+        width: 100%;
+        margin-top: 0.08rem;
+        font-size: 0.64rem;
+        line-height: 1.05;
+      }
+
+      @media (min-width: 45rem) {
+        .mathematics-quick-column:first-child .mathematics-quick-list {
+          grid-template-rows: repeat(6, minmax(0, 1fr));
+        }
+
+        .mathematics-quick-column:last-child .mathematics-quick-list {
+          grid-template-rows: repeat(8, minmax(0, 1fr));
+        }
+      }
+    </style>
+
+  
+    <style>
+      @media (min-width: 45rem) {
+        .mathematics-quick-column:last-child .mathematics-quick-list {
+          gap: 0.24rem;
+        }
+        .mathematics-quick-column:last-child .mathematics-quick-list a {
+          padding-block: 0.31rem;
+          font-size: clamp(0.72rem, 0.9vw, 0.82rem);
+        }
+      }
+    </style>
+
+
+    <style>
+      @media (min-width: 45rem) {
+        .mathematics-quick-column:first-child .mathematics-quick-list {
+          gap: 0.24rem;
+        }
+
+        .mathematics-quick-column:first-child .mathematics-quick-list a {
+          padding-block: 0.31rem;
+          font-size: clamp(0.72rem, 0.9vw, 0.82rem);
+        }
+
+        .mathematics-quick-column:first-child .mathematics-quick-list small {
+          font-size: 0.62rem;
+        }
+      }
+    </style>
+
+
+    <style>
+      .mathematics-quick-list .has-tooltip {
+        position: relative;
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        .mathematics-quick-list .has-tooltip::before {
+          content: attr(data-tooltip);
+          position: absolute;
+          left: 50%;
+          bottom: calc(100% + 7px);
+          z-index: 20;
+          width: max-content;
+          max-width: 220px;
+          padding: 0.4rem 0.55rem;
+          border: 1px solid rgba(111, 90, 168, 0.2);
+          border-radius: 0.45rem;
+          background: #fff;
+          color: #302a3d;
+          box-shadow: 0 5px 14px rgba(48, 42, 61, 0.12);
+          font-size: 0.72rem;
+          font-weight: 500;
+          line-height: 1.2;
+          opacity: 0;
+          pointer-events: none;
+          transform: translate(-50%, 3px);
+          transition: opacity 0.15s ease, transform 0.15s ease;
+        }
+
+        .mathematics-quick-list .has-tooltip:hover::before,
+        .mathematics-quick-list .has-tooltip:focus-visible::before {
+          opacity: 1;
+          transform: translate(-50%, 0);
+        }
+      }
+    </style>
+
+
+    <style>
+      /* Topics: fixed-height, two-column directory */
+      @media (min-width: 45rem) {
+        .mathematics-quick-column:last-child .mathematics-quick-list {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          grid-template-rows: repeat(6, minmax(0, 1fr));
+          grid-auto-flow: column;
+          gap: 0.28rem;
+          min-height: 0;
+        }
+
+        .mathematics-quick-column:last-child .mathematics-quick-list a {
+          min-width: 0;
+          min-height: 0;
+          padding: 0.3rem 0.48rem;
+          font-size: clamp(0.69rem, 0.82vw, 0.79rem);
+          white-space: nowrap;
+        }
+      }
+    </style>
+
+
+    <style>
+      /* Keep hero unchanged; Courses = 1/3, Topics = 2/3 of directory area */
+      @media (min-width: 45rem) {
+        .mathematics-quick-links {
+          grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+          align-items: stretch;
+        }
+
+        .mathematics-quick-column {
+          height: 100%;
+          min-height: 0;
+        }
+
+        .mathematics-quick-column:first-child .mathematics-quick-list {
+          grid-template-rows: repeat(6, minmax(0, 1fr));
+        }
+
+        .mathematics-quick-column:last-child .mathematics-quick-list {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          grid-template-rows: repeat(6, minmax(0, 1fr));
+          grid-auto-flow: column;
+        }
+      }
+    </style>
+
+
+    <style>
+      /* Restore original hero image proportions; refine only navigation panels */
+      @media (min-width: 45rem) {
+        .mathematics-hero__image-frame {
+          height: auto !important;
+        }
+
+        .mathematics-hero__image {
+          width: 100% !important;
+          height: auto !important;
+          object-fit: contain !important;
+          display: block;
+        }
+
+        .mathematics-hero__visual {
+          align-self: center;
+        }
+
+        .mathematics-quick-links {
+          grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+          align-items: stretch;
+        }
+
+        .mathematics-quick-column {
+          height: 100%;
+        }
+
+        .mathematics-quick-list a {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .mathematics-quick-list a > span {
+          display: flex;
+          align-items: center;
+          min-height: 100%;
+        }
+
+        .mathematics-quick-column:first-child .mathematics-quick-list {
+          grid-template-rows: repeat(6, minmax(0, 1fr));
+        }
+
+        .mathematics-quick-column:last-child .mathematics-quick-list {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          grid-template-rows: repeat(6, minmax(0, 1fr));
+          grid-auto-flow: column;
+        }
+      }
+    </style>
+
+</head>
+
+  <body>
+    <div id="site-header"></div>
+<main id="main-content">
+      <section class="mathematics-hero mathematics-hero--compact" aria-labelledby="mathematics-title">
+        <div class="mathematics-hero__container container mathematics-hero__container--compact">
+
+          <div class="mathematics-hero__visual">
+            <div class="mathematics-hero__image-frame">
+              <img
+                class="mathematics-hero__image"
+                src="../../assets/images/mathematics/mathematicians-gathering.png"
+                width="1536"
+                height="1024"
+                alt="Artistic gathering of influential mathematicians from different eras, including Euclid, Archimedes, Pythagoras, Gauss, Euler, Cauchy, Descartes, Newton, Leibniz, Emmy Noether, Ramanujan and John Nash."
+                fetchpriority="high"
+              >
+            </div>
+          </div>
+
+          <div class="mathematics-hero__content mathematics-hero__content--compact">
+            <p class="mathematics-hero__eyebrow">Learn Socratian Mathematics</p>
+            <h1 class="mathematics-hero__title mathematics-hero__title--compact" id="mathematics-title">
+              Mathematics
+            </h1>
+
+            <div class="mathematics-quick-links">
+
+              <section class="mathematics-quick-column" aria-labelledby="courses-column-title">
+                <h2 id="courses-column-title">Courses</h2>
+                <div class="mathematics-quick-list">
+                  <a href="foundations.html" class="has-tooltip" data-tooltip="Foundations of Math - Elementary">
+                    <span>Foundations</span>
+                  </a>
+                  <a href="grade-9/index.html"><span>Grade 9</span></a>
+                  <a href="grade-10/index.html"><span>Grade 10</span></a>
+                  <a href="grade-11/index.html"><span>Grade 11</span></a>
+                  <a href="grade-12/index.html"><span>Grade 12</span></a>
+                  <a href="ap/index.html" class="has-tooltip" data-tooltip="Advanced Placement">
+                    <span>AP</span>
+                  </a>
+                </div>
+              </section>
+
+              <section class="mathematics-quick-column" aria-labelledby="topics-column-title">
+                <h2 id="topics-column-title">Topics</h2>
+                <div class="mathematics-quick-list">
+                  <a href="topics/sets/index.html"><span>Sets</span></a>
+                  <a href="topics/numeration/index.html"><span>Numeration</span></a>
+                  <a href="topics/measurement/index.html"><span>Measurement</span></a>
+                  <a href="topics/patterning/index.html"><span>Patterning</span></a>
+                  <a href="topics/algebra/index.html"><span>Algebra</span></a>
+                  <a href="topics/geometry/index.html"><span>Geometry</span></a>
+                  <a href="topics/trigonometry/index.html"><span>Trigonometry</span></a>
+                  <a href="topics/functions/index.html"><span>Functions</span></a>
+                  <a href="topics/calculus/index.html"><span>Calculus</span></a>
+                  <a href="topics/probabilities/index.html"><span>Probabilities</span></a>
+                  <a href="topics/database-management/index.html" class="has-tooltip" data-tooltip="Database Management">
+                    <span>DB Management</span>
+                  </a>
+                  <a href="topics/vectors/index.html"><span>Vectors</span></a>
+                </div>
+              </section>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+      <script type="module" src="/assets/js/main.js"></script>
+  </body>
+</html>
+
