@@ -32,7 +32,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Libre+Baskerville:wght@400;700&amp;display=swap"
     >
-    <link rel="stylesheet" href="../../../../assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="stylesheet" href="../../../../assets/css/numeration.css">
 
     <script type="application/ld+json">
@@ -49,14 +49,15 @@
         }
       }
     </script>
-    <script type="module" src="../../../../assets/js/main.js"></script>
     <script type="module" src="../../../../assets/js/numeration-film.js"></script>
+    <script type="module" src="/assets/js/main.js"></script>
   </head>
 
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <script type="module" src="/assets/js/main.js"></script>
+    <!-- Shared site header -->
+    <div id="site-header"></div>
 
     <main id="main-content">
       <section class="numeration-film" aria-label="Learn Socratian Numeration film" data-numeration-film>
@@ -106,6 +107,24 @@
             <p>Your description...</p>
           </div>
           -->
+
+
+          <!-- Numeration topic links -->
+          <section class="numeration-topics" aria-labelledby="numeration-topics-title">
+            <h2 id="numeration-topics-title">Explore Numeration</h2>
+            <div class="numeration-topics__grid">
+              <a href="operations/">Operations</a>
+              <a href="order-of-operations/">Order of Operations</a>
+              <a href="exponents/">Exponents</a>
+              <a href="integers/">Integers</a>
+              <a href="divisibility/">Divisibility</a>
+              <a href="fractions/">Fractions</a>
+              <a href="decimals/">Decimals</a>
+              <a href="percentages/">Percentages</a>
+              <a href="proportions/">Proportions</a>
+            </div>
+            <!-- Add future Numeration topic links here. -->
+          </section>
 
           <div class="numeration-overview__actions">
             <a class="button button--secondary button--large" href="../../index.html#mathematics-topics">Back to Mathematics Topics</a>
