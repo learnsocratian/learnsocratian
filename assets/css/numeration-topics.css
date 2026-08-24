@@ -1,18 +1,243 @@
-/* Learn Socratian — Numeration topic master layout */
-.topic-page{padding:1.15rem 0 2rem}.topic-shell{max-width:980px}
-.topic-compact-head{margin-bottom:.9rem}.topic-breadcrumbs{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center;margin-bottom:.3rem;font-size:.84rem}
-.topic-breadcrumbs a{text-decoration:none}.topic-title-row h1{margin:0;font-size:clamp(1.8rem,4vw,2.45rem);line-height:1.1}
-.topic-video-box{display:grid;grid-template-columns:minmax(250px,42%) 1fr;overflow:hidden;border:1px solid rgba(111,90,168,.22);border-radius:1rem;background:#fff}
-.topic-video-box__media{min-height:190px}.topic-video-box__placeholder{display:grid;place-items:center;width:100%;height:100%;min-height:190px;background:linear-gradient(rgba(111,90,168,.12),rgba(111,90,168,.12)),#f5f1fb;cursor:pointer}
-.topic-video-box__play{display:grid;place-items:center;width:3.8rem;height:3.8rem;border:1px solid currentColor;border-radius:50%;font-size:1.35rem}
-.topic-video-box__content{display:flex;flex-direction:column;justify-content:center;padding:1.15rem 1.35rem}.topic-video-box__eyebrow{margin:0 0 .25rem;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-.topic-video-box__content h2{margin:0;font-size:1.45rem}.topic-video-box__status{margin:.45rem 0 0}
-.topic-read-link{display:flex;justify-content:space-between;align-items:center;margin-top:.7rem;padding:.8rem 1rem;border:1px solid rgba(111,90,168,.22);border-radius:.75rem;background:#fff;color:inherit;font-weight:700;text-decoration:none}
-.topic-levels{margin-top:1.15rem}.topic-levels__head{display:flex;justify-content:space-between;gap:1rem;align-items:end;margin-bottom:.6rem}.topic-levels__head h2,.topic-levels__head p{margin:0}.topic-levels__head h2{font-size:1.4rem}.topic-levels__head p{font-size:.9rem}
-.level-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem}.level-card{display:flex;align-items:center;justify-content:space-between;min-height:3.6rem;padding:.8rem 1rem;border:1px solid rgba(111,90,168,.22);border-radius:.8rem;background:#fff;color:inherit;text-decoration:none}.level-card--locked{opacity:.68}
-.topic-back{margin:1.1rem 0 0;font-size:.9rem}
-.lesson-dialog{width:min(94vw,1100px);height:min(90vh,760px);padding:0;border:0;border-radius:1rem;overflow:hidden}
-.lesson-dialog::backdrop{background:rgba(20,16,28,.72)}.lesson-dialog__bar{display:flex;align-items:center;justify-content:space-between;padding:.8rem 1rem;background:#fff;border-bottom:1px solid rgba(111,90,168,.18)}
-.lesson-dialog__close{border:0;background:transparent;font-size:1.8rem;line-height:1;cursor:pointer}.lesson-dialog__body{height:calc(100% - 55px);background:#faf9fc;overflow:auto}
-.video-placeholder,.reading-placeholder{min-height:100%;display:grid;place-items:center;padding:2rem;text-align:center}.video-placeholder{background:#191622;color:#fff}.reading-placeholder__paper{width:min(760px,100%);min-height:85%;padding:2rem;background:#fff;border:1px solid rgba(111,90,168,.18);border-radius:.5rem;text-align:left}
-@media(max-width:44rem){.topic-video-box{grid-template-columns:1fr}.topic-video-box__media,.topic-video-box__placeholder{min-height:155px}.topic-levels__head{display:block}.topic-levels__head p{margin-top:.25rem}.level-grid{grid-template-columns:1fr}.lesson-dialog{width:96vw;height:92vh}}
+:root{
+  --topic-lav:#6f5aa8;
+  --topic-soft:#f4f0fa;
+  --topic-ink:#2f2b3a;
+  --topic-muted:#6c6677;
+  --topic-line:#ddd5ea;
+  --topic-white:#fff;
+}
+
+.topic-page{padding:14px 22px 20px}
+.topic-shell{max-width:1180px;margin:0 auto}
+.topic-breadcrumbs{font-size:13px;color:var(--topic-muted);margin-bottom:5px}
+.topic-breadcrumbs a{text-decoration:none}
+.topic-page h1{font-family:Georgia,serif;font-size:32px;margin:0 0 10px}
+
+.topic-layout{
+  display:grid;
+  grid-template-columns:minmax(0,3fr) minmax(240px,1fr);
+  gap:18px;
+  align-items:stretch;
+}
+
+.topic-lesson-column{display:flex;flex-direction:column;height:100%}
+
+.topic-video{
+  aspect-ratio:16/9;
+  max-height:360px;
+  min-height:0;
+  border:1px solid var(--topic-line);
+  border-radius:15px;
+  background:linear-gradient(135deg,#e7dff2,#f7f3fb);
+  display:grid;
+  place-items:center;
+  cursor:pointer;
+}
+
+.topic-video__play{
+  width:72px;
+  height:72px;
+  border:2px solid var(--topic-lav);
+  border-radius:50%;
+  background:#fff;
+  color:var(--topic-lav);
+  display:grid;
+  place-items:center;
+  font-size:26px;
+}
+
+.topic-read-link{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:10px;
+  padding:14px 16px;
+  border:1px solid var(--topic-line);
+  border-radius:11px;
+  background:#fff;
+  color:var(--topic-ink);
+  text-decoration:none;
+  font-weight:700;
+}
+
+.topic-back{
+  margin-top:auto;
+  padding-top:10px;
+  margin-bottom:0;
+  font-size:14px;
+}
+.topic-back a{color:var(--topic-lav)}
+
+.topic-right-column{
+  display:grid;
+  grid-template-rows:minmax(0,1fr) auto;
+  gap:14px;
+  height:100%;
+}
+
+.topic-practice,
+.topic-assessment{
+  background:#fff;
+  border:1px solid var(--topic-line);
+  border-radius:15px;
+  padding:17px;
+}
+
+.topic-practice{
+  display:flex;
+  flex-direction:column;
+  min-height:0;
+}
+
+.topic-practice h2,
+.topic-assessment h2{
+  font-family:Georgia,serif;
+  font-size:19px;
+  margin:0 0 5px;
+}
+
+.topic-practice-title-wrap,
+.topic-assessment-title-wrap{
+  position:relative;
+  display:inline-block;
+}
+
+.topic-practice-title,
+.topic-assessment-title{cursor:help}
+
+.topic-tooltip{
+  position:absolute;
+  bottom:calc(100% + 9px);
+  width:235px;
+  padding:10px 12px;
+  border:1px solid var(--topic-line);
+  border-radius:9px;
+  background:#fff;
+  color:var(--topic-ink);
+  font-size:12px;
+  line-height:1.4;
+  box-shadow:0 8px 22px rgba(55,42,90,.12);
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(4px);
+  transition:opacity .15s ease,transform .15s ease,visibility .15s;
+  z-index:20;
+}
+
+.topic-practice-title-wrap .topic-tooltip{left:0}
+.topic-assessment-title-wrap .topic-tooltip{right:0}
+
+.topic-practice-title-wrap:hover .topic-tooltip,
+.topic-practice-title-wrap:focus-within .topic-tooltip,
+.topic-assessment-title-wrap:hover .topic-tooltip,
+.topic-assessment-title-wrap:focus-within .topic-tooltip{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+
+.topic-level{
+  flex:1 1 0;
+  border:1px solid var(--topic-line);
+  border-radius:11px;
+  padding:10px 12px;
+  margin-top:10px;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:10px;
+  align-items:center;
+}
+
+.topic-level__number{font-weight:700}
+
+.topic-level__actions,
+.topic-assessment__actions{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(92px,auto);
+  gap:7px;
+}
+
+.topic-button{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  padding:8px 9px;
+  border-radius:8px;
+  border:1px solid var(--topic-line);
+  text-decoration:none;
+  font-size:12px;
+  font-weight:700;
+  color:var(--topic-ink);
+  background:#fff;
+  white-space:nowrap;
+}
+
+.topic-button--buy{
+  background:var(--topic-soft);
+  color:var(--topic-lav);
+  border-color:#cfc3e3;
+  min-width:max-content;
+}
+
+.topic-assessment{margin-top:0}
+
+.topic-dialog{
+  width:min(94vw,1100px);
+  height:90vh;
+  border:0;
+  border-radius:15px;
+  padding:0;
+}
+
+.topic-dialog::backdrop{background:rgba(22,18,29,.78)}
+
+.topic-dialog__bar{
+  height:55px;
+  padding:0 17px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:#fff;
+  border-bottom:1px solid var(--topic-line);
+}
+
+.topic-dialog__close{
+  border:0;
+  background:none;
+  font-size:29px;
+  cursor:pointer;
+}
+
+.topic-dialog__video{
+  height:calc(100% - 55px);
+  background:#191622;
+  color:#fff;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  padding:20px;
+}
+
+.topic-dialog__reader{
+  height:calc(100% - 55px);
+  overflow:auto;
+  background:#f4f1f7;
+  padding:25px;
+}
+
+.topic-dialog__paper{
+  max-width:760px;
+  min-height:100%;
+  margin:auto;
+  background:#fff;
+  padding:35px;
+  border:1px solid var(--topic-line);
+}
+
+@media(max-width:760px){
+  .topic-layout{grid-template-columns:1fr}
+  .topic-video{max-height:none}
+  .topic-right-column{display:block;height:auto}
+  .topic-assessment{margin-top:14px}
+  .topic-level{flex:none}
+}
