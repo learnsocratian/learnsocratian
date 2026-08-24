@@ -1,191 +1,161 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-CA">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Numeration Preview | Learn Socratian</title>
+<title>Numeration | Learn Socratian</title>
 <style>
-:root{--lav:#6f5aa8;--soft:#f4f0fa;--ink:#2f2b3a;--muted:#6c6677;--line:#ddd5ea}
+:root{
+  --lav:#6f5aa8;--lav2:#806db5;--soft:#f7f4fb;--ink:#302a3d;
+  --muted:#746d7d;--line:#ddd6e9;--white:#fff;
+}
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#faf9fc;color:var(--ink)}
 header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line)}
-.header-inner{max-width:1180px;margin:auto;padding:12px 22px;display:flex;justify-content:space-between;align-items:center}
+.header-inner{max-width:1120px;margin:auto;padding:11px 22px;display:flex;justify-content:space-between;align-items:center}
 .brand{font-weight:700;color:var(--lav);font-size:18px}
-nav{display:flex;gap:18px;font-size:14px}nav a{color:var(--ink);text-decoration:none}
-main{max-width:1180px;margin:auto;padding:14px 22px 20px}
-.crumb{font-size:13px;color:var(--muted);margin-bottom:5px}
-h1{font-family:Georgia,serif;font-size:32px;margin:0 0 10px}
-.layout{display:grid;grid-template-columns:minmax(0,3fr) minmax(280px,1fr);gap:18px;align-items:stretch}
-.left{display:flex;flex-direction:column;height:100%;min-height:0}
-.video{
-  aspect-ratio:16/9;width:100%;min-height:0;border:1px solid var(--line);border-radius:15px;
-  background-image:linear-gradient(rgba(20,16,28,.08),rgba(20,16,28,.08)),url('../../../../assets/images/numeration/numeration-film-poster.jpg');
-  background-size:cover;background-position:center;display:grid;place-items:center;cursor:pointer
+nav{display:flex;gap:18px;font-size:14px} nav a{color:var(--ink);text-decoration:none}
+main{max-width:1120px;margin:auto;padding:14px 22px 20px}
+.crumb{font-size:13px;color:var(--muted);margin-bottom:4px}
+h1{font-family:Georgia,serif;font-size:31px;margin:0 0 10px}
+.layout{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) clamp(220px,24vw,300px);
+  gap:clamp(12px,1.8vw,22px);
+  align-items:center;
 }
-.play{width:72px;height:72px;border:2px solid var(--lav);border-radius:50%;background:#fff;color:var(--lav);display:grid;place-items:center;font-size:26px}
-.read{display:flex;justify-content:space-between;align-items:center;margin-top:10px;padding:14px 16px;border:1px solid var(--line);border-radius:11px;background:#fff;color:var(--ink);text-decoration:none;font-weight:700}
-.back{margin-top:10px;padding-top:0;margin-bottom:0;font-size:14px}.back a{color:var(--lav)}
-.topics{background:#fff;border:1px solid var(--line);border-radius:15px;padding:15px;display:flex;flex-direction:column;aspect-ratio:auto;height:auto;align-self:start}
-.topics h2{font-family:Georgia,serif;font-size:19px;margin:0 0 9px}
-.tree{display:flex;flex-direction:column;justify-content:center;gap:10px;flex:1}
-.link{display:flex;justify-content:space-between;align-items:center;min-height:34px;padding:7px 9px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);text-decoration:none;font-size:12.5px;font-weight:700}
-.link:hover,.link:focus{border-color:var(--lav);background:var(--soft)}
-.level1{margin-left:13px}
-.level2{margin-left:26px}
-.level3{margin-left:39px}
-.group-label{font-weight:700}
-dialog{width:min(94vw,1100px);height:90vh;border:0;border-radius:15px;padding:0}
-dialog::backdrop{background:rgba(22,18,29,.78)}
-.bar{height:55px;padding:0 17px;display:flex;align-items:center;justify-content:space-between;background:#fff;border-bottom:1px solid var(--line)}
-.close{border:0;background:none;font-size:29px;cursor:pointer}
-.video-body{height:calc(100% - 55px);background:#191622;display:grid;place-items:center;padding:0}.video-body video{width:100%;height:100%;object-fit:contain;background:#000}
-@media(max-width:760px){nav{display:none}.layout{grid-template-columns:1fr}.video{aspect-ratio:16/9;min-height:0}.level1{margin-left:10px}.level2{margin-left:20px}.level3{margin-left:30px}}
-</style>
-
-<style>
-/* FINAL NUMERATION DESKTOP LAYOUT */
-@media (min-width: 761px) {
-  .layout {
-    display: grid !important;
-    grid-template-columns: minmax(0, 3fr) minmax(280px, 1fr) !important;
-    grid-template-areas: "video topics" !important;
-    gap: 18px !important;
-    align-items: start !important;
-  }
-
-  .layout > .left,
-  .layout > .video-column {
-    grid-area: video !important;
-    min-width: 0 !important;
-  }
-
-  .layout > .topics {
-    grid-area: topics !important;
-    min-width: 0 !important;
-    width: 100% !important;
-  }
+.poster{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/9;
+  min-height:0;
+  max-height:min(52vh,430px);
+  border:0;
+  border-radius:14px;
+  overflow:hidden;
+  cursor:pointer;
+  background:
+    linear-gradient(rgba(25,18,38,.08),rgba(25,18,38,.08)),
+    url("/assets/images/numeration/numeration-film-poster.jpg") center/cover no-repeat,
+    linear-gradient(135deg,#ddd4eb,#f4eff9);
+  box-shadow:0 7px 22px rgba(57,43,88,.08);
 }
-
-@media (max-width: 760px) {
-  .layout {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    grid-template-areas:
-      "video"
-      "topics" !important;
-  }
+.poster::after{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(22,16,33,.22),transparent 45%);
+  pointer-events:none;
 }
-</style>
-
-
-<style>
-@media (min-width: 761px) {
-  .layout {
-    display: grid !important;
-    grid-template-columns: minmax(0, 3fr) minmax(260px, 1fr) !important;
-    gap: 18px !important;
-    align-items: start !important;
+.play{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:62px;height:62px;border:2px solid rgba(255,255,255,.95);border-radius:50%;
+  display:grid;place-items:center;color:#fff;background:rgba(48,35,69,.62);
+  font-size:23px;z-index:2;box-shadow:0 5px 18px rgba(0,0,0,.22)
+}
+.topics{
+  background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:clamp(11px,1.2vw,15px);display:flex;flex-direction:column;
+  box-shadow:0 7px 22px rgba(57,43,88,.05);
+  align-self:center;
+}
+.topics h2{font-family:Georgia,serif;font-size:18px;margin:0 0 9px}
+.topic-list{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:8px;
+}
+.topic{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:clamp(8px,1vw,10px) clamp(9px,1vw,11px);min-height:clamp(38px,4.5vw,42px);border:1px solid var(--line);
+  border-radius:9px;background:#fff;color:var(--ink);text-decoration:none;
+  font-size:13px;font-weight:700;transition:.15s ease;
+}
+.topic:hover,.topic:focus-visible{
+  border-color:#b8aad2;background:var(--soft);transform:translateX(2px);
+}
+.topic .arrow{color:var(--lav);font-size:15px}
+.back{margin:9px 0 0;font-size:13px}
+.back a{color:var(--lav);text-decoration:none}
+dialog{width:min(94vw,1080px);height:min(90vh,720px);padding:0;border:0;border-radius:15px;overflow:hidden}
+dialog::backdrop{background:rgba(18,13,27,.78)}
+.dialog-bar{height:52px;padding:0 16px;display:flex;justify-content:space-between;align-items:center;background:#fff;border-bottom:1px solid var(--line)}
+.close{border:0;background:transparent;font-size:28px;cursor:pointer}
+.video-wrap{height:calc(100% - 52px);background:#000}
+.video-wrap video{width:100%;height:100%;object-fit:contain;background:#000}
+@media(max-width:900px){
+  .layout{
+    grid-template-columns:minmax(0,1fr) clamp(210px,30vw,260px);
   }
-
-  .left {
-    min-width: 0 !important;
-  }
-
-  .video {
-    width: 100% !important;
-    aspect-ratio: 16 / 9 !important;
-  }
-
-  .topics {
-    min-width: 0 !important;
-    width: 100% !important;
-    align-self: stretch !important;
-  }
+  .topic{font-size:12.5px}
 }
 
-@media (max-width: 760px) {
-  .layout {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-  }
+@media(max-width:760px){
+  nav{display:none}
+  main{padding:12px 16px 18px}
+  .layout{grid-template-columns:1fr;gap:12px}
+  .poster{aspect-ratio:16/9;max-height:none}
+  .topics{width:100%;height:auto!important}
+  .topic-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+}
+
+@media(max-width:480px){
+  .topic-list{grid-template-columns:1fr}
+  h1{font-size:28px}
 }
 </style>
-
 </head>
 <body>
 <header><div class="header-inner"><div class="brand">Learn Socratian</div><nav><a href="#">Home</a><a href="#">Philosophy</a><a href="#">Courses</a><a href="#">About</a><a href="#">Contact</a><a href="#">Log in</a></nav></div></header>
 
 <main>
-<div class="crumb">Mathematics › Numeration</div>
-<h1>Numeration</h1>
+  <div class="crumb">Mathematics › Numeration</div>
+  <h1>Numeration</h1>
 
-<div class="layout">
-<section class="left">
-  <button class="video" id="openVideo" type="button" aria-label="Open Numeration video lesson">
-        <span class="play" aria-hidden="true">▶</span>
-      </button>
-  <p class="back"><a href="#">← Back to Mathematics</a></p>
-</section>
+  <div class="layout" id="numerationLayout">
+    <button class="poster" id="openVideo" type="button" aria-label="Open Numeration video">
+      <span class="play" aria-hidden="true">▶</span>
+    </button>
 
-<aside class="topics">
-  <h2>Topics</h2>
-  <div class="tree">
-    <a class="link" href="operations/"><span>Operations</span><span>→</span></a>
-    <a class="link" href="divisibility/"><span>Divisibility</span><span>→</span></a>
-    <a class="link" href="exponents/"><span>Exponents</span><span>→</span></a>
-    <a class="link" href="real-numbers/"><span>Real Numbers</span><span>→</span></a>
+    <aside class="topics" id="topicsPanel">
+      <h2>Topics</h2>
+      <div class="topic-list">
+        <a class="topic" href="operations/"><span>Operations</span><span class="arrow">→</span></a>
+        <a class="topic" href="divisibility/"><span>Divisibility</span><span class="arrow">→</span></a>
+        <a class="topic" href="exponents/"><span>Exponents</span><span class="arrow">→</span></a>
+        <a class="topic" href="real-numbers/"><span>Real Numbers</span><span class="arrow">→</span></a>
+      </div>
+    </aside>
   </div>
-</aside>
-</div>
+
+  <p class="back"><a href="/courses/mathematics/">← Back to Mathematics</a></p>
 </main>
 
 <dialog id="videoDialog">
-  <div class="bar">
+  <div class="dialog-bar">
     <strong>Numeration — Video Lesson</strong>
     <button class="close" id="closeVideo" type="button" aria-label="Close video">×</button>
   </div>
-  <div class="video-body">
+  <div class="video-wrap">
     <video id="numerationVideo" controls playsinline preload="metadata"
-           poster="../../../../assets/images/numeration/numeration-film-poster.jpg">
-      <source src="../../../../assets/video/learn-socratian-numeration-film.mp4" type="video/mp4">
-      Your browser cannot play this video.
+      poster="/assets/images/numeration/numeration-film-poster.jpg">
+      <source src="/assets/video/learn-socratian-numeration-film.mp4" type="video/mp4">
     </video>
   </div>
 </dialog>
+
 <script>
-const dialog = document.getElementById("videoDialog");
-const video = document.getElementById("numerationVideo");
-const openButton = document.getElementById("openVideo");
-const closeButton = document.getElementById("closeVideo");
+const poster=document.getElementById("openVideo");
+const panel=document.getElementById("topicsPanel");
+const dialog=document.getElementById("videoDialog");
+const video=document.getElementById("numerationVideo");
+const close=document.getElementById("closeVideo");
 
-openButton.addEventListener("click", () => {
+poster.addEventListener("click",()=>{
   dialog.showModal();
-  video.currentTime = 0;
-  video.play().catch(() => {});
+  video.play().catch(()=>{});
 });
-
-closeButton.addEventListener("click", () => {
-  video.pause();
-  dialog.close();
-});
-
-dialog.addEventListener("close", () => {
-  video.pause();
-});
-
-dialog.addEventListener("click", (event) => {
-  const rect = dialog.getBoundingClientRect();
-  const clickedOutside =
-    event.clientX < rect.left ||
-    event.clientX > rect.right ||
-    event.clientY < rect.top ||
-    event.clientY > rect.bottom;
-
-  if (clickedOutside) {
-    video.pause();
-    dialog.close();
-  }
-});
+close.addEventListener("click",()=>{video.pause();dialog.close();});
+dialog.addEventListener("close",()=>video.pause());
 </script>
 </body>
 </html>
