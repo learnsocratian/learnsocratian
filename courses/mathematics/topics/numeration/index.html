@@ -38,78 +38,77 @@ dialog{width:min(94vw,1100px);height:90vh;border:0;border-radius:15px;padding:0}
 dialog::backdrop{background:rgba(22,18,29,.78)}
 .bar{height:55px;padding:0 17px;display:flex;align-items:center;justify-content:space-between;background:#fff;border-bottom:1px solid var(--line)}
 .close{border:0;background:none;font-size:29px;cursor:pointer}
-.video-body{height:calc(100% - 55px);background:#191622;color:#fff;display:grid;place-items:center;text-align:center}
+.video-body{height:calc(100% - 55px);background:#191622;display:grid;place-items:center;padding:0}.video-body video{width:100%;height:100%;object-fit:contain;background:#000}
 @media(max-width:760px){nav{display:none}.layout{grid-template-columns:1fr}.video{aspect-ratio:16/9;min-height:0}.level1{margin-left:10px}.level2{margin-left:20px}.level3{margin-left:30px}}
 </style>
-  <link rel="stylesheet" href="../../../../assets/css/numeration.css">
-  <script type="module" src="../../../../assets/js/numeration-film.js"></script>
 
 <style>
-  /* Numeration directory layout override */
+/* FINAL NUMERATION DESKTOP LAYOUT */
+@media (min-width: 761px) {
   .layout {
-    display: grid;
-    grid-template-columns: minmax(0, 3fr) minmax(280px, 1fr);
-    gap: 18px;
-    align-items: start;
+    display: grid !important;
+    grid-template-columns: minmax(0, 3fr) minmax(280px, 1fr) !important;
+    grid-template-areas: "video topics" !important;
+    gap: 18px !important;
+    align-items: start !important;
+  }
+
+  .layout > .left,
+  .layout > .video-column {
+    grid-area: video !important;
+    min-width: 0 !important;
+  }
+
+  .layout > .topics {
+    grid-area: topics !important;
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .layout {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "video"
+      "topics" !important;
+  }
+}
+</style>
+
+
+<style>
+@media (min-width: 761px) {
+  .layout {
+    display: grid !important;
+    grid-template-columns: minmax(0, 3fr) minmax(260px, 1fr) !important;
+    gap: 18px !important;
+    align-items: start !important;
   }
 
   .left {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
+    min-width: 0 !important;
   }
 
-  .numeration-film {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    min-height: 0;
-    overflow: hidden;
-    border: 1px solid var(--line);
-    border-radius: 15px;
-    background: #191622;
-  }
-
-  .numeration-film__video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+  .video {
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important;
   }
 
   .topics {
-    background: #fff;
-    border: 1px solid var(--line);
-    border-radius: 15px;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    align-self: start;
+    min-width: 0 !important;
+    width: 100% !important;
+    align-self: stretch !important;
   }
+}
 
-  .tree {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
+@media (max-width: 760px) {
+  .layout {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
   }
-
-  .back {
-    margin: 10px 0 0;
-    padding: 0;
-    font-size: 14px;
-  }
-
-  @media (max-width: 760px) {
-    .layout {
-      grid-template-columns: 1fr;
-    }
-
-    .topics {
-      height: auto !important;
-    }
-  }
+}
 </style>
 
 </head>
@@ -122,42 +121,9 @@ dialog::backdrop{background:rgba(22,18,29,.78)}
 
 <div class="layout">
 <section class="left">
-  <section class="numeration-film" aria-label="Learn Socratian Numeration film" data-numeration-film>
-        <video
-          class="numeration-film__video"
-          controls
-          controlslist="nodownload noremoteplayback"
-          playsinline
-          preload="metadata"
-          poster="../../../../assets/images/numeration/numeration-film-poster.jpg"
-          data-numeration-film-video
-        >
-          <source src="../../../../assets/video/learn-socratian-numeration-film.mp4" type="video/mp4">
-          <p>
-            Your browser cannot play this video.
-            <a href="../../../../assets/video/learn-socratian-numeration-film.mp4">Download the Numeration film</a>.
-          </p>
-        </video>
-
-        <div class="numeration-film__shade" aria-hidden="true"></div>
-
-        <button
-          class="numeration-film__play"
-          type="button"
-          aria-label="Play the Learn Socratian Numeration film"
-          data-numeration-film-play
-        >
-          <span class="numeration-film__play-icon" aria-hidden="true">
-            <svg viewBox="0 0 32 32" width="32" height="32">
-              <path d="M11 7.5 25 16 11 24.5Z" fill="currentColor"/>
-            </svg>
-          </span>
-          <span>
-            <span class="numeration-film__play-label" data-numeration-film-play-label>Play film</span>
-            <span class="numeration-film__play-meta">1 min 20 sec · With sound</span>
-          </span>
-        </button>
-      </section>
+  <button class="video" id="openVideo" type="button" aria-label="Open Numeration video lesson">
+        <span class="play" aria-hidden="true">▶</span>
+      </button>
   <p class="back"><a href="#">← Back to Mathematics</a></p>
 </section>
 
@@ -173,24 +139,53 @@ dialog::backdrop{background:rgba(22,18,29,.78)}
 </div>
 </main>
 
-
+<dialog id="videoDialog">
+  <div class="bar">
+    <strong>Numeration — Video Lesson</strong>
+    <button class="close" id="closeVideo" type="button" aria-label="Close video">×</button>
+  </div>
+  <div class="video-body">
+    <video id="numerationVideo" controls playsinline preload="metadata"
+           poster="../../../../assets/images/numeration/numeration-film-poster.jpg">
+      <source src="../../../../assets/video/learn-socratian-numeration-film.mp4" type="video/mp4">
+      Your browser cannot play this video.
+    </video>
+  </div>
+</dialog>
 <script>
-  function matchTopicsToVideo() {
-    const videoSection = document.querySelector(".numeration-film");
-    const topics = document.querySelector(".topics");
+const dialog = document.getElementById("videoDialog");
+const video = document.getElementById("numerationVideo");
+const openButton = document.getElementById("openVideo");
+const closeButton = document.getElementById("closeVideo");
 
-    if (!videoSection || !topics) return;
+openButton.addEventListener("click", () => {
+  dialog.showModal();
+  video.currentTime = 0;
+  video.play().catch(() => {});
+});
 
-    if (window.innerWidth > 760) {
-      topics.style.height = `${videoSection.getBoundingClientRect().height}px`;
-    } else {
-      topics.style.height = "auto";
-    }
+closeButton.addEventListener("click", () => {
+  video.pause();
+  dialog.close();
+});
+
+dialog.addEventListener("close", () => {
+  video.pause();
+});
+
+dialog.addEventListener("click", (event) => {
+  const rect = dialog.getBoundingClientRect();
+  const clickedOutside =
+    event.clientX < rect.left ||
+    event.clientX > rect.right ||
+    event.clientY < rect.top ||
+    event.clientY > rect.bottom;
+
+  if (clickedOutside) {
+    video.pause();
+    dialog.close();
   }
-
-  window.addEventListener("load", matchTopicsToVideo);
-  window.addEventListener("resize", matchTopicsToVideo);
+});
 </script>
-
 </body>
 </html>
