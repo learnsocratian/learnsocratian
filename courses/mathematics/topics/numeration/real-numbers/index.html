@@ -1,224 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-CA">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Real Numbers — Learn Socratian</title>
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <style>
-    .real-numbers-page{
-      --rn-lavender:#eee8ff;
-      --rn-lavender-2:#f7f3ff;
-      --rn-ink:#2f2b3a;
-      --rn-border:#d8cfee;
-      --rn-button:#ffffff;
-      --rn-button-hover:#f3edff;
-      --rn-shadow:0 10px 28px rgba(52, 42, 78, .10);
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Real Numbers | Learn Socratian</title>
+<link rel="stylesheet" href="/assets/css/styles.css">
+<style>
+.real-numbers-page{
+  --rn-lav:#6f5aa8;
+  --rn-soft:#f7f4fb;
+  --rn-ink:#302a3d;
+  --rn-muted:#746d7d;
+  --rn-line:#ddd6e9;
+  max-width:1120px;
+  margin:auto;
+  padding:14px 22px 20px;
+  color:var(--rn-ink);
+}
+.real-numbers-page *{box-sizing:border-box}
+.real-numbers-page .crumb{font-size:13px;color:var(--rn-muted);margin-bottom:4px}
+.real-numbers-page h1{font-family:Georgia,serif;font-size:31px;margin:0 0 10px}
+.real-numbers-page .layout{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) clamp(220px,24vw,300px);
+  gap:clamp(12px,1.8vw,22px);
+  align-items:center;
+}
+.real-numbers-page .poster{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/9;
+  min-height:0;
+  max-height:min(52vh,430px);
+  border:0;
+  border-radius:14px;
+  overflow:hidden;
+  background:linear-gradient(135deg,#ddd4eb,#f4eff9);
+  box-shadow:0 7px 22px rgba(57,43,88,.08);
+  display:grid;
+  place-items:center;
+}
+.real-numbers-page .poster-title{
+  font-family:Georgia,serif;
+  font-size:clamp(24px,4vw,42px);
+  color:#4b3e67;
+  text-align:center;
+  padding:24px;
+}
+.real-numbers-page .topics{
+  background:#fff;
+  border:1px solid var(--rn-line);
+  border-radius:14px;
+  padding:clamp(11px,1.2vw,15px);
+  display:flex;
+  flex-direction:column;
+  box-shadow:0 7px 22px rgba(57,43,88,.05);
+  align-self:center;
+}
+.real-numbers-page .topics h2{font-family:Georgia,serif;font-size:18px;margin:0 0 9px}
+.real-numbers-page .topic-list{display:grid;grid-template-columns:1fr;gap:8px}
+.real-numbers-page .topic{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+  padding:clamp(8px,1vw,10px) clamp(9px,1vw,11px);
+  min-height:clamp(38px,4.5vw,42px);
+  border:1px solid var(--rn-line);
+  border-radius:9px;
+  background:#fff;
+  color:var(--rn-ink);
+  text-decoration:none;
+  font-size:13px;
+  font-weight:700;
+  transition:.15s ease;
+}
+.real-numbers-page .topic:hover,
+.real-numbers-page .topic:focus-visible{
+  border-color:#b8aad2;
+  background:var(--rn-soft);
+  transform:translateX(2px);
+}
+.real-numbers-page .topic .arrow{color:var(--rn-lav);font-size:15px;flex:0 0 auto}
+.real-numbers-page .back{margin:9px 0 0;font-size:13px}
+.real-numbers-page .back a{color:var(--rn-lav);text-decoration:none}
 
-      min-height:calc(100vh - 140px);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:34px 24px;
-      background:linear-gradient(180deg, var(--rn-lavender-2), #fff);
-      color:var(--rn-ink);
-    }
-
-    .real-numbers-page *{
-      box-sizing:border-box;
-    }
-
-    .real-numbers-page .rn-page{
-      width:min(1180px, 100%);
-    }
-
-    .real-numbers-page .rn-title{
-      margin:0 0 18px;
-      text-align:center;
-      font-size:clamp(1.7rem, 2.5vw, 2.35rem);
-      font-weight:650;
-      letter-spacing:.01em;
-    }
-
-    .real-numbers-page .rn-layout{
-      display:grid;
-      grid-template-columns:minmax(0, 1.65fr) minmax(280px, .85fr);
-      gap:30px;
-      align-items:stretch;
-    }
-
-    .real-numbers-page .rn-video-card{
-      position:relative;
-      width:100%;
-      aspect-ratio:16/9;
-      border-radius:18px;
-      overflow:hidden;
-      border:1px solid var(--rn-border);
-      background:
-        radial-gradient(circle at 32% 32%, rgba(255,255,255,.85), transparent 23%),
-        linear-gradient(135deg,#ded4f8,#f4efff 55%,#d9d0ef);
-      box-shadow:var(--rn-shadow);
-      cursor:pointer;
-    }
-
-    .real-numbers-page .rn-video-card::after{
-      content:"Real Numbers";
-      position:absolute;
-      left:22px;
-      bottom:18px;
-      font-size:clamp(1.25rem, 2vw, 1.8rem);
-      font-weight:650;
-      color:#4a4161;
-      letter-spacing:.02em;
-    }
-
-    .real-numbers-page .rn-play{
-      position:absolute;
-      inset:50% auto auto 50%;
-      transform:translate(-50%,-50%);
-      width:74px;
-      height:74px;
-      border-radius:50%;
-      border:0;
-      background:rgba(255,255,255,.92);
-      box-shadow:0 8px 24px rgba(50,40,72,.16);
-      display:grid;
-      place-items:center;
-    }
-
-    .real-numbers-page .rn-play::before{
-      content:"";
-      width:0;
-      height:0;
-      border-top:12px solid transparent;
-      border-bottom:12px solid transparent;
-      border-left:19px solid #62537f;
-      margin-left:5px;
-    }
-
-    .real-numbers-page .rn-child-panel{
-      border:1px solid var(--rn-border);
-      border-radius:16px;
-      padding:18px;
-      background:rgba(255,255,255,.82);
-      box-shadow:var(--rn-shadow);
-      display:flex;
-      flex-direction:column;
-      overflow:hidden;
-    }
-
-    .real-numbers-page .rn-child-panel h2{
-      margin:0 0 13px;
-      font-size:1.05rem;
-      font-weight:650;
-      text-align:center;
-    }
-
-    .real-numbers-page .rn-child-links{
-      display:grid;
-      grid-template-rows:repeat(4, 1fr);
-      gap:10px;
-      flex:1;
-    }
-
-    .real-numbers-page .rn-child-links a{
-      min-height:48px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:9px 14px;
-      border:1px solid var(--rn-border);
-      border-radius:10px;
-      background:var(--rn-button);
-      color:var(--rn-ink);
-      text-decoration:none;
-      font-size:.98rem;
-      line-height:1.25;
-      transition:background .15s ease, transform .15s ease, box-shadow .15s ease;
-    }
-
-    .real-numbers-page .rn-child-links a:hover,
-    .real-numbers-page .rn-child-links a:focus-visible{
-      background:var(--rn-button-hover);
-      transform:translateY(-1px);
-      box-shadow:0 4px 12px rgba(70,55,100,.08);
-      outline:none;
-    }
-
-    .real-numbers-page .rn-symbol{
-      margin-left:.35em;
-      white-space:nowrap;
-    }
-
-    @media (max-width:760px){
-      .real-numbers-page{
-        padding:24px 16px;
-      }
-
-      .real-numbers-page .rn-layout{
-        grid-template-columns:1fr;
-        gap:20px;
-      }
-
-      .real-numbers-page .rn-child-panel{
-        width:100%;
-        height:auto !important;
-      }
-    }
-  </style>
+@media(max-width:900px){
+  .real-numbers-page .layout{grid-template-columns:minmax(0,1fr) clamp(210px,30vw,260px)}
+  .real-numbers-page .topic{font-size:12.5px}
+}
+@media(max-width:760px){
+  .real-numbers-page{padding:12px 16px 18px}
+  .real-numbers-page .layout{grid-template-columns:1fr;gap:12px}
+  .real-numbers-page .poster{aspect-ratio:16/9;max-height:none}
+  .real-numbers-page .topics{width:100%;height:auto!important}
+  .real-numbers-page .topic-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+}
+@media(max-width:480px){
+  .real-numbers-page .topic-list{grid-template-columns:1fr}
+  .real-numbers-page h1{font-size:28px}
+}
+</style>
 </head>
-
 <body>
-  <div id="site-header"></div>
+<div id="site-header"></div>
 
-  <main class="real-numbers-page">
-    <section class="rn-page" aria-labelledby="page-title">
-      <h1 id="page-title" class="rn-title">Real Numbers</h1>
+<main class="real-numbers-page">
+  <div class="crumb">Mathematics › Numeration › Real Numbers</div>
+  <h1>Real Numbers</h1>
 
-      <div class="rn-layout">
-        <div class="rn-video-card" role="img" aria-label="Preview area for the Real Numbers video poster">
-          <button class="rn-play" type="button" aria-label="Play Real Numbers video"></button>
-        </div>
+  <div class="layout">
+    <!-- Replace this placeholder with the actual Real Numbers video poster/player
+         only when the real poster/video asset paths are available. -->
+    <div class="poster" aria-label="Real Numbers video area">
+      <div class="poster-title">Real Numbers</div>
+    </div>
 
-        <aside class="rn-child-panel" aria-label="Real Numbers topics">
-          <h2>Real Numbers</h2>
-
-          <nav class="rn-child-links">
-            <a href="natural-numbers/index.html">
-              Natural Numbers <span class="rn-symbol">(ℕ)</span>
-            </a>
-
-            <a href="integers/index.html">
-              Integers <span class="rn-symbol">(ℤ)</span>
-            </a>
-
-            <a href="rational-numbers/index.html">
-              Rational Numbers <span class="rn-symbol">(ℚ)</span>
-            </a>
-
-            <a href="irrational-numbers/index.html">
-              Irrational Numbers <span class="rn-symbol">(ℝ ∖ ℚ)</span>
-            </a>
-          </nav>
-        </aside>
+    <aside class="topics" aria-label="Real Numbers topics">
+      <h2>Topics</h2>
+      <div class="topic-list">
+        <a class="topic" href="natural-numbers/"><span>Natural Numbers (ℕ)</span><span class="arrow">→</span></a>
+        <a class="topic" href="integers/"><span>Integers (ℤ)</span><span class="arrow">→</span></a>
+        <a class="topic" href="rational-numbers/"><span>Rational Numbers (ℚ)</span><span class="arrow">→</span></a>
+        <a class="topic" href="irrational-numbers/"><span>Irrational Numbers (ℝ ∖ ℚ)</span><span class="arrow">→</span></a>
       </div>
-</section>
-  </main>
+    </aside>
+  </div>
 
-  <div id="site-footer"></div>
+  <p class="back"><a href="../">← Back to Numeration</a></p>
+</main>
 
-  <script>
-    function matchPanelToVideo() {
-      if (window.innerWidth <= 760) return;
-      const video = document.querySelector('.rn-video-card');
-      const panel = document.querySelector('.rn-child-panel');
-      panel.style.height = video.getBoundingClientRect().height + 'px';
-    }
-    window.addEventListener('load', matchPanelToVideo);
-    window.addEventListener('resize', matchPanelToVideo);
-  </script>
-
-  <script type="module" src="/assets/js/main.js"></script>
+<div id="site-footer"></div>
+<script type="module" src="/assets/js/main.js"></script>
 </body>
 </html>
