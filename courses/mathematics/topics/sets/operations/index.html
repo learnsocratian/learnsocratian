@@ -71,7 +71,7 @@
             </div>
 
             <div class="set-operation-buttons" aria-label="Set operations">
-              <button class="topic-button set-operation-button" type="button" aria-pressed="false" data-operation="Union" data-key="union">Union (∪)</button>
+              <button class="topic-button set-operation-button" type="button" aria-pressed="true" data-operation="Union" data-key="union">Union (∪)</button>
               <button class="topic-button set-operation-button" type="button" aria-pressed="false" data-operation="Intersection" data-key="intersection">Intersection (∩)</button>
               <button class="topic-button set-operation-button" type="button" aria-pressed="false" data-operation="Difference" data-key="difference">Difference (∖)</button>
               <button class="topic-button set-operation-button" type="button" aria-pressed="false" data-operation="Complement" data-key="complement">Complement</button>
@@ -79,8 +79,8 @@
               <button class="topic-button set-operation-button" type="button" aria-pressed="false" data-operation="All Operations" data-key="all-operations">All Operations</button>
             </div>
 
-            <div id="set-operation-practice" hidden>
-            <h3 class="set-current-operation" id="set-current-operation">Practise:</h3>
+            <div id="set-operation-practice">
+            <h3 class="set-current-operation" id="set-current-operation">Union - Practise:</h3>
 
             <article class="topic-level">
               <span class="topic-level__number">1:</span>
@@ -167,6 +167,35 @@
       </article>
     </div>
   </dialog>
-<div id="site-footer"></div>
+
+  <script>
+    (() => {
+      const buttons = document.querySelectorAll(".set-operation-button");
+      const current = document.getElementById("set-current-operation");
+      const buy1 = document.getElementById("set-buy-1");
+      const buy2 = document.getElementById("set-buy-2");
+      const viewer1 = document.querySelector("#practice-viewer-1 .topic-dialog__bar strong");
+      const viewer2 = document.querySelector("#practice-viewer-2 .topic-dialog__bar strong");
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          buttons.forEach((b) => b.setAttribute("aria-pressed", "false"));
+          button.setAttribute("aria-pressed", "true");
+
+          const name = button.dataset.operation;
+          const key = button.dataset.key;
+
+          current.textContent = name + " - Practise:";
+          buy1.dataset.product = key + "-level1";
+          buy2.dataset.product = key + "-level2";
+
+          if (viewer1) viewer1.textContent = name + " — Level 1 Practice";
+          if (viewer2) viewer2.textContent = name + " — Level 2 Practice";
+        });
+      });
+    })();
+  </script>
+
+  <div id="site-footer"></div>
 </body>
 </html>
