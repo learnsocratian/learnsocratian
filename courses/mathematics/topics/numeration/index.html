@@ -34,12 +34,11 @@ h1{font-family:Georgia,serif;font-size:31px;margin:0 0 10px}
   border-radius:14px;
   overflow:hidden;
   cursor:pointer;
-  background:#000;
+  background:
+    linear-gradient(rgba(25,18,38,.08),rgba(25,18,38,.08)),
+    url("numeration-first-frame.jpg") center/cover no-repeat,
+    linear-gradient(135deg,#ddd4eb,#f4eff9);
   box-shadow:0 7px 22px rgba(57,43,88,.08);
-}
-.poster-preview{
-  position:absolute;inset:0;width:100%;height:100%;
-  object-fit:cover;background:#000;
 }
 .poster::after{
   content:"";
@@ -115,9 +114,6 @@ dialog::backdrop{background:rgba(18,13,27,.78)}
 
   <div class="layout" id="numerationLayout">
     <button class="poster" id="openVideo" type="button" aria-label="Open Numeration video">
-      <video class="poster-preview" id="posterPreview" muted playsinline preload="auto" aria-hidden="true">
-        <source src="/assets/video/learn-socratian-numeration-film.mp4" type="video/mp4">
-      </video>
       <span class="play" aria-hidden="true">▶</span>
     </button>
 
@@ -156,11 +152,6 @@ const panel=document.getElementById("topicsPanel");
 const dialog=document.getElementById("videoDialog");
 const video=document.getElementById("numerationVideo");
 const close=document.getElementById("closeVideo");
-const posterPreview=document.getElementById("posterPreview");
-
-posterPreview.addEventListener("loadedmetadata",()=>{
-  if(posterPreview.duration > 0) posterPreview.currentTime=Math.min(0.1,posterPreview.duration);
-});
 
 poster.addEventListener("click",()=>{
   dialog.showModal();
