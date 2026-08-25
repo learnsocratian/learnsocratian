@@ -4,40 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Real Numbers — Learn Socratian</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
   <style>
-    :root{
-      --lavender:#eee8ff;
-      --lavender-2:#f7f3ff;
-      --ink:#2f2b3a;
-      --muted:#686174;
-      --border:#d8cfee;
-      --button:#ffffff;
-      --button-hover:#f3edff;
-      --shadow:0 10px 28px rgba(52, 42, 78, .10);
-    }
+    .real-numbers-page{
+      --rn-lavender:#eee8ff;
+      --rn-lavender-2:#f7f3ff;
+      --rn-ink:#2f2b3a;
+      --rn-border:#d8cfee;
+      --rn-button:#ffffff;
+      --rn-button-hover:#f3edff;
+      --rn-shadow:0 10px 28px rgba(52, 42, 78, .10);
 
-    *{box-sizing:border-box}
-
-    body{
-      margin:0;
-      font-family: Arial, Helvetica, sans-serif;
-      background:linear-gradient(180deg, var(--lavender-2), #fff);
-      color:var(--ink);
-    }
-
-    main{
-      min-height:100vh;
+      min-height:calc(100vh - 140px);
       display:flex;
       align-items:center;
       justify-content:center;
       padding:34px 24px;
+      background:linear-gradient(180deg, var(--rn-lavender-2), #fff);
+      color:var(--rn-ink);
     }
 
-    .page{
+    .real-numbers-page *{
+      box-sizing:border-box;
+    }
+
+    .real-numbers-page .rn-page{
       width:min(1180px, 100%);
     }
 
-    h1{
+    .real-numbers-page .rn-title{
       margin:0 0 18px;
       text-align:center;
       font-size:clamp(1.7rem, 2.5vw, 2.35rem);
@@ -45,30 +40,28 @@
       letter-spacing:.01em;
     }
 
-    .parent-layout{
+    .real-numbers-page .rn-layout{
       display:grid;
       grid-template-columns:minmax(0, 1.65fr) minmax(280px, .85fr);
       gap:30px;
       align-items:stretch;
     }
 
-    .video-card{
+    .real-numbers-page .rn-video-card{
       position:relative;
       width:100%;
-      height:100%;
-      min-height:0;
       aspect-ratio:16/9;
       border-radius:18px;
       overflow:hidden;
-      border:1px solid var(--border);
+      border:1px solid var(--rn-border);
       background:
         radial-gradient(circle at 32% 32%, rgba(255,255,255,.85), transparent 23%),
         linear-gradient(135deg,#ded4f8,#f4efff 55%,#d9d0ef);
-      box-shadow:var(--shadow);
+      box-shadow:var(--rn-shadow);
       cursor:pointer;
     }
 
-    .video-card::after{
+    .real-numbers-page .rn-video-card::after{
       content:"Real Numbers";
       position:absolute;
       left:22px;
@@ -79,7 +72,7 @@
       letter-spacing:.02em;
     }
 
-    .play{
+    .real-numbers-page .rn-play{
       position:absolute;
       inset:50% auto auto 50%;
       transform:translate(-50%,-50%);
@@ -93,7 +86,7 @@
       place-items:center;
     }
 
-    .play::before{
+    .real-numbers-page .rn-play::before{
       content:"";
       width:0;
       height:0;
@@ -103,67 +96,75 @@
       margin-left:5px;
     }
 
-    .child-panel{
-      border:1px solid var(--border);
+    .real-numbers-page .rn-child-panel{
+      border:1px solid var(--rn-border);
       border-radius:16px;
       padding:18px;
       background:rgba(255,255,255,.82);
-      box-shadow:var(--shadow);
-      height:100%;
-      min-height:0;
+      box-shadow:var(--rn-shadow);
       display:flex;
       flex-direction:column;
       overflow:hidden;
     }
 
-    .child-panel h2{
+    .real-numbers-page .rn-child-panel h2{
       margin:0 0 13px;
       font-size:1.05rem;
       font-weight:650;
       text-align:center;
     }
 
-    .child-links{
+    .real-numbers-page .rn-child-links{
       display:grid;
       grid-template-rows:repeat(4, 1fr);
       gap:10px;
       flex:1;
     }
 
-    .child-links a{
+    .real-numbers-page .rn-child-links a{
       min-height:48px;
       display:flex;
       align-items:center;
       justify-content:center;
       text-align:center;
       padding:9px 14px;
-      border:1px solid var(--border);
+      border:1px solid var(--rn-border);
       border-radius:10px;
-      background:var(--button);
-      color:var(--ink);
+      background:var(--rn-button);
+      color:var(--rn-ink);
       text-decoration:none;
       font-size:.98rem;
       line-height:1.25;
       transition:background .15s ease, transform .15s ease, box-shadow .15s ease;
     }
 
-    .child-links a:hover,
-    .child-links a:focus-visible{
-      background:var(--button-hover);
+    .real-numbers-page .rn-child-links a:hover,
+    .real-numbers-page .rn-child-links a:focus-visible{
+      background:var(--rn-button-hover);
       transform:translateY(-1px);
       box-shadow:0 4px 12px rgba(70,55,100,.08);
       outline:none;
     }
 
-    .symbol{
+    .real-numbers-page .rn-symbol{
       margin-left:.35em;
       white-space:nowrap;
     }
 
     @media (max-width:760px){
-      main{padding:24px 16px}
-      .parent-layout{grid-template-columns:1fr; gap:20px}
-      .child-panel{width:100%; height:auto !important}
+      .real-numbers-page{
+        padding:24px 16px;
+      }
+
+      .real-numbers-page .rn-layout{
+        grid-template-columns:1fr;
+        gap:20px;
+      }
+
+      .real-numbers-page .rn-child-panel{
+        width:100%;
+        height:auto !important;
+      }
     }
   </style>
 </head>
@@ -171,33 +172,33 @@
 <body>
   <div id="site-header"></div>
 
-  <main>
-    <section class="page" aria-labelledby="page-title">
-      <h1 id="page-title">Real Numbers</h1>
+  <main class="real-numbers-page">
+    <section class="rn-page" aria-labelledby="page-title">
+      <h1 id="page-title" class="rn-title">Real Numbers</h1>
 
-      <div class="parent-layout">
-        <div class="video-card" role="img" aria-label="Preview area for the Real Numbers video poster">
-          <button class="play" type="button" aria-label="Play Real Numbers video"></button>
+      <div class="rn-layout">
+        <div class="rn-video-card" role="img" aria-label="Preview area for the Real Numbers video poster">
+          <button class="rn-play" type="button" aria-label="Play Real Numbers video"></button>
         </div>
 
-        <aside class="child-panel" aria-label="Real Numbers topics">
+        <aside class="rn-child-panel" aria-label="Real Numbers topics">
           <h2>Real Numbers</h2>
 
-          <nav class="child-links">
+          <nav class="rn-child-links">
             <a href="natural-numbers/index.html">
-              Natural Numbers <span class="symbol">(ℕ)</span>
+              Natural Numbers <span class="rn-symbol">(ℕ)</span>
             </a>
 
             <a href="integers/index.html">
-              Integers <span class="symbol">(ℤ)</span>
+              Integers <span class="rn-symbol">(ℤ)</span>
             </a>
 
             <a href="rational-numbers/index.html">
-              Rational Numbers <span class="symbol">(ℚ)</span>
+              Rational Numbers <span class="rn-symbol">(ℚ)</span>
             </a>
 
             <a href="irrational-numbers/index.html">
-              Irrational Numbers <span class="symbol">(ℝ ∖ ℚ)</span>
+              Irrational Numbers <span class="rn-symbol">(ℝ ∖ ℚ)</span>
             </a>
           </nav>
         </aside>
@@ -210,8 +211,8 @@
   <script>
     function matchPanelToVideo() {
       if (window.innerWidth <= 760) return;
-      const video = document.querySelector('.video-card');
-      const panel = document.querySelector('.child-panel');
+      const video = document.querySelector('.rn-video-card');
+      const panel = document.querySelector('.rn-child-panel');
       panel.style.height = video.getBoundingClientRect().height + 'px';
     }
     window.addEventListener('load', matchPanelToVideo);
