@@ -17,6 +17,8 @@ body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#faf9fc;color:va
  
 main{max-width:1120px;margin:auto;padding:14px 22px 20px}
 .crumb{font-size:13px;color:var(--muted);margin-bottom:4px}
+.crumb a{color:var(--lav);text-decoration:none}
+.crumb a:hover,.crumb a:focus-visible{text-decoration:underline}
 h1{font-family:Georgia,serif;font-size:31px;margin:0 0 10px}
 .layout{
   display:grid;
@@ -109,7 +111,7 @@ dialog::backdrop{background:rgba(18,13,27,.78)}
 <div id="site-header"></div>
 
 <main>
-  <div class="crumb">Mathematics › Numeration</div>
+  <div class="crumb"><a href="/courses/mathematics/">Mathematics</a> › <span aria-current="page">Numeration</span></div>
   <h1>Numeration</h1>
 
   <div class="layout" id="numerationLayout">
