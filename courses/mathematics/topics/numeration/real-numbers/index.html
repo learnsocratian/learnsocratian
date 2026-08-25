@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Real Numbers — Learn Socratian Preview</title>
+  <title>Real Numbers — Learn Socratian</title>
   <style>
     :root{
       --lavender:#eee8ff;
@@ -160,13 +160,6 @@
       white-space:nowrap;
     }
 
-    .preview-note{
-      margin:14px 0 0;
-      text-align:center;
-      color:var(--muted);
-      font-size:.8rem;
-    }
-
     @media (max-width:760px){
       main{padding:24px 16px}
       .parent-layout{grid-template-columns:1fr; gap:20px}
@@ -176,6 +169,8 @@
 </head>
 
 <body>
+  <div id="site-header"></div>
+
   <main>
     <section class="page" aria-labelledby="page-title">
       <h1 id="page-title">Real Numbers</h1>
@@ -207,12 +202,10 @@
           </nav>
         </aside>
       </div>
-
-      <p class="preview-note">
-        Local layout preview only — the live page will use the real shared header and actual video/poster asset.
-      </p>
-    </section>
+</section>
   </main>
+
+  <div id="site-footer"></div>
 
   <script>
     function matchPanelToVideo() {
@@ -225,5 +218,6 @@
     window.addEventListener('resize', matchPanelToVideo);
   </script>
 
+  <script type="module" src="/assets/js/main.js"></script>
 </body>
 </html>
