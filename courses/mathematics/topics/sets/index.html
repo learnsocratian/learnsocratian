@@ -9,6 +9,20 @@
   <link rel="stylesheet" href="/assets/css/numeration-topics.css">
   <script type="module" src="/assets/js/main.js"></script>
   <script type="module" src="/assets/js/numeration-topic-page.js"></script>
+
+  <style>
+    .topic-video{
+      background:
+        linear-gradient(rgba(25,18,38,.08),rgba(25,18,38,.08)),
+        url("/assets/images/video-posters/sets-introduction-first-frame.jpg") center/cover no-repeat;
+    }
+    .topic-dialog__video iframe{
+      width:100%;
+      height:100%;
+      border:0;
+      display:block;
+    }
+  </style>
 </head>
 <body data-topic="sets" data-topic-name="Sets">
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -84,10 +98,12 @@
       <button class="topic-dialog__close" type="button" data-close-dialog aria-label="Close video">×</button>
     </div>
     <div class="topic-dialog__video">
-      <div>
-        <div style="font-size:52px">▶</div>
-        <p>The Introduction to Sets video will play here.</p>
-      </div>
+      <iframe
+        src="https://www.youtube.com/embed/3FKpu-Qoxc4?rel=0"
+        title="Introduction to Sets"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
     </div>
   </dialog>
 
