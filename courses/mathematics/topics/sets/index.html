@@ -159,5 +159,17 @@
     </div>
   </dialog>
 <div id="site-footer"></div>
+
+<script>
+  const setsVideoDialog = document.getElementById("video-dialog");
+  const setsVideoFrame = setsVideoDialog.querySelector("iframe");
+
+  setsVideoDialog.addEventListener("close", () => {
+    const src = setsVideoFrame.src;
+    setsVideoFrame.src = "";
+    setsVideoFrame.src = src;
+  });
+</script>
+  
 </body>
 </html>
