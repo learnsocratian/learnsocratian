@@ -1,250 +1,87 @@
 <!doctype html>
 <html lang="en-CA">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <title>Foundations of Mathematics | Learn Socratian</title>
-    <meta
-      name="description"
-      content="Explore the foundations of mathematics through sets, numeration, algebra, geometry, measurement, data and probability, and financial literacy."
-    >
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#6f5aa8">
-    <meta name="color-scheme" content="light">
+  <title>Foundations of Mathematics | Learn Socratian</title>
+  <meta name="description" content="Explore the foundations of mathematics with Learn Socratian.">
 
-    <!-- Add an absolute canonical URL after final production metadata is confirmed. -->
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="en_CA">
-    <meta property="og:site_name" content="Learn Socratian">
-    <meta property="og:title" content="Foundations of Mathematics | Learn Socratian">
-    <meta
-      property="og:description"
-      content="Build strong mathematical foundations by exploring one major area at a time."
-    >
-    <!-- Add og:url and og:image after final production metadata is confirmed. -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Foundations of Mathematics | Learn Socratian">
-    <meta
-      name="twitter:description"
-      content="Build strong mathematical foundations by exploring one major area at a time."
-    >
+  <link rel="stylesheet" href="/assets/css/styles.css">
 
-    <link rel="icon" href="/assets/images/logo/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/assets/images/logo/apple-touch-icon.png">
-    <link rel="manifest" href="/site.webmanifest">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Libre+Baskerville:wght@400;700&amp;display=swap"
-    >
-    <link rel="stylesheet" href="/assets/css/styles.css">
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Foundations of Mathematics",
-        "description": "Explore the major areas of foundational mathematics.",
-        "isPartOf": {
-          "@type": "WebSite",
-          "name": "Learn Socratian"
-        },
-        "inLanguage": "en-CA"
+  <style>
+    html,body{margin:0}
+    .foundations-approved-page{
+      width:100%;
+      padding:0;
+      overflow-x:hidden;
+      background:#f7faff;
+    }
+    .foundations-approved-visual{
+      position:relative;
+      width:min(100%,1536px);
+      margin:0 auto;
+      line-height:0;
+    }
+    .foundations-approved-visual img{
+      display:block;
+      width:100%;
+      height:auto;
+      max-height:calc(100vh - 76px);
+      object-fit:contain;
+      object-position:top center;
+      margin:0 auto;
+    }
+    .brick-hotspot{
+      position:absolute;
+      z-index:2;
+      border-radius:9px;
+      text-decoration:none;
+      cursor:pointer;
+      transition:box-shadow .15s ease, transform .15s ease;
+    }
+    .brick-hotspot:hover,
+    .brick-hotspot:focus-visible{
+      box-shadow:inset 0 0 0 3px rgba(255,255,255,.88),0 4px 14px rgba(16,40,74,.25);
+      transform:translateY(-2px);
+      outline:none;
+    }
+    @media(max-width:760px){
+      .foundations-approved-visual img{
+        max-height:none;
       }
-    </script>
-    <script type="module" src="/assets/js/main.js"></script>
-  </head>
+    }
+  </style>
+</head>
+<body>
+  <div id="site-header"></div>
 
-  <body>
-    <a class="skip-link" href="#main-content">Skip to main content</a>
+  <main class="foundations-approved-page">
+    <div class="foundations-approved-visual">
+      <img
+        src="/assets/images/mathematics/foundations-building-approved.png"
+        alt="Foundations of Mathematics shown as seven foundation blocks supporting future levels from Grade 9 through University."
+        width="1536"
+        height="952"
+      >
+      <a class="brick-hotspot" href="/courses/mathematics/topics/sets/" aria-label="Sets"
+         style="left:12.2396%;top:70.3782%;width:9.1146%;height:13.4454%"></a>
+      <a class="brick-hotspot" href="/courses/mathematics/topics/numeration/" aria-label="Numeration"
+         style="left:21.4193%;top:70.3782%;width:10.4818%;height:13.4454%"></a>
+      <a class="brick-hotspot" href="/courses/mathematics/foundations/algebra.html" aria-label="Algebra"
+         style="left:32.0312%;top:70.3782%;width:10.6120%;height:13.4454%"></a>
+      <a class="brick-hotspot" href="/courses/mathematics/foundations/geometry.html" aria-label="Geometry"
+         style="left:42.7734%;top:70.3782%;width:11.1328%;height:13.4454%"></a>
+      <a class="brick-hotspot" href="/courses/mathematics/foundations/measurement.html" aria-label="Measurement"
+         style="left:54.0365%;top:70.3782%;width:12.1745%;height:13.4454%"></a>
+      <a class="brick-hotspot" href="/courses/mathematics/foundations/data-probability.html" aria-label="Database Management and Probability"
+         style="left:66.3411%;top:70.3782%;width:12.3047%;height:13.4454%"></a>
+      <a class="brick-hotspot" href="/courses/mathematics/foundations/financial-literacy.html" aria-label="Financial Literacy"
+         style="left:78.7109%;top:70.3782%;width:12.3698%;height:13.4454%"></a>
+    </div>
+  </main>
 
-    <div id="site-header"></div>
-
-    <main id="main-content">
-      <!-- =========================================================
-           FOUNDATIONS OF MATHEMATICS — COMPACT DIRECTORY
-
-           DESIGN PRINCIPLE:
-           This page shows ONLY the major Foundations areas.
-           Each card leads to its own page, where the next level of
-           topics can be introduced without turning this page into
-           a large visible sitemap.
-           ========================================================= -->
-      <section class="foundations-page" aria-labelledby="foundations-title">
-        <div class="foundations-page__container container">
-          <nav class="breadcrumb" aria-label="Breadcrumb">
-            <ol class="breadcrumb__list" role="list">
-              <li><a href="/courses/mathematics/index.html">Mathematics</a></li>
-              <li aria-current="page">Foundations</li>
-            </ol>
-          </nav>
-
-          <header class="foundations-page__header">
-            <p class="foundations-page__eyebrow">Learn Socratian Mathematics</p>
-            <h1 class="foundations-page__title" id="foundations-title">Foundations of Mathematics</h1>
-            <div class="foundations-page__ornament" aria-hidden="true">
-              <span></span><span>◇</span><span></span>
-            </div>
-            <p class="foundations-page__intro">
-              Build a strong mathematical foundation by choosing the area you want to explore.
-              Each area opens into its own expandable pathway of topics, lessons and practice.
-            </p>
-          </header>
-
-          <!-- =====================================================
-               MAJOR FOUNDATIONS AREAS
-
-               IMPORTANT:
-               Keep only major areas visible on this page.
-               Add subtopics on the destination pages instead.
-               ===================================================== -->
-          <div class="foundations-grid">
-            <a class="foundations-card" href="/courses/mathematics/topics/sets/">
-              <span class="foundations-card__symbol" aria-hidden="true">{ }</span>
-              <span class="foundations-card__content">
-                <strong class="foundations-card__title">Sets</strong>
-                <small class="foundations-card__description">Objects, collections and mathematical relationships</small>
-              </span>
-              <span class="foundations-card__arrow" aria-hidden="true">→</span>
-            </a>
-
-            <a class="foundations-card" href="/courses/mathematics/topics/numeration/">
-              <span class="foundations-card__symbol" aria-hidden="true">123</span>
-              <span class="foundations-card__content">
-                <strong class="foundations-card__title">Numeration</strong>
-                <small class="foundations-card__description">Numbers, operations, ratios, rates, percentages and equations</small>
-              </span>
-              <span class="foundations-card__arrow" aria-hidden="true">→</span>
-            </a>
-
-            <a class="foundations-card" href="/courses/mathematics/foundations/algebra.html">
-              <span class="foundations-card__symbol" aria-hidden="true">x²</span>
-              <span class="foundations-card__content">
-                <strong class="foundations-card__title">Algebra</strong>
-                <small class="foundations-card__description">Patterns, polynomials, equations and formulae</small>
-              </span>
-              <span class="foundations-card__arrow" aria-hidden="true">→</span>
-            </a>
-
-            <a class="foundations-card" href="/courses/mathematics/foundations/geometry.html">
-              <span class="foundations-card__symbol" aria-hidden="true">△</span>
-              <span class="foundations-card__content">
-                <strong class="foundations-card__title">Geometry</strong>
-                <small class="foundations-card__description">Two-dimensional and three-dimensional geometry</small>
-              </span>
-              <span class="foundations-card__arrow" aria-hidden="true">→</span>
-            </a>
-
-            <a class="foundations-card" href="/courses/mathematics/foundations/measurement.html">
-              <span class="foundations-card__symbol" aria-hidden="true">↔</span>
-              <span class="foundations-card__content">
-                <strong class="foundations-card__title">Measurement</strong>
-                <small class="foundations-card__description">Length, area, volume, units and practical measurement</small>
-              </span>
-              <span class="foundations-card__arrow" aria-hidden="true">→</span>
-            </a>
-
-            <a class="foundations-card" href="/courses/mathematics/foundations/data-probability.html">
-              <span class="foundations-card__symbol" aria-hidden="true">▥</span>
-              <span class="foundations-card__content">
-                <strong class="foundations-card__title">Database Management and Probability</strong>
-                <small class="foundations-card__description">Data management, probability, statistics and interpretation</small>
-              </span>
-              <span class="foundations-card__arrow" aria-hidden="true">→</span>
-            </a>
-
-            <a class="foundations-card" href="/courses/mathematics/foundations/financial-literacy.html">
-              <span class="foundations-card__symbol" aria-hidden="true">$</span>
-              <span class="foundations-card__content">
-                <strong class="foundations-card__title">Financial Literacy</strong>
-                <small class="foundations-card__description">Practical mathematics for money and everyday decisions</small>
-              </span>
-              <span class="foundations-card__arrow" aria-hidden="true">→</span>
-            </a>
-
-            <!-- ADD A NEW MAJOR FOUNDATIONS AREA HERE.
-                 Copy one .foundations-card block, change its icon/text,
-                 and point it to a new page inside /foundations/. -->
-          </div>
-
-          <!-- =====================================================
-               FUTURE PAGE STRUCTURE — DEVELOPMENT NOTES ONLY
-               Nothing below is rendered on the page.
-
-               foundations/sets.html
-                 - ADD SETS TOPICS HERE
-
-               foundations/numeration.html
-                 - Properties of Operations
-                 - Real Numbers
-                   - Natural Numbers
-                   - Integers
-                   - Rational Numbers
-                     - Fractions
-                     - Decimals
-                   - Irrational Numbers
-                 - Proportions / Rates / Ratios
-                 - Percentages
-                 - Equations
-                 - ADD MORE NUMERATION TOPICS HERE
-
-               foundations/algebra.html
-                 - Patterns
-                 - Polynomials
-                 - Equations
-                 - Formulae
-                 - ADD MORE ALGEBRA TOPICS HERE
-
-               foundations/geometry.html
-                 - 2D Geometry
-                   - Lines
-                   - Angles
-                   - Polygons
-                     - ADD MORE POLYGON TOPICS HERE
-                   - ADD MORE 2D GEOMETRY TOPICS HERE
-                 - 3D Geometry
-                   - Prisms
-                   - Pyramids
-                   - Cylinders
-                   - Cones
-                   - ADD MORE 3D GEOMETRY TOPICS HERE
-                 - ADD MORE GEOMETRY TOPICS HERE
-
-               foundations/measurement.html
-                 - ADD MEASUREMENT TOPICS HERE
-
-               foundations/data-probability.html
-                 - Data Management
-                 - Probability
-                 - Statistics
-                 - ADD MORE DATA / PROBABILITY TOPICS HERE
-
-               foundations/financial-literacy.html
-                 - ADD FINANCIAL LITERACY TOPICS HERE
-               ===================================================== -->
-
-          <div class="foundations-page__back">
-            <a class="button button--secondary" href="/courses/mathematics/index.html">
-              <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true">
-                <path d="M16 10H4m4.5-4.5L4 10l4.5 4.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/>
-              </svg>
-              Back to Mathematics
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <div id="site-footer"></div>
-
-    <noscript>
-      <p class="noscript-message">
-        JavaScript is disabled. The Foundations content remains available, but the shared site navigation
-        and footer require JavaScript to load.
-      </p>
-    </noscript>
-  </body>
+  <div id="site-footer"></div>
+  <script type="module" src="/assets/js/main.js"></script>
+</body>
 </html>
