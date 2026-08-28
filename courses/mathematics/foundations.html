@@ -3,53 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-
   <title>Foundations of Mathematics | Learn Socratian</title>
   <meta name="description" content="Explore the foundations of mathematics with Learn Socratian.">
-
   <link rel="stylesheet" href="/assets/css/styles.css">
-
   <style>
     html,body{margin:0}
     .foundations-approved-page{
       width:100%;
-      padding:0;
-      overflow-x:hidden;
       background:#f7faff;
+      overflow-x:hidden;
     }
     .foundations-approved-visual{
-      position:relative;
       width:min(100%,1536px);
       margin:0 auto;
-      line-height:0;
     }
     .foundations-approved-visual img{
       display:block;
       width:100%;
       height:auto;
-      max-height:calc(100vh - 76px);
-      object-fit:contain;
-      object-position:top center;
-      margin:0 auto;
-    }
-    .brick-hotspot{
-      position:absolute;
-      z-index:2;
-      border-radius:9px;
-      text-decoration:none;
-      cursor:pointer;
-      transition:box-shadow .15s ease, transform .15s ease;
-    }
-    .brick-hotspot:hover,
-    .brick-hotspot:focus-visible{
-      box-shadow:inset 0 0 0 3px rgba(255,255,255,.88),0 4px 14px rgba(16,40,74,.25);
-      transform:translateY(-2px);
-      outline:none;
-    }
-    @media(max-width:760px){
-      .foundations-approved-visual img{
-        max-height:none;
-      }
+      margin:0;
+      padding:0;
     }
   </style>
 </head>
@@ -59,29 +32,55 @@
   <main class="foundations-approved-page">
     <div class="foundations-approved-visual">
       <img
+        id="foundation-map-image"
         src="/assets/images/mathematics/foundations-building-approved.png"
         alt="Foundations of Mathematics shown as seven foundation blocks supporting future levels from Grade 9 through University."
         width="1536"
         height="952"
+        usemap="#foundation-bricks"
       >
-      <a class="brick-hotspot" href="/courses/mathematics/topics/sets/" aria-label="Sets"
-         style="left:12.2396%;top:70.3782%;width:9.1146%;height:13.4454%"></a>
-      <a class="brick-hotspot" href="/courses/mathematics/topics/numeration/" aria-label="Numeration"
-         style="left:21.4193%;top:70.3782%;width:10.4818%;height:13.4454%"></a>
-      <a class="brick-hotspot" href="/courses/mathematics/foundations/algebra.html" aria-label="Algebra"
-         style="left:32.0312%;top:70.3782%;width:10.6120%;height:13.4454%"></a>
-      <a class="brick-hotspot" href="/courses/mathematics/foundations/geometry.html" aria-label="Geometry"
-         style="left:42.7734%;top:70.3782%;width:11.1328%;height:13.4454%"></a>
-      <a class="brick-hotspot" href="/courses/mathematics/foundations/measurement.html" aria-label="Measurement"
-         style="left:54.0365%;top:70.3782%;width:12.1745%;height:13.4454%"></a>
-      <a class="brick-hotspot" href="/courses/mathematics/foundations/data-probability.html" aria-label="Database Management and Probability"
-         style="left:66.3411%;top:70.3782%;width:12.3047%;height:13.4454%"></a>
-      <a class="brick-hotspot" href="/courses/mathematics/foundations/financial-literacy.html" aria-label="Financial Literacy"
-         style="left:78.7109%;top:70.3782%;width:12.3698%;height:13.4454%"></a>
+      <map name="foundation-bricks">
+        <area shape="rect" coords="190,670,328,798" href="/courses/mathematics/topics/sets/" alt="Sets" title="Sets"><area shape="rect" coords="329,670,489,798" href="/courses/mathematics/topics/numeration/" alt="Numeration" title="Numeration"><area shape="rect" coords="491,670,654,798" href="/courses/mathematics/foundations/algebra.html" alt="Algebra" title="Algebra"><area shape="rect" coords="656,670,827,798" href="/courses/mathematics/foundations/geometry.html" alt="Geometry" title="Geometry"><area shape="rect" coords="829,670,1016,798" href="/courses/mathematics/foundations/measurement.html" alt="Measurement" title="Measurement"><area shape="rect" coords="1018,670,1207,798" href="/courses/mathematics/foundations/data-probability.html" alt="Database Management and Probability" title="Database Management and Probability"><area shape="rect" coords="1209,670,1398,798" href="/courses/mathematics/foundations/financial-literacy.html" alt="Financial Literacy" title="Financial Literacy">
+      </map>
     </div>
   </main>
 
   <div id="site-footer"></div>
   <script type="module" src="/assets/js/main.js"></script>
+  <script>
+    // HTML image-map coordinates are based on the original 1536×952 image.
+    // Scale the coordinates whenever the responsive image is displayed smaller.
+    (() => {
+      const image = document.getElementById('foundation-map-image');
+      const map = document.querySelector('map[name="foundation-bricks"]');
+      const originalWidth = 1536;
+      const originalHeight = 952;
+      const originalCoords = Array.from(map.areas).map(area =>
+        area.coords.split(',').map(Number)
+      );
+
+      function resizeMap() {
+        const renderedWidth = image.clientWidth;
+        const renderedHeight = image.clientHeight;
+        if (!renderedWidth || !renderedHeight) return;
+        const sx = renderedWidth / originalWidth;
+        const sy = renderedHeight / originalHeight;
+
+        Array.from(map.areas).forEach((area, i) => {
+          const c = originalCoords[i];
+          area.coords = [
+            Math.round(c[0] * sx),
+            Math.round(c[1] * sy),
+            Math.round(c[2] * sx),
+            Math.round(c[3] * sy)
+          ].join(',');
+        });
+      }
+
+      image.addEventListener('load', resizeMap);
+      window.addEventListener('resize', resizeMap);
+      if (image.complete) resizeMap();
+    })();
+  </script>
 </body>
 </html>
