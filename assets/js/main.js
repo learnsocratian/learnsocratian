@@ -345,10 +345,11 @@ function initializeSubmenus() {
 /**
  * Start site-wide functionality after the document is ready.
  */
-async function initializeApp() {
+aasync function initializeApp() {
   document.documentElement.classList.add("has-js");
 
   await loadSharedHeader();
+  await loadSharedFooter();
 
   initializeCurrentYear();
   initializeStickyHeader();
