@@ -59,6 +59,29 @@ async function loadSharedHeader() {
   }
 }
 
+
+async function loadSharedFooter() {
+  const footerPlaceholder = document.getElementById("site-footer");
+
+  if (!footerPlaceholder) {
+    return;
+  }
+
+  try {
+    const response = await fetch("/components/footer.html");
+
+    if (!response.ok) {
+      throw new Error(`Could not load footer: ${response.status}`);
+    }
+
+    footerPlaceholder.innerHTML = await response.text();
+  } catch (error) {
+    console.error("Error loading shared footer:", error);
+  }
+}
+
+
+
 /**
  * Return focusable, visible descendants of an element.
  * @param {Element} container
