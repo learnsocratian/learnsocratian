@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mathematics Games | Learn Socratian</title>
+  <meta name="description" content="Free interactive mathematics games on Learn Socratian.">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <style>
+    .games-page { min-height: 75vh; padding: clamp(2rem,5vw,4rem) 1.25rem 5rem; background: #fbf9fd; }
+    .games-wrap { width: min(100%, 1000px); margin: 0 auto; }
+    .games-breadcrumb { margin:0 0 1.6rem; font-size:.84rem; color:#625a72; }
+    .games-breadcrumb ol { display:flex; flex-wrap:wrap; align-items:center; gap:.5rem; list-style:none; margin:0; padding:0; }
+    .games-breadcrumb a { color:#60438f; text-decoration:none; }
+    .games-breadcrumb a:hover, .games-breadcrumb a:focus-visible { text-decoration:underline; text-underline-offset:3px; }
+    .games-breadcrumb li + li::before { content:"›"; padding-right:.5rem; color:#968aa8; }
+    .games-back { display:inline-block; margin-top:2.5rem; color:#60438f; font-weight:600; text-underline-offset:3px; }
+    .games-page h1 { margin:0 0 .65rem; color:#372957; font-size:clamp(2rem,4vw,3rem); }
+    .games-intro { max-width:52rem; margin:0 0 2.1rem; color:#555064; font-size:1.05rem; line-height:1.65; }
+    .games-list { display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr)); gap:1.1rem; }
+    .game-card { display:flex; flex-direction:column; gap:.85rem; padding:1.5rem; border:1px solid #ded6ec; background:white; border-radius:1rem; box-shadow:0 10px 25px rgba(53,42,70,.06); }
+    .game-card h2 { margin:0; color:#372957; font-size:1.35rem; }
+    .game-card p { margin:0 0 .6rem; flex:1; color:#555064; line-height:1.55; }
+    .game-card a { display:inline-flex; align-items:center; gap:.5rem; align-self:start; padding:.78rem 1rem; background:#60438f; color:#fff; border-radius:.55rem; font-weight:700; text-decoration:none; }
+    .game-card a:hover, .game-card a:focus-visible { background:#443064; }
+  </style>
+  <script type="module" src="/assets/js/main.js"></script>
+</head>
+<body>
+  <div id="site-header"></div>
+  <main class="games-page" id="main-content">
+    <div class="games-wrap">
+      <nav class="games-breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/courses/mathematics/index.html">Mathematics</a></li>
+          <li aria-current="page">Games</li>
+        </ol>
+      </nav>
+      <h1>Mathematics Games</h1>
+      <p class="games-intro">Explore interactive games to build confidence, fluency, and mathematical thinking.</p>
+      <div class="games-list">
+        <article class="game-card">
+          <h2>Multiplication Voice Challenge</h2>
+          <p>Practise multiplication tables from 2 to 9 using spoken answers, timed rounds, scores, and individual progress tracking.</p>
+          <a href="multiplication/index.html">Open game <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+      <a class="games-back" href="/courses/mathematics/index.html">← Back to Mathematics</a>
+    </div>
+  </main>
+  <div id="site-footer"></div>
+</body>
+</html>
