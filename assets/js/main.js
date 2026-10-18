@@ -345,7 +345,7 @@ function initializeSubmenus() {
 /**
  * Start site-wide functionality after the document is ready.
  */
-aasync function initializeApp() {
+async function initializeApp() {
   document.documentElement.classList.add("has-js");
 
   await loadSharedHeader();
